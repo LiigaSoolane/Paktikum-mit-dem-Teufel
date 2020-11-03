@@ -1,4 +1,43 @@
 \section{Theorie}
 \label{sec:Theorie}
+\subsection{Das Fadenpendel}
+    Ein Fadenpendel besteht aus einem Pendelkörper mit Masse m, der idealerweise 
+    an einem masselosen Faden; in unserem Fall an einer Metallstange befestigt ist.
+    Wird der Pendelkörper aus der Ruhelage ausgelenkt, so wirkt aufgrund der 
+    Gravitation die rücktreibende Kraft $\vec{F}=m\cdot \vec{g}$. Dadurch entsteht  
+    ein Drehmoment $M= D_p \cdot \sin{\alpha}$ mit $D_p= m\cdot g\cdot l$. Für kleine Auslenkungen 
+    kann die Kleinwinkelnäherung $\sin{\alpha}=\alpha$ verwendet werden. %\nocite{wiki}
+    Unter Berücksichtigung des Trägheitsmomentes $J=m\cdot l²$ ergibt sich folgende Bewegungsgleichung 
+    für den Pendelkörper
+    \begin{equation}
+        D_p \cdot \sin{\alpha}+J\cdot \ddot \alpha=0
+    \end{equation}
+    Für kleine Winkel kann das Fadenpendel also als harmonischer Oszillator angenähert werden.
+    Die Lösung dieser Gleichung lautet
+    \begin{equation}
+        \alpha=a\cdot \sin{\omega t} + b\cdot \cos{\omega t}
+    \end{equation}
+    mit Schwingungsfrequenz
+    \begin{equation}
+        \omega= \sqrt{\dfrac{D_p}{J}}=\sqrt{\dfrac{g}{l}}
+    \end{equation}
+    Bei kleinen Auslenkungen haben daher weder die Masse des Pendelkörpers noch der
+    Auslenkwinkel Einfluss auf die Periodendauer $T=\dfrac{2\pi}{\omega}$.
 
-\cite{sample}
+\subsection{Verbunden}
+    Durch die Kopplung von zwei Fadenpendeln durch eine Feder kann Energie des einen 
+    Fadenpendels auf das andere übertragen werden. Die zusätzlichen Drehmomente der Pendel
+    lauten: $M_1=D_F(\alpha_2-\alpha_1),\ M_2=D_F(\alpha_1-\alpha_2)$
+    \subsection{Gleichsinnige Schwingungen}
+        Im Fall von gleichsinnigen Schwingungen findet keine Energieübertragung zwischen
+        den beiden Systemen statt, da die Feder im Idealfall weder ge- noch entspannt wird.
+        Bei zwei Pendeln der selben Länge ist zu erwarten, dass sich die Periodendauer durch
+        die Kopplung nicht ändern; vorrausgesetzt, die Aulenkungen zu Beginn betragen exakt 
+        den selben Wert.
+    \subsection{Gegensinnige Schwingungen}
+        Im Fall von gegensinnigen Schwingungen verstärkt die Feder die rücktreibenden Kräfte
+        der einzelnen Pendel. Dadurch wird die Periodendauer verkürzt. 
+    \subsection{Gekoppelte Schwingungen}
+        Wird zu Beginn das eine Pendel ausgelenkt, das andere jedoch in der Ruheposition 
+        belassen, so wird Energie langsam hin und her übertragen (Dies gilt zumindestens, wenn die
+        Rückstellkraft der Feder gering ist im Vergleich zur Rückstellkraft der Pendel).
