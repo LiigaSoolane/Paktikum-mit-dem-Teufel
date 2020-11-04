@@ -1,1 +1,1 @@
-Anfängerpraktikum TU Dortmund
+Wer das liest, ist Physikstudent
