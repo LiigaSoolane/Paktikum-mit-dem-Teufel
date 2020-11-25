@@ -1,11 +1,11 @@
 \section{Auswertung}
 %-------Pendellänge 1-------
 \subsection{Pendellänge 1}
-Zunächst wurde das Pendel auf eine Länge $l = 0,824 m$ eingestellt, um die erste Reihe an Messwerten zu nehmen.
+Zunächst wurde das Pendel auf eine Länge $l = 0,824 \si{\m}$ eingestellt, um die erste Reihe an Messwerten zu nehmen.
 
 \subsubsection{Frei schwingende Pendel}
 Da die Zeit für 5 Schwingungen gestoppt wurde, werden die
-Werte erst durch fünf geteilt. Dann erhält man die Messwerte
+Werte erst durch fünf geteilt. Daraus folgen die Messwerte
 wie in \ref{tab:frei} dargestellt.
 \begin{table}
     \centering
@@ -13,7 +13,7 @@ wie in \ref{tab:frei} dargestellt.
     \label{tab:frei}
     \begin{tabular}{c c}
      \toprule
-     $T_1$ & $T_2$\\
+     $T_1 / \si{\s}$ & $T_2 / \si{\s}$\\
      \midrule
      1.773 & 1.767 \\
      1.792 & 1.777 \\
@@ -28,20 +28,32 @@ wie in \ref{tab:frei} dargestellt.
      \bottomrule
     \end{tabular}
 \end{table}
-Als Mittelwert aus den Messwerten ergibt sich eine
-Schwingungsdauer $T_1 = 1.796 s$ für das eine und 
-$T_2 = 1.817 s$ für das andere Pendel.
+Die Formel für den Mittelwert lautet
+\begin{equation}
+x = \frac{1}{N} \sum_{k=1}^{N} x_k
+\label{eqn:mittel}
+\end{equation}
+und die für den Fehler des Mittelwertes
+\begin{equation}
+\sigma_{x} = \frac{\sigma}{\sqrt{N}}
+\label{eqn:mif}
+\end{equation}
+wobei $N$ die Anzahl an Messwerten ist und $\sigma$ die Standardabweichung.
+Als Mittelwert aus den Messwerten folgen eine
+Schwingungsdauer $T_1 = 1.796\pm 0.007 \si{\s}$ für das eine und 
+$T_2 = 1.817\pm 0.012 \si{\s}$ für das andere Pendel.
+
 
 \subsubsection{Gleich- und gegenphasige Schwingungen}
 Als nächstes sollte das System betrachtet werden, wenn die Feder eingesetzt und die Massen tatsächlich verbunden sind.
-Nach Teilung erhalten wir die in Tabelle \ref{tab:g1} aufgelisteten Werte. 
+Durch Teilung errechnen sich die in Tabelle \ref{tab:g1} aufgelisteten Werte. 
 \begin{table}
     \centering
     \caption{Messdaten für gleich- ($T_{+}$) und gegenphasige ($T_{-}$).}
     \label{tab:g1}
     \begin{tabular}{c c}
      \toprule
-     $T_{+}$ & $T_{-}$\\
+     $T_{+} / \si{\s}$ & $T_{-} / \si{\s}$\\
      \midrule
      1.806 & 1.694 \\
      1.814 & 1.66 \\
@@ -56,12 +68,22 @@ Nach Teilung erhalten wir die in Tabelle \ref{tab:g1} aufgelisteten Werte.
      \bottomrule
     \end{tabular}
 \end{table}
-Nimmt man jeweils die Mittelwerte, so erhält man $T_{+} = 1.806s$ und $T_{-} = 1.669s$. Aus diesen lässt sich der Koppungsgrad $\kappa$ durch die in der 
+Die Mittelwerte (mithilfe von \eqref{eqn:mittel}, \eqref{eqn:mif}) lauten $T_{+} = 1.806\pm 0.005\si{\s}$ und $T_{-} = 1.669\pm 0.005\si{\s}$. Aus diesen lässt sich der Koppungsgrad $\kappa$ durch die in der 
 Theorie hergeleitete Formel berechnen:
-\begin{align}
+\begin{align*}
 \kappa = \frac{T_{+}^2 - T_{-}^2}{T_{+}^2 + T_{-}^2}
     = 0.077
+\end{align*}
+Der zugehörige Fehler wird durch die Gaussche Fehlerfortpflanzung mit den Fehlern des Mittelwertes für $T_{+}$, $T_{-}$ bestimmt.
+\begin{equation}
+\sigma_f = \sqrt{\sum_{i=1}^{n} \left( \frac{\partial f}{\partial x_i} \right)^2 \sigma_{x_i}^2}
+\label{eqn:gauss}
+\end{equation}
+Für $\kappa$ gilt also:
+\begin{align}
+\sigma_{\kappa} = \sqrt{\sigma_{T_{+}}^{2} \left(- \frac{2 T_{+} \left(T_{+}^{2} - T_{-}^{2}\right)}{\left(T_{+}^{2} + T_{-}^{2}\right)^{2}} + \frac{2 T_{+}}{T_{+}^{2} + T_{-}^{2}}\right)^{2} + \sigma_{T_{-}}^{2} \left(- \frac{2 T_{-} \left(T_{+}^{2} - T_{-}^{2}\right)}{\left(T_{+}^{2} + T_{-}^{2}\right)^{2}} - \frac{2 T_{-}}{T_{+}^{2} + T_{-}^{2}}\right)^{2}}
 \end{align}
+Daraus folgt $\kappa = 0.077 \pm 0.005$.
 
 \subsubsection{Gekoppelte Schwingung}
 Zudem sollte die dritte mögliche Mode genauer betrachtet werden, die gekoppelte Schwingung. Einerseits ist dabei die Schwingung von Bedeutung, andererseits die
@@ -73,7 +95,7 @@ Gemessene Daten sind in Tabelle \ref{tab:gek1} zu finden.
     \label{tab:gek1}
     \begin{tabular}{c c}
      \toprule
-     $T$ & $T_{S}$\\
+     $T / \si{\s}$ & $T_{S} / \si{\s}$\\
      \midrule
      1.71 & 20.72 \\
      1.664 & 20.85\\
@@ -88,42 +110,57 @@ Gemessene Daten sind in Tabelle \ref{tab:gek1} zu finden.
      \bottomrule
     \end{tabular}
 \end{table}
-Als Mittelwerte erhalten wir $T = 1.678s$ und $T_{S} = 21.099s$. Nun gibt es aber auch eine Formel, mit der sich die Schwebungsdauer theoretisch aus den Schwingungsdauern der
-gleich- und gegenphasigen Schwingungen berechnen lassen. Für diesen theoretischen Wert ergibt sich bei unserer Rechnung:
+Zugehörige Mittelwerte sind mit \eqref{eqn:mittel}, \eqref{eqn:mif} $T = 1.678 \pm 0.006\si{\s}$ und $T_{S} = 21.099 \pm 0.124\si{\s}$. Nun gibt es aber auch eine Formel, mit der sich die Schwebungsdauer theoretisch aus den Schwingungsdauern der
+gleich- und gegenphasigen Schwingungen berechnen lassen. Für diesen theoretischen Wert gilt wie zuvor hergeleitet:
 \begin{align}
 T_\text{S, theoretisch} = \frac{T_{+} \cdot T_{-}}{T_{+} - T_{-}}
-    = 22.141s
+\label{eqn:ts}
 \end{align}
-Man erkennt, dass sich der theoretisch ermittelte Wert für $T_{S}$ um mehr als eine Sekunde vom gemessenen Wert unterscheidet. 
+Da die gleich- und gegenphasigen Moden fehlerbehaftet sind, ist eine Gauss'sche Fehlerrechnung \eqref{eqn:gauss} vonnöten:
+\begin{equation}
+\sigma_{T_S} = \sqrt{\sigma_{T_{+}}^{2} \left(- \frac{T_{+} T_{-}}{\left(T_{+} - T_{-}\right)^{2}} + \frac{T_{-}}{T_{+} - T_{-}}\right)^{2} + \sigma_{T_{-}}^{2} \left(\frac{T_{+} T_{-}}{\left(T_{+} - T_{-}\right)^{2}} + \frac{T_{+}}{T_{+} - T_{-}}\right)^{2}}
+\end{equation}
+Also $T_\text{S, theoretisch}= 22.141 \pm 1.444\si{\s}$.
 
 \subsubsection{Frequenzen}
 Zum einen lassen sich die Frequenzen $\omega_{+}$, $\omega_{-}$ aus den Messwerten bestimmen mithilfe der bekannten Formel
 \begin{equation}
 \omega = \frac{2 \pi}{T}
+\label{durcht}
 \end{equation}
-berechnen. Daraus erhalten wir für unsere Messdaten $\omega_{+} = 3.478Hz$ und $\omega_{-} = 3.763Hz$. Für die Schwebungsfrequenz $\omega_{S}$ gilt die Formel
+berechnen. Daraus errechnen sich die Messdaten $\omega_{+} = 3.478\pm 0.006\si{\Hz}$ und $\omega_{-} = 3.763\pm 0.007\si{\Hz}$. Für die Schwebungsfrequenz $\omega_{S}=-0.284\pm 0.009\si{\Hz}$ gilt die Formel
 \begin{equation}
 \omega_{S} = \omega_{+} - \omega_{-}
 \end{equation}
-Also ergibt sich ein Wert von $-0.284 Hz$. 
+Die Fehler folgen mit \eqref{eqn:gauss} aus:
+\begin{align}
+\sigma_{\omega_{+}} = \sqrt{\frac{\sigma_{T_{+}}^{2}}{T_{+}^{4}}}\\
+\sigma_{\omega_{-}} = \sqrt{\frac{\sigma_{T_{-}}^{2}}{T_{-}^{4}}}\\
+\sigma_{\omega_{s}} = \sqrt{\sigma_{\omega_{+}}^2 + \sigma_{\omega_{-}}^2}
+\end{align}
 Zum anderen wurde in der Theorie je eine Formel für die Eigenfrequenzen 
-der gleich- und gegenphasigen Schwingungen hergeleitet. Die daraus berechneten Werte lauten
+der gleich- und gegenphasigen Schwingungen hergeleitet.
 \begin{align}
 \omega_\text{+, theoretisch} = \sqrt{\frac{g}{l}}\\
-    = 3.45Hz\\
 \omega_\text{-, theoretisch} = \sqrt{\frac{g}{l} + \frac{2 \kappa}{l}}\\
-    = 3.476Hz\\
-\omega_\text{S, theoretisch} = \omega_\text{+, theoretisch} - \omega_\text{-, theoretisch}\\
-    = -0.273Hz
+\omega_\text{S, theoretisch} = \omega_\text{+, theoretisch} - \omega_\text{-, theoretisch}
+\label{eqn:omega}
 \end{align}
-Verglichen mit den theoretischen Werten fällt sofort eine große Ähnlichkeit auf. Die Werte liegen alle sehr nah beieinander, allerdings liegen in der Theorie die
-Werte von $\omega_{+}$ und $\omega_{-}$ näher beieinander als die gemessenen Werte.
-
+Für die Länge wird eine Messunsicherheit von $\increment l = 0.005 \si{\m}$ angenommen. Dann gilt für die Fehler nach \eqref{eqn:gauss}:
+\begin{align}
+\sigma_{\omega_\text{+, theoretisch}} = \sqrt{(\increment l)^2 \left( -\frac{g}{2 \sqrt{\frac{g}{l}}l^2} \right)^2}\\
+\sigma_{\omega_\text{-, theoretisch}} = \sqrt{(\increment l)^2 \left( -\frac{2 \kappa + g}{2 \sqrt{\frac{2 \kappa + g}{l}l^2}} \right)^2 + \sigma_{\kappa}^2 \left(\frac{1}{l \sqrt{\frac{2 \kappa + g}{l}}} \right)^2}\\
+\sigma_{\omega_\text{S, theoretisch}} = \sqrt{\sigma_{\omega_\text{+, theoretisch}}^2 + \sigma_{\omega_\text{-, theoretisch}}^2}
+\label{eqn:omegagauss}
+\end{align}
+Es sind also: $\omega_\text{+, theoretisch} = 3.449\pm 0.016 \si{\Hz}$, $\omega_\text{-, theoretisch} = \pm 0.056 \si{\Hz}$ und $\omega_\text{S, theoretisch} = -0.027 \pm 0.061\si{\Hz}$.
 
 
 %-------Pendellänge 2-------
+
+
 \subsection{Pendellänge 2}
-Als zweite Pendellänge haben wir das Pendel auf $0.471 m$ eingestellt.
+Als zweite Pendellänge wurde das Pendel auf $0.471 \si{\m}$ eingestellt.
 \subsubsection{Frei schwingende Pendel}
 Auch hier wurden die Daten zunächst durch fünf geteilt, dargestellt
 sind sie in Tabelle \ref{tab:frei2}. 
@@ -133,7 +170,7 @@ sind sie in Tabelle \ref{tab:frei2}.
     \label{tab:frei2}
     \begin{tabular}{c c}
      \toprule
-     $T_1$ & $T_2$\\
+     $T_1 / \si{\s}$ & $T_2 / \si{\s}$\\
      \midrule
      1.406 & 1.424 \\
      1.42 & 1.424 \\
@@ -148,7 +185,7 @@ sind sie in Tabelle \ref{tab:frei2}.
      \bottomrule
     \end{tabular}
 \end{table}
-Als Mittelwerte ergeben sich $T_1 = 1.403 s$ und $T_2 = 1.419 s$.
+Als Mittelwerte ergeben sich aus \eqref{eqn:mittel} und \eqref{eqn:mif} $T_1 = 1.403\pm 0.006 \si{\s}$ und $T_2 = 1.419\pm 0.004 \si{\s}$.
 
 \subsubsection{Gleich- und gegenphasige Schwingungen}
 Die Feder wurde wieder auf derselben Höhe eingehangen und die ersten beiden Moden wurden betrachtet.
@@ -158,7 +195,7 @@ Die Feder wurde wieder auf derselben Höhe eingehangen und die ersten beiden Mod
     \label{tab:g2}
     \begin{tabular}{c c}
      \toprule
-     $T_{+}$ & $T_{-}$\\
+     $T_{+} / \si{\s}$ & $T_{-} / \si{\s}$ \\
      \midrule
      1.43 & 1.236 \\
      1.406& 1.272 \\
@@ -173,19 +210,21 @@ Die Feder wurde wieder auf derselben Höhe eingehangen und die ersten beiden Mod
      \bottomrule
     \end{tabular}
 \end{table}
-In Tabelle \ref{tab:g2} sind die Werte aufgeführt, die gemessen wurden. Die Mittelwerte lauten dabei $T_{+} = 1.419s$ und $T_{-} = 1.262s$. Auch hier sollte wieder der Kopplungsgrad 
-der Feder bestimmt werden, mit derselben Formel wie oben ergibt er sich zu $\kappa = 0.117$.
+In Tabelle \ref{tab:g2} sind die Werte aufgeführt, die gemessen wurden. Die Mittelwerte lauten dabei (\eqref{eqn:mittel} und \eqref{eqn:mif}) $T_{+} = 1.419\pm 0.005\si{\s}$ und $T_{-} = 1.262\pm 0.008\si{\s}$. Auch hier sollte wieder der Kopplungsgrad 
+der Feder bestimmt werden, mit derselben Formel wie oben ergibt er sich zu $\kappa = 0.117 \pm 0.007$.
+
 
 \subsubsection{Gekoppelte Schwingung}
 Als letzte Mode bleibt wie vorher auch die gekoppelte Schwingung. \ref{tab:gek2} zeigt die Messwerte. \\
-$T = 1.264s$ und $T_{S} = 10.513s$ sind die Mittelwerte, wobei wieder $T_{S}$ die Schwebungsdauer ist.
+$T = 1.264\pm 0.012\si{\s}$ und $T_{S} = 10.513\pm 0.161\si{\s}$ sind die Mittelwerte, wobei wieder \eqref{eqn:mittel} und \eqref{eqn:mif} verwendet wurden und 
+$T_{S}$ die Schwebungsdauer ist.
 \begin{table}
     \centering
     \caption{Messdaten für Schwingungs- ($T$) und Schwebungsdauer ($T_{S}$).}
     \label{tab:gek2}
     \begin{tabular}{c c}
      \toprule
-     $T$ & $T_{S}$\\
+     $T / \si{\s}$ & $T_{S} / \si{\s}$\\
      \midrule
      1.244 & 10.58\\
      1.264 & 11.13\\
@@ -200,30 +239,16 @@ $T = 1.264s$ und $T_{S} = 10.513s$ sind die Mittelwerte, wobei wieder $T_{S}$ di
      \bottomrule
     \end{tabular}
 \end{table}
-Durch Berechnung mit der Formel 
-\begin{equation}
-T_\text{S, theoretisch} = \frac{T_{+} \cdot T_{-}}{T_{+} - T_{-}}
-\end{equation}
-erhalten wir den Theoriewert $T_\text{S, theoretisch} = 11.416s$, der auch wieder etwa eine Sekunde höher ist als das gemessene Ergebnis.
+Durch Berechnung mit der Formel \eqref{eqn:ts} und der Fehlerformel nach Gauss \eqref{eqn:gauss} ergibt sich der Theoriewert $T_\text{S, theoretisch} = 11.416\pm 0.754\si{\s}$.
 
 \subsubsection{Frequenzen}
 Zuletzt sollen noch die Frequenzen für diese zweite Pendellänge betrachtet werden.
-$\omega_{+}$ und $\omega_{-}$ werden wieder mithilfe der Messwerte aus der Formel
-\begin{equation}
-\omega = \frac{2 \pi}{T}
-\end{equation}
-berechnet. Es ergeben sich $\omega_{+} = 4.428Hz$ und $\omega_{-} = 4.98Hz$. Für die Schwebungsfrequenz $\omega_{S}$ ergibt sich mit 
-\begin{equation}
-\omega_{S} = \omega_{+} - \omega_{-}
-\end{equation}
-ein Wert von $-0.54 Hz$.
-Die Theoriewerte lauten
-\begin{align}
-\omega_\text{+, theoretisch} = \sqrt{\frac{g}{l}}\\
-    = 4.563Hz\\
-\omega_\text{-, theoretisch} = \sqrt{\frac{g}{l} + \frac{2 \kappa}{l}}\\
-    = 4.617Hz\\
-\omega_\text{S, theoretisch} = \omega_{+} - \omega_{-}\\
-    = -0.054Hz
-\end{align}
-Auffällig ist insbesondere die stark unterschiedliche Schwebungsfrequenz.
+$\omega_{+}$ und $\omega_{-}$ werden wieder mithilfe der Messwerte und Gleichungen \eqref{eqn:durcht} \eqref{eqn:gauss}
+berechnet. Es ergeben sich $\omega_{+} = 4.428\pm 0.011\si{\Hz}$ und $\omega_{-} = 4.98\pm 0.014\si{\Hz}$. Für die Schwebungsfrequenz $\omega_{S}$ ergibt sich 
+ein Wert von $-0.54 \pm 0.018\si{\Hz}$.
+Die Theoriewerte (siehe \eqref{eqn:omega} und \eqref{eqn:omegagauss}) lauten
+\begin{align*}
+\omega_\text{+, theoretisch} = 4.563 \pm 0.023\si{\Hz}\\
+\omega_\text{-, theoretisch} = 4.617 \pm 0.025\si{\Hz}\\
+\omega_\text{S, theoretisch} = -0.054 \pm 0.034\si{\Hz}
+\end{align*}
