@@ -107,4 +107,91 @@
   gewonnen werden.
 
 \subsection{Hochdruckbereich}
+  Da die Messreihe abgebrochen wurde, nachdem der Versuchsaufbau begann zu zischen 
+  und rapider Druckabfall festgestellt wurde, gehen die in folgender Tabelle und Grafik dargestellten 
+  Werte nur bis zu einem Druckbereich von 800 kPa.
+  \begin{table}[H]
+    \centering
+     \caption{Messwerte bis 1 bar}
+     \label{tab:data}
+     \begin{tabular}{c c c c c}
+     \toprule
+     $p$[kPa] & $T$[K] \\
+      \midrule
+      50 &   381.15 \\ 
+      100 &   392.15 \\ 
+      150 &   398.15 \\ 
+      200 &   405.15 \\ 
+      250 &   409.15 \\ 
+      300 &   414.15 \\ 
+      350 &   419.15 \\ 
+      400 &   422.15 \\ 
+      450 &   425.15 \\ 
+      500 &   428.15 \\ 
+      550 &   431.65 \\ 
+      600 &   434.15 \\ 
+      650 &   436.15 \\ 
+      700 &   440.15 \\ 
+      750 &   443.15 \\ 
+      800 &   446.15 \\ 
+     \bottomrule
+    \end{tabular}
+  \end{table}
+  \begin{figure}[H]
+   \centering
+   \includegraphics{plot1.pdf}
+   \caption{Messwerte im Hochdruckbereich}
+   \label{fig:plot1}
+  \end{figure}
+  \noindent Wie in Abbildung \ref{fig:plot1} bereits dargestellt, können die Messwerte durch ein Polynom
+  der Form $p = a \cdot T³ + b \cdot T² + c \cdot T + d$ genähert werden. Die mit Python
+  ermittelten Koeffizienten lauten:
+  \begin{align*}
+    & a = -0.5015 \pm 0.3859 \ \dfrac{Pa}{K³}\\
+    & b = 750.5024 \pm 479.7916 \ \dfrac{Pa}{K²}\\
+    & c = (-3.5129 \pm 1.9861) \cdot 10⁵ \ \dfrac{Pa}{K}\\
+    & d = (5.269 \pm 2.7371) \cdot 10⁷ \ Pa\\
+  \end{align*}
+  Die Verdampfungswärme L lässt sich bekanntermaßen aus der Clausius-Clapeyron Gleichung 
+  \begin{equation}
+    \label{eqn:ccg}
+    (V_D-V_F)dp = \dfrac{L}{T}dT \Leftrightarrow L = (T \cdot \dfrac{dp}{dT}\cdot(V_D-V_F)) 
+  \end{equation}
+  berechnen.
+  Die Ableitung des Drucks nach der Zeit betraägt offensichtlich $\dfrac{dp}{dT}= 3a \cdot
+  T²+2b\cdot T+ c$. $V_F$ kann hier erneut vernachlässigt werden.
+  Da hier zu hoher Druck herrscht, um von einem idealen Gas ausgehen zu können, wird 
+  $V_D$ anhand der Gleichung
+  \begin{equation*}
+  (p+\dfrac{a}{V²})V = RT \Leftrightarrow V = \dfrac{RT}{2p} \pm \sqrt{\dfrac{R²T²}{4p²}-\dfrac{a}{p}}
+  \end{equation*}
+  bestimmt. Eingesetzt in Gleichung \ref{eqn:ccg} ergibt sich für die Verdampfungswärme:
+  \begin{equation*}
+  L = T \cdot \dfrac{dp}{dT} \cdot (\dfrac{RT}{2p} \pm \sqrt{\dfrac{R²T²}{4p²}-\dfrac{a}{p}})
+  \end{equation*}
+  Aus dieser Gleichung ergeben sich zwei unterschiedliche Kurven für die Verdampungswärme, die
+  Folgenden dargestellt sind. Abbilgung \ref{fig:plot2} behandelt den Fall, dass die Wurzel aufaddiert wird; 
+  Abbildung \ref{fig:plot3} den Fall, dass die Wurzel subtrahiert wird.
+  \begin{figure}[H]
+   \centering
+   \includegraphics{plot2.pdf}
+   \caption{Verdampfungswärme mit positiver Wurzel}
+   \label{fig:plot2}
+  \end{figure}
+  
+  \begin{figure}[H]
+   \centering
+   \includegraphics{plot3.pdf}
+   \caption{Verdampfungswärme mit negativer Wurzel}
+   \label{fig:plot3}
+  \end{figure}
+
+  
+  
+
+
+
+
+
+
 
