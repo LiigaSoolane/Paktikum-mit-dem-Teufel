@@ -1,6 +1,6 @@
 \section{Auswertung}
 \label{sec:Auswertung}
-\subsection{Messung bis 1 bar}
+\subsection{Niedrigdruckbereich}
 
   Bei den Messungen bis 1 bar wurde die in folgender Tabelle dargestellten Werte festgehalten. Sie
   wurden bereits in die SI Einheiten Kelvin und Pascal umgerechnet.
@@ -12,12 +12,61 @@
    \toprule
     $p$[Pa] & $T$[K] \\
     \midrule
-      a & b \\
+      3700 &   301.65 \\  
+      5700 &   309.15 \\  
+      7700 &   314.15 \\  
+      9700 &   318.15 \\ 
+      11700 &   322.15 \\ 
+      13700 &   322.15 \\ 
+      15700 &   328.15 \\ 
+      17700 &   330.15 \\ 
+      19700 &   333.15 \\ 
+      21700 &   335.15 \\ 
+      23700 &   337.15 \\ 
+      35700 &   339.15 \\ 
+      27700 &   341.15 \\ 
+      29700 &   342.15 \\ 
+      31700 &   344.15 \\ 
+      33700 &   346.15 \\ 
+      35700 &   347.15 \\ 
+      37700 &   349.15 \\
+      39700 &   350.15 \\ 
+      41700 &   352.15 \\ 
+      43700 &   353.15 \\ 
+      45700 &   355.15 \\ 
+      47700 &   356.15 \\ 
+      49700 &   357.15 \\ 
+      51700 &   358.15 \\ 
+      53700 &   359.15 \\ 
+      55700 &   360.15 \\ 
+      57700 &   361.15 \\ 
+      59700 &   362.15 \\ 
+      61700 &   363.15 \\ 
+      63700 &   364.15 \\ 
+      65700 &   365.15 \\ 
+      67700 &   366.15 \\ 
+      69700 &   367.15 \\ 
+      71700 &   368.15 \\ 
+      73700 &   369.15 \\ 
+      75700 &   369.15 \\ 
+      77700 &   370.15 \\ 
+      79700 &   371.15 \\ 
+      81700 &   372.15 \\ 
+      83700 &   372.15 \\ 
+      85700 &   373.15 \\ 
+      87700 &   373.15 \\
+      89700 &   375.15 \\ 
+      91700 &   375.15 \\ 
+      93700 &   376.15 \\ 
+      95700 &   377.15 \\ 
+      97700 &   377.15 \\ 
+      99700 &   378.15 \\ 
+      101700 &   378.15 \\ 
     \bottomrule
     \end{tabular}
   \end{table}
 
-  Zur Berechnung von L wird die in der Theorie hergeleitete Formel 
+  \noindent Zur Berechnung von L wird die in der Theorie hergeleitete Formel 
   \begin{equation}
     \label{eq:L}
     \ln{(\dfrac{p}{p_0})}=-\dfrac{L}{RT}\ \Leftrightarrow \ L=-\ln{(\dfrac{p}{p_0})}RT
@@ -28,18 +77,19 @@
   sich L mittels linearer Regression aus folgender Grafik berechnen: 
   \begin{figure}[H]
    \centering
-   \includegraphics{plot1.pdf}
+   \includegraphics{plot.pdf}
    \caption{Messwerte und Ausgleichsgerade bis 1 bar}
    \label{fig:plot}
   \end{figure}
-  Für die Ausgleichsgerade ergeben sich die Koeffizienten
+  \noindent Für die Ausgleichsgerade ergeben sich die Koeffizienten
   \begin{align*}
    a=(-4686.5514 \pm 58.9156)\ K\\
    b=10.1354 \pm 0.2268
   \end{align*}
-  Einsetzen in die Formel \eqref{eq:L} liefert:
-  \begin{equation*}
-    L= - a \cdot R = 39000 \pm 489.85 \dfrac{J}{mol}
-  \end{equation*}
+  \noindent Einsetzen in die Formel \eqref{eq:L} liefert:
 
+  \begin{equation*}
+    L= - a \cdot R = (3.9 \pm 0.05) \cdot 10^4 \dfrac{J}{mol}
+  \end{equation*}
+\subsection{Hochdruckbereich}
 
