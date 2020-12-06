@@ -19,6 +19,7 @@ print('aerr,berr=',errors2)
 print('L = ', -params[0]*8.31446261815324)
 print('Lerror', errors2[0]*8.31446261815324)
 L = ufloat(-params[0]*8.31446261815324,errors2[0]*8.31446261815324)
+Laus=L
 
 plt.figure(0)
 plt.plot(x_plot, y_plot, 'r*', label='Messdaten')
@@ -35,7 +36,6 @@ print(La, Li)
 p,t=np.genfromtxt("messwerte1.txt", unpack=True)
 t=t+273.15
 p=p*10**(5)
-np.savetxt("aufgabe3.txt", np.column_stack([p, t]), fmt = "%10.4f", delimiter = " & ", newline = " \\\ ", header = " Tka Tsa ")
 S=0.9
 params, cov = np.polyfit(t, p, deg=3, cov=True)
 print('a,b = ',params)
@@ -59,12 +59,17 @@ plt.legend(loc='best')
 plt.savefig('build/plot1.pdf')
 
 lt = dpt*t*(r*t/(2*pt)+((r*t/(2*pt))**2-S/pt)**(1/2))
+print('L(380) = ', lt[1])
 plt.figure("""second figure""")
 plt.plot(t, lt, 'r*', label='L zu den Messwerten')
 plt.ylabel(r'L(T) in J/mol')
 plt.xlabel(r'Temperatur [K]')
 plt.legend(loc='best')
 plt.savefig('build/plot2.pdf')
+pup,L=np.genfromtxt("hnr.txt", unpack=True)
+L=L*18
+abw = 100-100*L/lt
+np.savetxt("aufgabe.txt", np.column_stack([pup, L, lt, abw]), fmt = "%10.4f", delimiter = " & ", newline = " \\\ ", header = " Tka Tsa tada")
 
 lt = dpt*t*(r*t/(2*pt)-((r*t/(2*pt))**2-S/pt)**(1/2))
 plt.figure("""forth Figure""")
@@ -73,3 +78,13 @@ plt.ylabel(r'L(T) in $J/mol')
 plt.xlabel(r'Temperatur [K]')
 plt.legend(loc='best')
 plt.savefig('build/plot3.pdf')
+
+t,L=np.genfromtxt("niedrigtheo.txt", unpack=True)
+t=t+273.15
+ML=0
+for i in L:
+    ML=ML+i
+ML = ML/len(L)
+print('ML = ', ML)
+print('Abweichung = ', ML*Laus/100)
+

@@ -8,7 +8,7 @@
     \centering
    \caption{Messwerte bis 1 bar}
    \label{tab:data}
-   \begin{tabular}{c c c c c}
+   \begin{tabular}{c c}
    \toprule
     $p$[Pa] & $T$[K] \\
     \midrule
@@ -91,6 +91,7 @@
   \begin{equation*}
     L= - a \cdot R = (3.9 \pm 0.05) \cdot 10^4 \dfrac{J}{mol}
   \end{equation*}
+  Die Unsicherheit wurde mit Numerik Python berechnet.\\
   Die Verdamfpungswären setzt sich aus zwei Teilen zusammen: Der äußeren Verdampfungswärme $L_a$
   liefert die Energie, die benötigt, wird um das Volumen einer Flüssigkeit in das eines 
   Gases zu vergrößern. Sie lässt sich also durch die Volumenarbeit $W = pV$ ausdrücken. Da es sich um 
@@ -112,13 +113,13 @@
   Werte nur bis zu einem Druckbereich von 800 kPa.
   \begin{table}[H]
     \centering
-     \caption{Messwerte bis 1 bar}
+     \caption{Messwerte ab 1 bar}
      \label{tab:data}
-     \begin{tabular}{c c c c c}
+     \begin{tabular}{c c}
      \toprule
      $p$[kPa] & $T$[K] \\
       \midrule
-      50 &   381.15 \\ 
+       50 &   381.15 \\ 
       100 &   392.15 \\ 
       150 &   398.15 \\ 
       200 &   405.15 \\ 
@@ -171,7 +172,8 @@
   \end{equation*}
   Aus dieser Gleichung ergeben sich zwei unterschiedliche Kurven für die Verdampungswärme, die
   Folgenden dargestellt sind. Abbilgung \ref{fig:plot2} behandelt den Fall, dass die Wurzel aufaddiert wird; 
-  Abbildung \ref{fig:plot3} den Fall, dass die Wurzel subtrahiert wird.
+  Abbildung \ref{fig:plot3} den Fall, dass die Wurzel subtrahiert wird. Physikalisch sinnvoll ist allerdings
+  nur der Term mit aufaddierter Wurzel.
   \begin{figure}[H]
    \centering
    \includegraphics{plot2.pdf}
@@ -185,13 +187,4 @@
    \caption{Verdampfungswärme mit negativer Wurzel}
    \label{fig:plot3}
   \end{figure}
-
-  
-  
-
-
-
-
-
-
 
