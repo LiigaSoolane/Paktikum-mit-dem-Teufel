@@ -56,7 +56,7 @@
 % Zahlen und Einheiten
 \usepackage[
   locale=DE,                   % deutsche Einstellungen
-  separate-uncertainty=true,   % immer Unsicherheit mit \pm
+  separate-uncertainty=true,   % immer Fehler mit \pm
   per-mode=symbol-or-fraction, % / in inline math, fraction in display math
 ]{siunitx}
 
@@ -98,6 +98,8 @@
 
 % Grafiken können eingebunden werden
 \usepackage{graphicx}
+% Für Dateinamen mit mehreren Punkten (z.B. .eps.gz)
+% \usepackage{grffile} % Currently broken, See ho-tex/oberdiek#73
 
 % schöne Tabellen
 \usepackage{booktabs}
@@ -128,8 +130,10 @@
 \usepackage[shortcuts]{extdash}
 
 \author{%
-  Nikola Sarah Mang
+  AUTOR A\\%
+  \href{mailto:authorA@udo.edu}{authorA@udo.edu}%
   \and%
-  Mirjam Prayer
+  AUTOR B\\%
+  \href{mailto:authorB@udo.edu}{authorB@udo.edu}%
 }
 \publishers{TU Dortmund – Fakultät Physik}
