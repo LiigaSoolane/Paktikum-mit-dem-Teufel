@@ -2,7 +2,7 @@
 \label{sec:Auswertung}
 \subsection{Niedrigdruckbereich}
 
-  Bei den Messungen bis 1 bar wurde die in folgender Tabelle dargestellten Werte festgehalten. Sie
+  Bei den Messungen bis 1 bar wurden die in Tabelle \ref{tab:data} dargestellten Werte festgehalten. Sie
   wurden bereits in die SI Einheiten Kelvin und Pascal umgerechnet.
   \begin{table}[H]
     \centering
@@ -89,7 +89,7 @@
   \noindent Einsetzen in die Formel \eqref{eq:L} liefert:
 
   \begin{equation*}
-    L= - a \cdot R = (3.9 \pm 0.05) \cdot 10^4 \dfrac{J}{mol}
+    L= - a \cdot R = (3.9 \pm 0.05) \cdot 10^4 \dfrac{J}{\symup{mol}}
   \end{equation*}
   Die Unsicherheit wurde mit Numerik Python berechnet.\\
   Die Verdamfpungswären setzt sich aus zwei Teilen zusammen: Der äußeren Verdampfungswärme $L_a$
@@ -98,23 +98,21 @@
   den Niedrigdruckbereich handelt, kann mit der idealen Gasgleichung $pV = RT$ gearbeitet 
   werden, so dass sich für 
   \begin{equation*}
-  L_a = W = pV = RT
+  \symup{L_a} = \symup{W} = pV = RT
   \end{equation*}
   ergibt. Die innere Verdampfungswärme $L_i$, die benötigt wird, um die molekularen Bindungskräfte
   zu überwinden kann daher aus der Gleichung
   \begin{equation*}
-  L_i = L - L_a
+  \symup{L_i = L - L_a}
   \end{equation*}
   gewonnen werden.
 
 \subsection{Hochdruckbereich}
-  Da die Messreihe abgebrochen wurde, nachdem der Versuchsaufbau begann zu zischen 
-  und rapider Druckabfall festgestellt wurde, gehen die in folgender Tabelle und Grafik dargestellten 
-  Werte nur bis zu einem Druckbereich von 800 kPa.
+  Tabelle \ref{tab:data2} zeigt die Messwerte im Bereich von 50 bis 800 kPa.
   \begin{table}[H]
     \centering
      \caption{Messwerte ab 1 bar}
-     \label{tab:data}
+     \label{tab:data2}
      \begin{tabular}{c c}
      \toprule
      $p$[kPa] & $T$[K] \\
@@ -159,7 +157,7 @@
     (V_D-V_F)dp = \dfrac{L}{T}dT \Leftrightarrow L = (T \cdot \dfrac{dp}{dT}\cdot(V_D-V_F)) 
   \end{equation}
   berechnen.
-  Die Ableitung des Drucks nach der Zeit betraägt offensichtlich $\dfrac{dp}{dT}= 3a \cdot
+  Die Ableitung des Drucks nach der Zeit beträgt offensichtlich $\dfrac{dp}{dT}= 3a \cdot
   T²+2b\cdot T+ c$. $V_F$ kann hier erneut vernachlässigt werden.
   Da hier zu hoher Druck herrscht, um von einem idealen Gas ausgehen zu können, wird 
   $V_D$ anhand der Gleichung
