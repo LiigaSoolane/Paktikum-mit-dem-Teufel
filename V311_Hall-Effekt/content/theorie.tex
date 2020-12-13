@@ -1,4 +1,129 @@
 \section{Theorie}
 \label{sec:Theorie}
 
-\cite{sample}
+\subsection{Zielsetzung}
+    Ziel dieses Versuchs ist es, die Bewegung der Leitungselektronen eines metallischen Stoffes
+    zu untersuchen. Diese sind die Elektronen auf dem höchsten Energieband, welches auch 
+    Leitfähigkeitsband oder Valenzband genannt wird. 
+\subsection{Berechnung der Leitfähigkeit eines Metalles}
+    Das Verhalten der Leitungselektronen kann durch das Verhalten von Atomen in einem
+    idealen Gas angenähert werden. Wie die Atome eines idealen Gases führen auch 
+    die Leitungselektronen untergeordnete Bewegungen aus. Dabei stoßen sie 
+    immer wieder mit Strukturdefekten zusammen.
+    Um die mittlere Flugzeit $\overline \tau$ eines Leitungselektrons zu bestimmen, 
+    wird über die Zeitintervalle zwischen zwei Zusammenstößen gemittelt.\\
+    Die mittlere Driftgeschwindigkeit 
+    in Richtung eines elektrischen Feldes ergibt sich aus den getroffenen Annahmen zu 
+    \begin{equation}
+        \vec{\overline v_d} = \dfrac{1}{2} \Delta \vec{\overline v} = -\dfrac{e_0}{2 m_0} \vec E \overline \tau
+    \end{equation}
+    Die Stromdichte beträgt dann
+    \begin{equation}
+        \label{eqn:stromdichte}
+        j = - n\ \overline v_d \ e_0 = \dfrac{e_0²}{2 m_0}n\ \overline \tau \ E
+    \end{equation}
+    wobei n die Anzahl der Leitungselektronen pro Volumeneinheit ist. Wird davon ausgegangen, 
+    dass die Leiterplatte homogen ist, so folgt für den Strom 
+    \begin{equation}
+        \label{eqn:strom}
+        I=\dfrac{e_0²}{2 m_0}n\ \overline \tau \dfrac{Q}{L}U
+    \end{equation}
+    Diese Gleichung weist die Gestalt des Ohmschen Gestzes $I=\dfrac{U}{R}$ auf. 
+    Der Proportionalitätsfaktor $\dfrac{1}{R}$ wird auch elektrische Leitfähigkeit S 
+    genannt. Nach Gleichung \eqref{eqn:strom} werden der elektrischer Widerstand 
+    und die elektrische Leitfähigkeit wie folgt berechnet:
+    \begin{equation}
+        \label{eqn:leitfähigkeit}
+        S=\dfrac{e_0²}{2 m_0}n\ \overline \tau \dfrac{Q}{L}
+    \end{equation}
+    \begin{equation}
+        \label{eqn:widerstand}
+        R=\dfrac{2m_0}{e_0²} \dfrac{1}{n \overline \tau} \dfrac{L}{Q}
+    \end{equation}
+    Der Widerstand und somit auch die elektrische Leitfähigkeit eines Drahtes
+    lassen sich einfach und präzise messen. Sind S und R bekannt, so können 
+    die spezifische Leitfähigkeit $\omega$ und der spezifische Widerstand $\rho$ 
+    eines Materials durch folgende Gleichungen bestimmt werden. 
+    \begin{align}
+        \omega= \dfrac{e_0²}{m_0}n\ \overline \tau \\
+        \rho = \dfrac{2m_0}{e_0²} \dfrac{1}{n \overline \tau}
+    \end{align}
+    Außerdem können aus dem Widerstand R nach der Gleichung \eqref{eqn:widerstand} 
+    Rückschlüsse über die materialabhängigen mikroskopischen Größen gezogen werden.
+    Da allerdings zwei unbekannte mikroskopische Größen auftreten (n und $\overline \tau$)
+    muss ein weiterer Zusammenhang hergestellt werden.
+\subsection{Der Hall-Effekt}
+    Der Hall Effekt wird erzeugt, indem, wie in Abbildung \ref{fig:hall}
+    dargestellt, an eine homogene Leiterplatte eine elektrische Spannung angelegt wird,
+    so dass die Ladungsträger von einem zum anderen Ende laufen. Zusätzlich wird ein 
+    Magnetfeld senkrecht zur Stromrichtung angelegt, wodurch die Leitungselektronen
+    durch die Lorentzkraft $F_L = e_0 \ \overline v \ B$ in negative y-Richtung
+    abgelenkt werden. 
+    \begin{figure}[H]
+     \includegraphics[width=\linewidth]{hallsonde.png}
+     \caption{Aufbau einer Hallsonde}
+     \label{fig:hall}
+    \end{figure}
+    \noindent Es entsteht also ein zusätzliches elektrisches Feld durch die 
+    Ladungsansammlung bzw. den Ladungsentzug an den Punkten A und B. Dieses Feld
+    wird so groß, dass es die Lorentzkraft genau aufhebt. Es gilt also:
+    \begin{equation}
+        e_0 \ E_y = e_0\ \overline v_d \ B
+    \end{equation} 
+    Werden nun die Punkte A und B aus
+    Abbildung \ref{fig:hall} mit einem Spannungsmessgerät verbunden, kann die sogenannte
+    Hall-Spannung abgegriffen werden. Sie beträgt
+    \begin{equation}
+        U_H = E_y\cdot b = \overline v_d\ B \cdot b
+    \end{equation}
+    mit Länge b der stromdurchflossenen Leiterplatte. Unter Verwendung von Gleichung 
+    \ref{eqn:stromdichte} und \eqref{eqn:strom} ergibt sich $\overline v_d = \dfrac{-I_q}
+    {b\cdot d\cdot e_0 \cdot n}$ wobei $I_q$ den Querstrom darstellt, sodass
+    \begin{equation}
+        U_H = -\dfrac{1}{n e_0} \dfrac{B\cdot I_q}{d}.
+    \end{equation}
+    So kann man den unbekannten Parameter n in Gleichung \eqref{eqn:widerstand} eliminieren. 
+    Mit Hilfe der Hallsonde können also die Anzahl von Leitungselektronen pro Volumeneinheit
+    n, die mittlere freie Weglänge $\overline \tau$ und bei Kenntnis des fließenden Stroms auch die 
+    mittlere Driftgeschwindigkeit $\overline v_d$ bestimmt werden.
+\subsection{Mittlere freie Weglänge und mittlere Geschwindigkeit}
+    Weiterhin soll die mittlere freie Weglänge $\overline l$ bestimmt werden. Diese 
+    kann durch die Gleichung
+    \begin{equation}
+        \label{eqn: Weglaenge}
+        \overline l = \overline \tau \cdot \mid v \mid
+    \end{equation}
+    bestimmt werden, Dzu muss allerdings die mittlere Geschwindigkeit $\mid v \mid$ der Teilchen
+    bekannt sein. Diese lässt sich aus dem Äquipartitionstheorem 
+    \begin{equation}
+        \vec E_{kin}=\dfrac{3}{2} k T
+    \end{equation}
+    mit der Temperatur T und Boltzmannkonstante k herleiten. Aus dieser und der Beziehung
+    \begin{equation*}
+        \overline E_{kin} = \dfrac{m_0}{2}\mid \overline v² \mid
+    \end{equation*}
+    folgt
+    \begin{equation}
+        \mid \overline v \mid = \sqrt{\dfrac{3kT}{m_0}}.
+    \end{equation}
+    Aufgrund des Pauli-Prinzips können die Elektronen aber nicht jede beliebige Geschwindigkeit 
+    annehmen. Die Wahrscheinlichkeiten für die unterschiedlichen Energien kann durch die
+    Fermi-Dirac-Verteilung berechnet werden. Daher lautet die mittlere Geschwindigkeit
+    \begin{equation}
+        \mid \overline v \mid \approx \sqrt{\dfrac{2 E_F}{m_0}}
+    \end{equation}
+    und somit eingesetzt in \label{eqn: Weglaenge} die mittlere Weglänge
+    \begin{equation}
+        \overline l \approx \overline \tau \sqrt{\dfrac{2 E_F}{m_0}}.
+    \end{equation}
+    Dabei stellt $E_F$ die Fermi-Energie dar, die sich durch
+    \begin{equation}
+        E_F = \dfrac{h²}{2 m_0}\sqrt[3]{(\dfrac{3}{8\pi }n)²}
+    \end{equation}
+    berechnen lässt.
+\subsection{Beweglichkeit der Ladungsträger}
+    Als Beweglichkeit wird die Proportionalitätskonstante 
+    \begin{equation}
+        \mu = \dfrac{\overline v_d}{E} = - \dfrac{e_0 \overline \tau}{2 m_0}
+    \end{equation}
+    bezeichnet, wobei E in diesem Fall das Elektrische Feld darstellt.
