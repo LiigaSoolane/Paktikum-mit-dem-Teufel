@@ -1,21 +1,29 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-x = np.linspace(0, 10, 1000)
-y = x ** np.sin(x)
+# konstantes Uh
+B1, I1, B2, I2 = np.genfromtxt('hallwerte.txt', unpack=True)
 
-plt.subplot(1, 2, 1)
-plt.plot(x, y, label='Kurve')
-plt.xlabel(r'$\alpha \:/\: \si{\ohm}$')
-plt.ylabel(r'$y \:/\: \si{\micro\joule}$')
-plt.legend(loc='best')
+#fitte B1 und B2
+params, cov = np.polyfit(I1, B1, deg=1, cov=True)
+errors = np.sqrt(np.diag(cov))
 
-plt.subplot(1, 2, 2)
-plt.plot(x, y, label='Kurve')
-plt.xlabel(r'$\alpha \:/\: \si{\ohm}$')
-plt.ylabel(r'$y \:/\: \si{\micro\joule}$')
-plt.legend(loc='best')
+x = np.linspace(0, 5, num = 1000)
 
-# in matplotlibrc leider (noch) nicht möglich
-plt.tight_layout(pad=0, h_pad=1.08, w_pad=1.08)
-plt.savefig('build/plot.pdf')
+
+plt.plot(I1, B1, 'rx', label="Messwerte")
+plt.plot(x, params[0] * x + params[1], label="Lineare Regression")
+plt.legend(loc="best")
+plt.xlabel('Stromstärke I [A]')
+plt.ylabel('Magnetische Flussdichte B [mT]')
+plt.savefig('unswitched.pdf')
+
+poroms, cav = np.polyfit(I2, B2, deg=1, cov=True)
+errars = np.sqrt(np.diag(cav))
+
+plt.plot(I2, B2, 'rx', label="Messwerte")
+plt.plot(x, poroms[0] * x + poroms[1], label= "Lineare Regression")
+plt.legend(loc="best")
+plt.xlabel('Stromstärke I [A]')
+plt.ylabel('Magnetische Flussdichte B [mT]')
+plt.savefig('switched.pdf')
