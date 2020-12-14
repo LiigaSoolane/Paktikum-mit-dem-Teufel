@@ -1,11 +1,11 @@
 all: build/main.pdf
 
 # hier Python-Skripte:
-build/unswitched.pdf: halleffect.py matplotlibrc header-matplotlib.tex | build
+build/mag.pdf: halleffect.py matplotlibrc header-matplotlib.tex | build
 	TEXINPUTS=$$(pwd): python halleffect.py
 
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
-build/main.pdf: build/unswitched.pdf
+build/main.pdf: build/mag.pdf
 
 build/main.pdf: FORCE | build
 	  TEXINPUTS=build: \
