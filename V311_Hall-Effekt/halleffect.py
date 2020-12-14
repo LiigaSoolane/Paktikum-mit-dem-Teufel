@@ -21,30 +21,31 @@ errors = np.sqrt(np.diag(covB1))
 for name, value, error in zip('ab', parB1, errors):
     print(f'{name} = {value:.3f} +- {error:.3f}')
 
-x = np.linspace(0, 5, num = 1000)
-
-
-plt.plot(I1, B1, 'rx', label="Messwerte")
-plt.plot(x, parB1[0] * x + parB1[1], label="Lineare Regression")
-plt.legend(loc="best")
-plt.xlabel('Stromstärke I [A]')
-plt.ylabel('Magnetische Flussdichte B [T]')
-plt.savefig('unswitched.pdf')
-
 parB2, covB2 = np.polyfit(I2, B2, deg=1, cov=True)
 errars = np.sqrt(np.diag(covB2))
 
 for name, value, error in zip('ab', parB2, errars):
     print(f'{name} = {value:.3f} +- {error:.3f}')
 
-plt.clf()
+x = np.linspace(0, 5, num = 1000)
 
-plt.plot(I2, B2, 'rx', label="Messwerte")
-plt.plot(x, parB2[0] * x + parB2[1], label= "Lineare Regression")
-plt.legend(loc="best")
+plt.subplot(2, 1, 1)
+plt.plot(I1, B1, 'rx', label="Messwerte")
+plt.plot(x, parB1[0] * x + parB1[1], label="Lineare Regression")
 plt.xlabel('Stromstärke I [A]')
 plt.ylabel('Magnetische Flussdichte B [T]')
-plt.savefig('switched.pdf')
+plt.title('Aufsteigender Strom')
+
+plt.subplot(2, 1, 2)
+plt.plot(I2, B2, 'rx', label="Messwerte")
+plt.plot(x, parB2[0] * x + parB2[1], label= "Lineare Regression")
+plt.xlabel('Stromstärke I [A]')
+plt.ylabel('Magnetische Flussdichte B [T]')
+plt.title('Abfallender Strom')
+
+plt.legend()
+plt.tight_layout()
+plt.savefig(mag.pdf)
 
 plt.clf()
 
@@ -52,6 +53,7 @@ linreg1 = unp.uarray([parB1[0], parB1[1]], [errors[0], errors[1]])
 linreg2 = unp.uarray([parB2[0], parB2[1]], [errars[0], errars[1]])
 
 linreg = 1/2 * (linreg1 + linreg2)
+print(linreg)
 
 # Uh = 1/2 (Uges+ - Uges-)
 

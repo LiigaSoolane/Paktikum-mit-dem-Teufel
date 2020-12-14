@@ -2,6 +2,36 @@
 \label{sec:Auswertung}
 
 \subsection{Messung des Magnetfeldes}
+Zunächst wurde mithilfe einer kleinen Hall-Sonde das von den Spulen erzeugte Magnetfeld gemessen, dazu wurde der Strom, der in die Spulen geleitet wurde, stückweise erhöht, 
+nach Umpolung der Stromzufuhr wurde die Messung wiederholt. Es ergaben sich die in Tabelle \ref{tab:mag}.
+%\begin{tabular}
+% \centering
+% \label{tab:mag}
+% \caption{Messung des Magnetfeldes.}
+% 
+%\end{tabular}
+Beide Verläufe wurden mithilfe linearer Regression in kontinuierliche Verläufe der Form $y = a + b*x$ überführt, durch Rechnung mit Scientific Python ergeben sich für das 
+Magnetfeld vor der Umpolung
+\begin{align*}
+a = 0.204 \pm 0.002
+b = 0.011 \pm 0.005
+B = (0.204 \pm 0.002) + (0.011 \pm 0.005) \cdot I
+\end{align*}
+und für das Magnetfeld nach Umpolung
+\begin{align*}
+a = 0.19 \pm 0.005
+b = 0.02 \pm 0.014
+B = (0.19 \pm 0.005) + (0.02 \pm 0.014) \cdot I
+\end{align*}
+Die Abbildung \ref{fig:plots} zeigt das jeweilige Magnetfeld aufgetragen gegen die Stromstärke. 
+%\begin{figure}
+% \centering
+% \includegraphics[width=\textwidth]{}
+Um genauere Werte zum Weiterrechnen zu erzielen, wurde der Mittelwert aus
+beiden Geraden verwendet. Dann folgt eine Relation von Magnetfeld und Stromstärke nach
+%\begin{align*}
+%
+%\end{align*}
 
 \subsection{Berechnung der Hall-Spannung}
 
