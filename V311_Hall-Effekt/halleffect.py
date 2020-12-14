@@ -45,7 +45,7 @@ plt.title('Abfallender Strom')
 
 plt.legend()
 plt.tight_layout()
-plt.savefig(mag.pdf)
+plt.savefig('mag.pdf')
 
 plt.clf()
 
