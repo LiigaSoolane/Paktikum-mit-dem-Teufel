@@ -108,56 +108,48 @@ Ikonst = 2 # konstanter Strom hat immer 2 A
 
 nSk_ = - (linreg[0] * Ihall + linreg[1])*Ikonst / (hallSk *e * d)
 nPk_ = - (linreg[0]* Ikonst + linreg[1]) * Ihall / (hallPk * e * d)
-nPk_[0] += (linreg[0] * Ikonst + linreg[1]) * 0.0001 / (hallPk[0] * e *d)
-#print(nSk_, nPk_)
-#nSk und nPk sollen die mean values sein, wie mache ich das?
-#Nsk = np.mean(unp.nominal_values(nSk_))
-#Npk = np.mean(unp.nominal_values(nPk_))
-#Nskerr = np.mean(unp.std_devs(nSk_))
-#Npkerr = np.mean(unp.std_devs(nPk_))
-#
-#nSk = unp.uarray(Nsk, Nskerr)
-#nPk = unp.uarray(Npk, Npkerr)
+nPk_[0] = (linreg[0] * Ikonst + linreg[1]) * 0.01 / (hallPk[0] * e *d)
+print(nSk_, nPk_)
 
 nSk = np.sum(nSk_)/11
 nPk = np.sum(nPk_)/11
 n = (nSk + nPk)/2
 print(nSk)
 print(nPk)
-print(n)
+
 # 2. Berechne Ladungsträger pro Atom z
 m = mCu * u
 a = rhoCu / m # Atomdichte in Kupfer
 
 zSk = nSk / a
 zPk = nPk / a
-z = n/a
+
 # 3. Berechne Driftgeschwindigkeit v_d
 j *= 1/10**(-6)
 
 v_d_Sk = j/(nSk * e)
 v_d_Pk = j/(nPk * e)
-vd = j/(n * e)
+
 # 4. Berechne mittlere Fluggeschwindigkeit tau
 Q = np.pi * (d/2)**2 # Querschnitt des Leiters
 tauSk = (2 * me * lD)/(R * e**2 * nSk * Q)
 tauPk = (2 * me * lD)/(R * e**2 * nPk * Q)
-tau = (2 * me * lD)/(R * e**2 *n * Q)
+
 # 5. Berechne die Beweglichkeit mu
 muSk = - e * tauSk / (2*me)
 muPk = -e * tauPk / (2*me)
-mu = -e *tau / (2 * me)
+
 # 6. Berechne die Geschwindigkeit v
 Ef_Sk = (h**2 / (2*me)) * (3*nSk/(8*np.pi))**(1/3) # Fermi-Energie
 Ef_Pk = (h**2 / (2*me)) * (3*nPk/(8*np.pi))**(1/3)
-Ef = (h**2 / (2*me)) * (3*n/(8*np.pi))**(1/3)
+
 vSk = (2 * Ef_Sk / me)**(1/2)
 vPk = (2 * Ef_Pk / me)**(1/2)
-v = (2 * Ef / me)**(1/2)
+
 # 7. Berechne die mittlere freie Weglänge lf
 lf_Sk = tauSk * vSk
 lf_Pk = tauPk * vPk
-lf = tau*v
+
 # DONE!
 # Jetzt noch ausgeben lassen
 
@@ -170,14 +162,5 @@ print(f'tau_Sk = {tauSk}; tau_Pk = {tauPk}')
 print(f'mu_Sk = {muSk}; mu_Pk = {muPk}')
 print(f'v_Sk = {vSk}; v_Pk = {vPk}')
 print(f'l_Sk = {lf_Sk}; l_Pk = {lf_Pk}')
-print("mittelmittelmittel**************")
-
-print(f'n = {n}')
-print(f'z = {z}')
-print(f'vd = {vd}')
-print(f'tau = {tau}')
-print(f'mu = {mu}')
-print(f'v = {v}')
-print(f'lf = {lf}')
 
 print("Listo!")

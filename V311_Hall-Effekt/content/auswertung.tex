@@ -5,13 +5,13 @@
 
 Zuerst wurde der Widerstand von Kupfer bestimmt. Dazu wurde eine Probe mit 
 einem Kupferdraht der Länge $l = 1.37 \si{\m}$ und der Dicke $d = 0.00037 \si{\m}$
-verwendet. 
-Es wurde gemessen $R = 2.65 \si{\ohm}$.
+verwendet. \\
+Es wurde gemessen, dass der Widerstand $R = 2.65 \si{\ohm}$ beträgt.
 
 \subsection{Messung des Magnetfeldes}
 
 Als Nächstes wurde mithilfe einer kleinen Hall-Sonde das von den Spulen erzeugte Magnetfeld gemessen, dazu wurde der Strom, der in die Spulen geleitet wurde, stückweise erhöht, 
-nach Umpolung der Stromzufuhr wurde die Messung wiederholt. Es ergaben sich die in Tabelle \ref{tab:mag}.
+nach Umpolung der Stromzufuhr wurde die Messung wiederholt. Es ergaben sich die in Tabelle \ref{tab:mag} dargestellten Messdaten.
 
 \begin{table}
  \centering
@@ -75,17 +75,18 @@ B_{\text{mittel}} = (0.197 \pm 0.002) \pm (0.014 \pm 0.007) \cdot I
 
 \subsection{Berechnung der Hall-Spannung}
 Mithilfe einer Kupferprobe, durch die ein Strom geleitet wurde, wurde die Hall-Spannung sowohl bei konstant gehaltenem Spulenstrom als auch 
-bei konstant gehaltenem Probenstrom. 
+bei konstant gehaltenem Probenstrom. Ab hier wird ein Subskript Pk dafür stehen, dass es sich um den Wert für die Messreihe mit konstantem 
+Probenstrom handelt, während ein Subskript Sk für einen konstanten Spulenstrom steht.\\
 In Tabelle \ref{tab:SKhall} sind die Werte für konstanten Spulenstrom dargestellt, während Tabelle \ref{tab:PKhall} die Messdaten für einen 
 konstanten Probenstrom zeigt.
 \begin{table}
  \centering
  \label{tab:PKhall}
- \caption{Messung des Magnetfeldes.}
+ \caption{Messung der Spannung bei konstantem Probenstrom.}
  \sisetup{table-format=2.1}
  \begin{tabular}{S[table-format=3.1]S S S S}
   \toprule
-  & \multicolumn{2}{c}{Hall-Spannung $U \mathbin{/} \si{\milli\volt}$}\\
+  & \multicolumn{2}{c}{Spannung $U_\text{Pk} \mathbin{/} \si{\milli\volt}$}\\
   \cmidrule(lr){2-3}
   {$I \mathbin{/} \si{\ampere}$} & {ansteigend} & {abfallend}\\
   \midrule
@@ -106,12 +107,12 @@ konstanten Probenstrom zeigt.
 
 \begin{table}
  \centering
- \label{tab:PKhall}
- \caption{Messung des Magnetfeldes.}
+ \label{tab:SKhall}
+ \caption{Messung der Spannung bei konstantem Spulenstrom.}
  \sisetup{table-format=2.1}
  \begin{tabular}{S[table-format=3.1]S S S S}
   \toprule
-  & \multicolumn{2}{c}{Hall-Spannung $U \mathbin{/} \si{\milli\volt}$}\\
+  & \multicolumn{2}{c}{Spannung $U_\text{Sk} \mathbin{/} \si{\milli\volt}$}\\
   \cmidrule(lr){2-3}
   {$I \mathbin{/} \si{\ampere}$} & {ansteigend} & {abfallend}\\
   \midrule
@@ -133,7 +134,7 @@ konstanten Probenstrom zeigt.
 \noindent Da die gemessene Spannung nicht der Hall-Spannung entspricht, sondern noch ein Störpotential
 beinhaltet, wird nach
 \begin{equation}
- U_H = \frac{1}{2} \left( U_\text{aufsteigend} - U_text{abfallend} \right)
+ U_H = \frac{1}{2} \left( U_\text{aufsteigend} - U_\text{abfallend} \right)
  \label{eqn:hallformel}
 \end{equation}
 die Hall-Spannung berechnet. So ergeben sich die in Tabelle \ref{tab:hallsp} dargestellten Werte.
@@ -169,100 +170,100 @@ die Hall-Spannung berechnet. So ergeben sich die in Tabelle \ref{tab:hallsp} dar
 \subsection{Berechnung der mikroskopischen Leitfähigkeitsparameter}
 
 Mit diesen Werten lassen sich die mikroskopischen Leitfähigkeitsparameter bestimmen, die das verhalten eines Metalles charakterisieren.
+
 \subsubsection{Ladungsträgerdichte n}
 In der Theorie wurde Formel \eqref{eqn:} für die Hall-Spannung hergeleitet.
 Diese lässt sich mit Leichtigkeit nach $n$ umstellen, sodass sich ergibt
 \begin{equation}
-n = \\frac{-1}{U_H e_0} \frac{B I_\text{quer}}{d}
+n = \frac{-1}{U_H e_0} \frac{B I_\text{quer}}{d}
 \end{equation}
 
 Dabei ist $e_0 = -1.601 \cdot 10^(-19)\si{\coulomb}$ die Elementarladung, $d = 0.032 \si{\milli\meter}$ die Dicke der Kupferprobe
 und $I_\text{quer}$ der Probenstrom.
 Es folgen also auch wieder zwei Werte für n, einer für konstanten Probenstrom und einer für
-konstanten Spulenstrom. 
-Nach Einsetzen der Werte folgen die Daten in Tabelle \ref{tab:nnn}
+konstanten Spulenstrom. Der jeweils konstante Strom wurde dabei auf $2 \si{\ampere}$ gehalten.\\
+Nach Einsetzen der Werte folgen die Daten in Tabelle \ref{tab:nnn}.
 
 \begin{table}
  \centering
  \label{tab:nnn}
  \caption{Ladungsträgerdichte von Kupfer bei konstantem Spulenstrom und konstantem Probenstrom.}
- \sisetup{table-format=2.1}
- \begin{tabular}{S[table-format=3.1]S S S S}
+ \begin{tabular}{c c}
   \toprule
-  & \multicolumn{2}{c}{Ladungsträgerdichte $n$}\\
-  \cmidrule(lr){2-3}
-  {$ \mathbin{/} \si{\ampere}$} & {konstater Spulenstrom} & {konstater Probenstrom}\\
+  $n_\text{Sk} \cdot 10^{29}$ & $n_\text{Pk} \cdot 10^{29}$ \\
   \midrule
-  0     & & \\
-  0.5   & & \\  
-  1     & & \\
-  1.5   & & \\ 
-  2     & & \\
-  2.5   & & \\ 
-  3     & & \\
-  3.5   & & \\       
-  4     & & \\
-  4.5   & & \\ 
-  5     & & \\  
+   -0.119& 0.001\\
+   0.443 & -0.797\\  
+   1.655 & 1.594\\
+   1.211 & 1.195\\
+   1.594 & 1.594\\
+   1.979 & 0.969\\
+   1.574 & 0.956\\
+   1.372 & 1.117\\       
+   1.564 & 1.062\\
+   1.406 & 1.024\\
+   1.298 & 1.138\\   
   \bottomrule
  \end{tabular}
 \end{table} 
 
 \noindent Aus den jeweiligen Datenreihen wurden die Mittelwerte bestimmt, sie ergaben sich zu
 \begin{align*}
-n_\text{Sk} = \pm \\
-n_\text{Pk} = \pm
+n_\text{Sk} = \left( 1.271 \pm 0.022 \right) \cdot 10^{29}\\
+n_\text{Pk} = \left( 0.9\pm 0.19 \right) \cdot 10^{29}
 \end{align*}
 
 Der Fehler wurde dabei aus mit den Fehlern der linearen Regression nach der Gauss'schen Fehlerrechnung
 \begin{equation}
-\sigma_f = \sqrt{\sum{\frac{\partial f}{\partial x_i} \cdot \sigma_{x_i}}}
+\sigma_f = \sqrt{\sum_{i=0}^{N} {\frac{\partial f}{\partial x_i} \cdot \sigma_{x_i}}}
 \label{eqn:gauss}
 \end{equation}
+mithilfe von Numeric Python berechnet.
 
 \subsubsection{Anzahl Ladungsträger pro Atom z}
 
 Um die Anzahl der Ladungsträger pro Atom herauszufinden, muss die Ladungsträgerdichte durch 
-die Atomdichte von Kupfer geteilt werden.
+die Atomdichte von Kupfer geteilt werden.\\
 Diese ergibt sich aus $a = \frac{N}{V}$, wobei N die Gesamtzahl der Atome in Kupfer sind und V das Volumen. 
 Allerdings ist auch 
 \begin{equation}
-\rho = \frav{N m_\text{Cu}}{V}
+\rho = \frac{N m_\text{Cu}}{V}
 \end{equation}
 Daraus folgt
 \begin{equation}
 a = \frac{\rho}{m_\text{Cu}} \\
 \end{equation}
-Dabei ist m die Masse eines Kupferatoms $m_\text{Cu} = 63.4 \si{\u}$, mit $u = \si{\kilo\g}$.
+Dabei bezeichnet $m_\text{Cu}$ die Masse eines Kupferatoms $m_\text{Cu} = 63.4 \si{\atomicmassunit}$, mit $u = 1.661 \cdot 10^{-27}\si{\kilo\g}$.
 So ist
 \begin{equation}
 z = \frac{n}{a} = \frac{n m_\text{Cu}}{\rho}
 \end{equation}
-Nach Einsetzen der jeweiligen Werte ist
+Nach Einsetzen der jeweiligen Werte folgen
 \begin{align*}
-z_\text{Sk} = \pm \\
-z_\text{Pk} = \pm
+z_\text{Sk} = 1.501 \pm 0.026\\
+z_\text{Pk} = 1.063 \pm 0.023
 \end{align*}
 
 Die Fehler wurden wieder automatisch durch Python mithilfe der Gauss'schen Fehlerrechnung 
 \eqref{eqn:gauss} errechnet.
 
-\subsubsection{mittlere Driftgeschwindigkeit}
+\subsubsection{Mittlere Driftgeschwindigkeit}
 
 Die mittlere Driftgeschwindigkeit wurde mithilfe der in der Theorie hergeleiteten
-Formel für die Stromdichte j \eqref{eqn:} berechnet. Nach Umstellen nach $v_d$ ergibt sich
+Formel für die Stromdichte j  berechnet. Nach Umstellen nach $v_d$ ergibt sich
 \begin{equation}
-\bar{v_d} = - \frac{n * e_0}{j} 
+\bar{v_d} = - \frac{n \cdot e_0}{j} 
 \end{equation}
 Durch Berechnen mit den Werten von $n$ und der Vorgabe $j = 1 \si{\ampere\per\milli\meter\squared}$
 folgt:
 \begin{align*}
-\bar{v_\text{d,Sk}} = \pm
+\bar{v}_\text{d,Sk} = -4.91 \pm 0.09 \si{\m\per\s}\\
+\bar{v}_\text{d,Pk} = -6.94 \pm 0.15 \si{\m\per\s}
 \end{align*}
 
-\subsubsection{mittlere Flugzeit}
+\subsubsection{Mittlere Flugzeit}
 
-Für den Widerstand wurde in der Theorie die Formel \eqref{eqn:} hergeleitet. Da der Widerstand
+Für den Widerstand wurde in der Theorie die Formel  hergeleitet. Da der Widerstand
 von Kupfer im Rahmen des Versuchs gemessen wurde, lässt sich diese Formel nach
 der mittleren Flugzeit $\bar{\tau}$ umstellen.
 \begin{equation}
@@ -275,31 +276,33 @@ Q = \pi \left( \frac{d}{2} \right)^2
 \end{equation}
 zu Berechnen. So folgt für $\tau$
 \begin{align*}
-
+\tau_\text{Sk} = \left( 3.59 \pm 0.06 \right) \cdot 10^{-13}\\
+\tau_\text{Pk} = \left( 5.07 \pm 0.11 \right) \cdot 10^{-13}
 \end{align*}
 
 \subsubsection{Beweglichkeit}
 
 Wie in der Theorie beschrieben ist die Beweglichkeit die Proportionalitätskonstante zwischen 
-der mittleren Driftgeschwindigkeit und der äußeren Feldstärke. Für sie gilt (\eqref{eqn:})
+der mittleren Driftgeschwindigkeit und der äußeren Feldstärke. Für sie gilt ()
 \begin{align*}
 \mu = -\frac{e_0}{m_0} \cdot \bar{\tau} \\
-= \pm
+\implies \mu_\text{Sk} = 0.0316 \pm 0.0006 \\
+\mu_\text{Pk} = 0.0446 \pm 0.0009
 \end{align*}
 
 \subsubsection{Totalgeschwindigkeit v}
 
-Die Totalgeschwindigkeit wurde mit der Gleichung \eqref{eqn:} berechnet.
+Die Totalgeschwindigkeit wurde mit der Gleichung  berechnet.
 Dafür musste zunächst die Fermi-Energie $E_f$ berechnet werden. Für sie gilt
 \begin{align}
 E_f = \frac{h^2}{2 m_0} \left( \left( \frac{3}{8 \pi} \right)^2 \right)
 \end{align}
-Mit dem Plankschen Wirkungsquantum $h = \si{\joule\s}$.
+Mit dem Plankschen Wirkungsquantum $h = 6.625 \cdot 10^{-34}\si{\joule\s}$.
 Daraus folgt für die Geschwindigkeit
 \begin{align*}
 \bar{v} = \sqrt{ \frac{2 E_f}{m_0}} \\
-= \pm \si{\m\per\s}
 \end{align*}
+Es sind also $\bar{v} = 36.19 \pm 0.11 \si{\m\per\s}$ und $\bar{v} = 34.17 \pm 0.12 \si{\m\per\s}$.
 
 \subsubsection{Mittlere freie Weglänge}
 
@@ -308,4 +311,5 @@ zurückgelegt wird. Es ist also anschaulich, dass
 \begin{equation}
 \bar{l} = \bar{ \tau } \bar{v}
 \end{equation}
-Nach Einsetzen der Werte folgt so $\bar{l} = \pm \si{\m}$.
+Nach Einsetzen der Werte folgt so $\bar{l_\text{Sk}} = \left( 1.301 \pm 0.019 \right) \si{\m}$
+und $\bar{l_\text{Pk}} = \left( 1.734 \pm 0.031 \right) \si{\m}$.
