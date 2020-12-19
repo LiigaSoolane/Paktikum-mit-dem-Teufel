@@ -172,11 +172,11 @@ die Hall-Spannung berechnet. So ergeben sich die in Tabelle \ref{tab:hallsp} dar
 Mit diesen Werten lassen sich die mikroskopischen Leitfähigkeitsparameter bestimmen, die das verhalten eines Metalles charakterisieren.
 
 \subsubsection{Ladungsträgerdichte n}
-In der Theorie wurde Formel \eqref{eqn:} für die Hall-Spannung hergeleitet.
+In der Theorie wurde Formel \eqref{eqn:hallspannung} für die Hall-Spannung hergeleitet.
 Diese lässt sich mit Leichtigkeit nach $n$ umstellen, sodass sich ergibt
-\begin{equation}
+\begin{equation*}
 n = \frac{-1}{U_H e_0} \frac{B I_\text{quer}}{d}
-\end{equation}
+\end{equation*}
 
 Dabei ist $e_0 = -1.601 \cdot 10^(-19)\si{\coulomb}$ die Elementarladung, $d = 0.032 \si{\milli\meter}$ die Dicke der Kupferprobe
 und $I_\text{quer}$ der Probenstrom.
@@ -226,13 +226,13 @@ Um die Anzahl der Ladungsträger pro Atom herauszufinden, muss die Ladungsträge
 die Atomdichte von Kupfer geteilt werden.\\
 Diese ergibt sich aus $a = \frac{N}{V}$, wobei N die Gesamtzahl der Atome in Kupfer sind und V das Volumen. 
 Allerdings ist auch 
-\begin{equation}
+\begin{equation*}
 \rho = \frac{N m_\text{Cu}}{V}
-\end{equation}
+\end{equation*}
 Daraus folgt
-\begin{equation}
+\begin{equation*}
 a = \frac{\rho}{m_\text{Cu}} \\
-\end{equation}
+\end{equation*}
 Dabei bezeichnet $m_\text{Cu}$ die Masse eines Kupferatoms $m_\text{Cu} = 63.4 \si{\atomicmassunit}$, mit $u = 1.661 \cdot 10^{-27}\si{\kilo\g}$.
 So ist
 \begin{equation}
@@ -250,10 +250,10 @@ Die Fehler wurden wieder automatisch durch Python mithilfe der Gauss'schen Fehle
 \subsubsection{Mittlere Driftgeschwindigkeit}
 
 Die mittlere Driftgeschwindigkeit wurde mithilfe der in der Theorie hergeleiteten
-Formel für die Stromdichte j  berechnet. Nach Umstellen nach $v_d$ ergibt sich
-\begin{equation}
+Formel \eqref{eqn:stromdichte} für die Stromdichte j  berechnet. Nach Umstellen nach $v_d$ ergibt sich
+\begin{equation*}
 \bar{v_d} = - \frac{n \cdot e_0}{j} 
-\end{equation}
+\end{equation*}
 Durch Berechnen mit den Werten von $n$ und der Vorgabe $j = 1 \si{\ampere\per\milli\meter\squared}$
 folgt:
 \begin{align*}
@@ -263,12 +263,12 @@ folgt:
 
 \subsubsection{Mittlere Flugzeit}
 
-Für den Widerstand wurde in der Theorie die Formel  hergeleitet. Da der Widerstand
+Für den Widerstand wurde in der Theorie die Formel \eqref{eqn:widerstand} hergeleitet. Da der Widerstand
 von Kupfer im Rahmen des Versuchs gemessen wurde, lässt sich diese Formel nach
 der mittleren Flugzeit $\bar{\tau}$ umstellen.
-\begin{equation}
+\begin{equation*}
 \bar{\tau} = \frac{2 m_0 L}{R e_0^2 n Q}
-\end{equation}
+\end{equation*}
 Dabei bezeichnet $Q$ den Querschnitt des Drahtes, mit dessen Hilfe der Widerstand gemessen wurde.
 Er ist mit der Formel
 \begin{equation}
@@ -283,7 +283,7 @@ zu Berechnen. So folgt für $\tau$
 \subsubsection{Beweglichkeit}
 
 Wie in der Theorie beschrieben ist die Beweglichkeit die Proportionalitätskonstante zwischen 
-der mittleren Driftgeschwindigkeit und der äußeren Feldstärke. Für sie gilt ()
+der mittleren Driftgeschwindigkeit und der äußeren Feldstärke. Für sie gilt (\eqref{eqn:beweg})
 \begin{align*}
 \mu = -\frac{e_0}{m_0} \cdot \bar{\tau} \\
 \implies \mu_\text{Sk} = 0.0316 \pm 0.0006 \\
@@ -292,24 +292,20 @@ der mittleren Driftgeschwindigkeit und der äußeren Feldstärke. Für sie gilt 
 
 \subsubsection{Totalgeschwindigkeit v}
 
-Die Totalgeschwindigkeit wurde mit der Gleichung  berechnet.
-Dafür musste zunächst die Fermi-Energie $E_f$ berechnet werden. Für sie gilt
-\begin{align}
-E_f = \frac{h^2}{2 m_0} \left( \left( \frac{3}{8 \pi} \right)^2 \right)
-\end{align}
-Mit dem Plankschen Wirkungsquantum $h = 6.625 \cdot 10^{-34}\si{\joule\s}$.
-Daraus folgt für die Geschwindigkeit
+Die Totalgeschwindigkeit wurde mit der Gleichung \eqref{eqn:totv} berechnet.
+Dafür musste zunächst die Fermi-Energie $E_f$ berechnet werden. Für sie gilt (nach \eqref{eqn:fermi})
 \begin{align*}
-\bar{v} = \sqrt{ \frac{2 E_f}{m_0}} \\
+E_f = \frac{h^2}{2 m_0} \left( \left( \frac{3}{8 \pi} \right)^2 \right)
 \end{align*}
+Mit dem Plankschen Wirkungsquantum $h = 6.625 \cdot 10^{-34}\si{\joule\s}$.
 Es sind also $\bar{v} = 36.19 \pm 0.11 \si{\m\per\s}$ und $\bar{v} = 34.17 \pm 0.12 \si{\m\per\s}$.
 
 \subsubsection{Mittlere freie Weglänge}
 
 Die mittlere freie Weglänge ist die Strecke, die in der mittleren Flugzeit
-zurückgelegt wird. Es ist also anschaulich, dass 
-\begin{equation}
+zurückgelegt wird. Es ist also anschaulich, dass (auch in der Theorie hergeleitet \eqref{eqn: Weglaenge}) 
+\begin{equation*}
 \bar{l} = \bar{ \tau } \bar{v}
-\end{equation}
+\end{equation*}
 Nach Einsetzen der Werte folgt so $\bar{l_\text{Sk}} = \left( 1.301 \pm 0.019 \right) \si{\m}$
 und $\bar{l_\text{Pk}} = \left( 1.734 \pm 0.031 \right) \si{\m}$.
