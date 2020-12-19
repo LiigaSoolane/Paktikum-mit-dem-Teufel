@@ -192,7 +192,7 @@ Nach Einsetzen der Werte folgen die Daten in Tabelle \ref{tab:nnn}.
   \toprule
   $n_\text{Sk} \cdot 10^{29}$ & $n_\text{Pk} \cdot 10^{29}$ \\
   \midrule
-   -0.119& 0.001\\
+   -0.119& 0.0001\\
    0.443 & -0.797\\  
    1.655 & 1.594\\
    1.211 & 1.195\\
@@ -209,8 +209,8 @@ Nach Einsetzen der Werte folgen die Daten in Tabelle \ref{tab:nnn}.
 
 \noindent Aus den jeweiligen Datenreihen wurden die Mittelwerte bestimmt, sie ergaben sich zu
 \begin{align*}
-n_\text{Sk} = \left( 1.271 \pm 0.022 \right) \cdot 10^{29}\\
-n_\text{Pk} = \left( 0.9\pm 0.19 \right) \cdot 10^{29}
+n_\text{Sk} = \left( 1.271 \pm 0.022 \right) \cdot 10^{29} \si{\per\m\cubed}\\
+n_\text{Pk} = \left( 0.899\pm 0.19 \right) \cdot 10^{29} \si{\per\m\cubed}
 \end{align*}
 
 Der Fehler wurde dabei aus mit den Fehlern der linearen Regression nach der Gauss'schen Fehlerrechnung
@@ -241,7 +241,7 @@ z = \frac{n}{a} = \frac{n m_\text{Cu}}{\rho}
 Nach Einsetzen der jeweiligen Werte folgen
 \begin{align*}
 z_\text{Sk} = 1.501 \pm 0.026\\
-z_\text{Pk} = 1.063 \pm 0.023
+z_\text{Pk} = 1.061 \pm 0.023
 \end{align*}
 
 Die Fehler wurden wieder automatisch durch Python mithilfe der Gauss'schen Fehlerrechnung 
@@ -257,8 +257,8 @@ Formel \eqref{eqn:stromdichte} für die Stromdichte j  berechnet. Nach Umstellen
 Durch Berechnen mit den Werten von $n$ und der Vorgabe $j = 1 \si{\ampere\per\milli\meter\squared}$
 folgt:
 \begin{align*}
-\bar{v}_\text{d,Sk} = -4.91 \pm 0.09 \si{\m\per\s}\\
-\bar{v}_\text{d,Pk} = -6.94 \pm 0.15 \si{\m\per\s}
+\bar{v}_\text{d,Sk} = \left( 4.91 \pm 0.09 \right) \cdot 10^{-5} \si{\m\per\s}\\
+\bar{v}_\text{d,Pk} = \left( 6.95 \pm 0.15 \right) \cdot 10^{-5} \si{\m\per\s}
 \end{align*}
 
 \subsubsection{Mittlere Flugzeit}
@@ -277,7 +277,7 @@ Q = \pi \left( \frac{d}{2} \right)^2
 zu Berechnen. So folgt für $\tau$
 \begin{align*}
 \tau_\text{Sk} = \left( 3.59 \pm 0.06 \right) \cdot 10^{-13}\\
-\tau_\text{Pk} = \left( 5.07 \pm 0.11 \right) \cdot 10^{-13}
+\tau_\text{Pk} = \left( 5.08 \pm 0.11 \right) \cdot 10^{-13}
 \end{align*}
 
 \subsubsection{Beweglichkeit}
@@ -286,8 +286,8 @@ Wie in der Theorie beschrieben ist die Beweglichkeit die Proportionalitätskonst
 der mittleren Driftgeschwindigkeit und der äußeren Feldstärke. Für sie gilt (\eqref{eqn:beweg})
 \begin{align*}
 \mu = -\frac{e_0}{m_0} \cdot \bar{\tau} \\
-\implies \mu_\text{Sk} = 0.0316 \pm 0.0006 \\
-\mu_\text{Pk} = 0.0446 \pm 0.0009
+\implies \mu_\text{Sk} = 0.0316 \pm 0.0006 \si{\m\squared\per\V\s} \\
+\mu_\text{Pk} = 0.0446 \pm 0.0009 \si{\m\squared\per\V\s}
 \end{align*}
 
 \subsubsection{Totalgeschwindigkeit v}
@@ -298,7 +298,8 @@ Dafür musste zunächst die Fermi-Energie $E_f$ berechnet werden. Für sie gilt 
 E_f = \frac{h^2}{2 m_0} \left( \left( \frac{3}{8 \pi} \right)^2 \right)
 \end{align*}
 Mit dem Plankschen Wirkungsquantum $h = 6.625 \cdot 10^{-34}\si{\joule\s}$.
-Es sind also $\bar{v} = 36.19 \pm 0.11 \si{\m\per\s}$ und $\bar{v} = 34.17 \pm 0.12 \si{\m\per\s}$.
+Es sind also $\bar{v} = \left( 1.801 \pm 0.11 \right) \cdot 10^{6} \si{\m\per\s}$ und 
+$\bar{v} = \left( 1.604 \pm 0.12 \right) \cdot 10^{6} \si{\m\per\s}$.
 
 \subsubsection{Mittlere freie Weglänge}
 
@@ -307,5 +308,5 @@ zurückgelegt wird. Es ist also anschaulich, dass (auch in der Theorie hergeleit
 \begin{equation*}
 \bar{l} = \bar{ \tau } \bar{v}
 \end{equation*}
-Nach Einsetzen der Werte folgt so $\bar{l_\text{Sk}} = \left( 1.301 \pm 0.019 \right) \si{\m}$
-und $\bar{l_\text{Pk}} = \left( 1.734 \pm 0.031 \right) \si{\m}$.
+Nach Einsetzen der Werte folgt so $\bar{l_\text{Sk}} = \left( 6.47 \pm 0.08 \right) \cdot 10^{-7} \si{\m}$
+und $\bar{l_\text{Pk}} = \left( 8.15 \pm 0.12 \right) \cdot 10^{-7} \si{\m}$.

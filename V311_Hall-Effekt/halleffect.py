@@ -108,7 +108,7 @@ Ikonst = 2 # konstanter Strom hat immer 2 A
 
 nSk_ = - (linreg[0] * Ihall + linreg[1])*Ikonst / (hallSk *e * d)
 nPk_ = - (linreg[0]* Ikonst + linreg[1]) * Ihall / (hallPk * e * d)
-nPk_[0] = (linreg[0] * Ikonst + linreg[1]) * 0.01 / (hallPk[0] * e *d)
+nPk_[0] = (linreg[0] * Ikonst + linreg[1]) * 0.0001 / (hallPk[0] * e *d)
 print(nSk_, nPk_)
 
 nSk = np.sum(nSk_)/11
@@ -127,8 +127,8 @@ zPk = nPk / a
 # 3. Berechne Driftgeschwindigkeit v_d
 j *= 1/10**(-6)
 
-v_d_Sk = j/(nSk * e)
-v_d_Pk = j/(nPk * e)
+v_d_Sk = -j/(nSk * e)
+v_d_Pk = -j/(nPk * e)
 
 # 4. Berechne mittlere Fluggeschwindigkeit tau
 Q = np.pi * (d/2)**2 # Querschnitt des Leiters
@@ -140,9 +140,9 @@ muSk = - e * tauSk / (2*me)
 muPk = -e * tauPk / (2*me)
 
 # 6. Berechne die Geschwindigkeit v
-Ef_Sk = (h**2 / (2*me)) * (3*nSk/(8*np.pi))**(1/3) # Fermi-Energie
-Ef_Pk = (h**2 / (2*me)) * (3*nPk/(8*np.pi))**(1/3)
-
+Ef_Sk = (h**2 / (2*me)) * (3*nSk/(8 * np.pi))**(2/3) # Fermi-Energie
+Ef_Pk = (h**2 / (2*me)) * (3*nPk/(8 * np.pi))**(2/3)
+print(Ef_Pk, Ef_Sk)
 vSk = (2 * Ef_Sk / me)**(1/2)
 vPk = (2 * Ef_Pk / me)**(1/2)
 
