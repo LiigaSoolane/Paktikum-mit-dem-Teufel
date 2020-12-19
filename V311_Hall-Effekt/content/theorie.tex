@@ -15,6 +15,7 @@
     Die mittlere Driftgeschwindigkeit 
     in Richtung eines elektrischen Feldes ergibt sich aus den getroffenen Annahmen zu 
     \begin{equation}
+        \label{eqn:driftv}
         \vec{\overline v_d} = \dfrac{1}{2} \Delta \vec{\overline v} = -\dfrac{e_0}{2 m_0} \vec E \overline \tau
     \end{equation}
     Die Stromdichte beträgt dann
@@ -77,9 +78,10 @@
         U_H = E_y\cdot b = \overline v_d\ B \cdot b
     \end{equation}
     mit Länge b der stromdurchflossenen Leiterplatte. Unter Verwendung von Gleichung 
-    \ref{eqn:stromdichte} und \eqref{eqn:strom} ergibt sich $\overline v_d = \dfrac{-I_q}
+    \eqref{eqn:stromdichte} und \eqref{eqn:strom} ergibt sich $\overline v_d = \dfrac{-I_q}
     {b\cdot d\cdot e_0 \cdot n}$ wobei $I_q$ den Querstrom darstellt, sodass
     \begin{equation}
+        \label{eqn:hallspannung}
         U_H = -\dfrac{1}{n e_0} \dfrac{B\cdot I_q}{d}.
     \end{equation}
     So kann man den unbekannten Parameter n in Gleichung \eqref{eqn:widerstand} eliminieren. 
@@ -93,7 +95,7 @@
         \label{eqn: Weglaenge}
         \overline l = \overline \tau \cdot \mid v \mid
     \end{equation}
-    bestimmt werden, Dzu muss allerdings die mittlere Geschwindigkeit $\mid v \mid$ der Teilchen
+    bestimmt werden, Dazu muss allerdings die mittlere Geschwindigkeit $\mid v \mid$ der Teilchen
     bekannt sein. Diese lässt sich aus dem Äquipartitionstheorem 
     \begin{equation}
         \vec E_{kin}=\dfrac{3}{2} k T
@@ -110,20 +112,23 @@
     annehmen. Die Wahrscheinlichkeiten für die unterschiedlichen Energien kann durch die
     Fermi-Dirac-Verteilung berechnet werden. Daher lautet die mittlere Geschwindigkeit
     \begin{equation}
+        \label{eqn:totv}
         \mid \overline v \mid \approx \sqrt{\dfrac{2 E_F}{m_0}}
     \end{equation}
-    und somit eingesetzt in \label{eqn: Weglaenge} die mittlere Weglänge
+    und somit eingesetzt in \eqref{eqn: Weglaenge} die mittlere Weglänge
     \begin{equation}
         \overline l \approx \overline \tau \sqrt{\dfrac{2 E_F}{m_0}}.
     \end{equation}
     Dabei stellt $E_F$ die Fermi-Energie dar, die sich durch
     \begin{equation}
+        \label{eqn:fermi}
         E_F = \dfrac{h²}{2 m_0}\sqrt[3]{(\dfrac{3}{8\pi }n)²}
     \end{equation}
     berechnen lässt.
 \subsection{Beweglichkeit der Ladungsträger}
     Als Beweglichkeit wird die Proportionalitätskonstante 
     \begin{equation}
+        \label{eqn:beweg}
         \mu = \dfrac{\overline v_d}{E} = - \dfrac{e_0 \overline \tau}{2 m_0}
     \end{equation}
     bezeichnet, wobei E in diesem Fall das Elektrische Feld darstellt.
