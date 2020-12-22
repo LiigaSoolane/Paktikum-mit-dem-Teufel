@@ -8,7 +8,7 @@ d, l, b, R, lD = np.genfromtxt("hallsnostiges.txt", unpack=True)
 d *= 10**(-3)
 l *= 10**(-3)
 b *= 10**(-3)
-lD *= 10**(-2)
+lD *= 10**(-3)
 
 B1, I1, B2, I2 = np.genfromtxt('hallwerte.txt', unpack=True)
 B1 *= 10**(-3)
@@ -113,7 +113,7 @@ print(nSk_, nPk_)
 
 nSk = np.sum(nSk_)/11
 nPk = np.sum(nPk_)/11
-n = (nSk + nPk)/2
+
 print(nSk)
 print(nPk)
 
@@ -132,8 +132,11 @@ v_d_Pk = -j/(nPk * e)
 
 # 4. Berechne mittlere Fluggeschwindigkeit tau
 Q = np.pi * (d/2)**2 # Querschnitt des Leiters
-tauSk = (2 * me * lD)/(R * e**2 * nSk * Q)
-tauPk = (2 * me * lD)/(R * e**2 * nPk * Q)
+
+sigma = R * Q / lD
+print(sigma)
+tauSk = (2 * me ) / ( e**2 * nSk * sigma)
+tauPk = (2 * me ) / ( e**2 * nPk * sigma)
 
 # 5. Berechne die Beweglichkeit mu
 muSk = - e * tauSk / (2*me)
@@ -164,3 +167,19 @@ print(f'v_Sk = {vSk}; v_Pk = {vPk}')
 print(f'l_Sk = {lf_Sk}; l_Pk = {lf_Pk}')
 
 print("Listo!")
+
+print("Literaturwerte")
+
+rhot = 0.0175 * 10**(-6)
+nt = 1 * 10**(29)
+taut = 2.51 * 10**(-14)
+mut = 43.6 * 10**(-4)
+vt = 1.6 * 10**6
+lft = 4.02 * 10**(-8)
+sk = [nSk, tauSk, muSk, vSk, lf_Sk]
+pk = [nPk, tauPk, muPk, vPk, lf_Pk]
+theo = [nt, taut, mut, vt, lft]
+for s, p, t in zip(sk, pk, theo):
+    a = (s-t)/t
+    b = (p-t)/t
+    print(f'Abweichung sk = {a}; Abweichung pk = {b}')

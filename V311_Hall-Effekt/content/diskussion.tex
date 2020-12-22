@@ -1,2 +1,61 @@
 \section{Diskussion}
 \label{sec:Diskussion}
+Die Messwerte, die im Laufe des Versuches aufgenommen und ausgerechnet wurden,
+lauten
+\begin{align*}
+R = 2.65 \si{\ohm} \\
+\rho = 1.56 \cdot 10^{-8} \si{\ohm\m} \\
+n_\text{Sk} = \left( 1.271 \pm 0.022 \right) \cdot 10^{29} \si{\per\m\cubed}\\
+n_\text{Pk} = \left( 0.899 \pm 0.19 \right) \cdot 10^{29} \si{\per\m\cubed}\\
+z_\text{Sk} = 1.501 \pm 0.026 \\
+z_\text{Pk} = 1.061 \pm 0.023 \\
+v_\text{d, Sk} = (4.91 \pm 0.09) \cdot 10^{-5} \si{\m\per\s}\\
+v_\text{d, Pk} = (6.95 \pm 0.15)  \cdot 10^{-5} \si{\m\per\s}\\
+\bar{\tau}_{Sk} = \left( 3.59 \pm 0.06 \right) \cdot 10^{-14} \si{\s}\\
+\bar{\tau}_{Pk} = \left( 5.08 \pm 0.11 \right) \cdot 10^{-14} \si{\s}\\
+\mu_{Sk} = \left( 3.16 \pm 0.06 \right) \cdot 10^{-2} \si{\m\squared\per\volt\s} \\
+\mu_{Pk} = \left( 4.47 \pm 0.09 \right) \cdot 10^{-2}\si{\m\squared\per\volt\s} \\
+\bar{v}_{Sk} = \left( 1.801 \pm 0.011 \right) \cdot 10^{6} \si{\m\per\s}\\
+\bar{v}_{Pk} = \left( 1.604 \pm 0.011 \right) \cdot 10^{6} \si{\m\per\s}\\
+\bar{l}_{Sk} = \left( 6.47 \pm 0.08 \right) \cdot 10^{-8} \si{\m}\\
+\bar{l}_{Pk} = \left( 8.15 \pm 0.12 \right) \cdot 10^{-8} \si{\m}
+\end{align*}
+
+Tabelle \ref{tab:theo} zeigt die Theoriewerte und die prozentualen Abweichungen 
+der jeweiligen Messreihen. Dabei stammen die Werte für die Ladungsträgersichte und
+die Beweglichkeit aus Quelle \cite{beweglichkeit}, die für die Totalgeschwindigkeit,
+die mittlere Flugzeit und die mittlere freie Weglänge aus \cite{transport}. 
+\begin{table}
+ \centering
+ \caption{Theoriewerte und prozentuale Abweichungen.}
+ \label{tab:theo}
+ \begin{tabular}{lccc}
+  \toprule
+   & & \multicolumn{2}{c}{Abweichungen in Prozent}\\
+  \cmidrule(lr){3-4}
+  Messwert & Theoriewert & Spulenstrom konst. & Probenstrom konst. \\
+  \midrule
+  Ladungsträgersichte n & $1 \cdot 10^{29} \si{\per\m\cubed}$ & 2.7 & 1.0\\
+  $\bar{\tau}$ & $2.51 \cdot 10^{-14} \si{s}$ & 4.3 & 10.2\\
+  Beweglichkeit $\mu$ & $4.36 \cdot 10^{-3} \si{\m\squared\per\volt\s}$ & 2.7 & 0.2 \\
+  Totalgeschwindigkeit $\bar{v}$ & $1.6 \cdot 10^{6} \si{\m\per\s}$ & 1.2 & 0.3 \\
+  mittlere freie Weglänge & $4.02 \cdot 10^{-8} \si{\m}$ & 6.1 & 10.2 \\
+  \bottomrule
+ \end{tabular}
+\end{table}
+\noindent Der Theoriewert für den spezifischen Widerstand beträgt nach \cite{spezid} 
+$\rho_\text{Theorie} = 1.75 \cdot 10^{-8} \si{\ohm\m}$, also folgt eine prozentuale 
+Abweichung von 10 Prozent.\\
+Die Abweichungen sind im Allgemeinen gering, dennoch lässt sich eine Diskrepanz feststellen.
+Eine mögliche Ursache für Messunsicherheiten ist, dass die Messung des Stroms sehr ungenau
+war, da die Ströme sehr klein waren und schon im Millivolt-Bereich nur 
+die dritte Nachkommastelle gemessen wurde. Diese Ungenauigekeit zieht sich
+natürlich durch die komplette Rechnung durch.\\
+Zudem hat es der Generator nicht immer geschafft, auf $5 \si{\A}$ hochzuregeln
+und so sind die Werte, mit denen für 5 Ampere gerechnet wurde, nicht immer einwandfrei
+vergleichbar. \\
+Da digitale Messgeräte zur Messung der Spannung und des Magnetfeldes verwendet
+wurden, ist zu erwarten, dass der menschliche Fehler bei diesen Werten eine geringere
+Rolle spielt.\\
+
+

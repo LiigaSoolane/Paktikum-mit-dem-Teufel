@@ -185,27 +185,52 @@ konstanten Spulenstrom. Der jeweils konstante Strom wurde dabei auf $2 \si{\ampe
 Nach Einsetzen der Werte folgen die Daten in Tabelle \ref{tab:nnn}.
 
 \begin{table}
- \centering
- \label{tab:nnn}
- \caption{Ladungsträgerdichte von Kupfer bei konstantem Spulenstrom und konstantem Probenstrom.}
- \begin{tabular}{c c}
+  \begin{tabular}{
+      S[table-format=3.1]
+      @{${}\pm{}$}
+      S[table-format=2.1]
+  }
+   \toprule
+   \multicolumn{2}{c}{$n_\text{Sk} \cdot 10^{29} \mathbin{/} \si{\per\m\cubed}$} \\
+   \midrule
+    -0.119 & 0.056 \\
+    0.443 & 0.027 \\
+    1.655 & 0.058 \\
+    1.211 & 0.031 \\
+    1.594 & 0.038 \\
+    1.979 & 0.037 \\
+    1.574 & 0.027 \\
+    1.372 & 0.022 \\      
+    1.564 & 0.024 \\
+    1.406 & 0.021 \\
+    1.298 & 0.019 \\
+   \bottomrule
+ \end{tabular}
+\end{table}
+
+\begin{table}
+ \begin{tabular}{
+     S[table-format=3.1]
+     @{${}\pm{}$}
+     S[table-format=2.1]
+ }
   \toprule
-  $n_\text{Sk} \cdot 10^{29}$ & $n_\text{Pk} \cdot 10^{29}$ \\
+  \multicolumn{2}{c}{$n_\text{Pk} \cdot 10^{29} \mathbin{/} \si{\per\m\cubed}$}\\
   \midrule
-   -0.119& 0.0001\\
-   0.443 & -0.797\\  
-   1.655 & 1.594\\
-   1.211 & 1.195\\
-   1.594 & 1.594\\
-   1.979 & 0.969\\
-   1.574 & 0.956\\
-   1.372 & 1.117\\       
-   1.564 & 1.062\\
-   1.406 & 1.024\\
-   1.298 & 1.138\\   
+  0.0001 & 0.038 \\
+  -0.797 & 0.017\\
+  1.594 & 0.038\\
+  1.195 & 0.024\\
+  1.594 & 0.038\\
+  0.969 & 0.021\\
+  0.956 & 0.019\\
+  1.117 & 0.024\\
+  1.062 & 0.023\\
+  1.024 & 0.022\\
+  1.138 & 0.041\\
   \bottomrule
  \end{tabular}
-\end{table} 
+\end{table}
 
 \noindent Aus den jeweiligen Datenreihen wurden die Mittelwerte bestimmt, sie ergaben sich zu
 \begin{align*}
@@ -233,7 +258,7 @@ Daraus folgt
 \begin{equation*}
 a = \frac{\rho}{m_\text{Cu}} \\
 \end{equation*}
-Dabei bezeichnet $m_\text{Cu}$ die Masse eines Kupferatoms $m_\text{Cu} = 63.4 \si{\atomicmassunit}$, mit $u = 1.661 \cdot 10^{-27}\si{\kilo\g}$.
+Dabei bezeichnet $m_\text{Cu}$ die Masse eines Kupferatoms $m_\text{Cu} = 63.4 \si{\atomicmassunit}$ (Quelle \cite{beweglichkeit}), mit $u = 1.661 \cdot 10^{-27}\si{\kilo\g}$ (\cite{beweglichkeit}).
 So ist
 \begin{equation}
 z = \frac{n}{a} = \frac{n m_\text{Cu}}{\rho}
@@ -254,7 +279,7 @@ Formel \eqref{eqn:stromdichte} für die Stromdichte j  berechnet. Nach Umstellen
 \begin{equation*}
 \bar{v_d} = - \frac{n \cdot e_0}{j} 
 \end{equation*}
-Durch Berechnen mit den Werten von $n$ und der Vorgabe $j = 1 \si{\ampere\per\milli\meter\squared}$
+Durch Berechnen mit den Werten von $n$ und der Vorgabe $j = 1 \si{\ampere\per\milli\meter\squared}$ (\cite{V311})
 folgt:
 \begin{align*}
 \bar{v}_\text{d,Sk} = \left( 4.91 \pm 0.09 \right) \cdot 10^{-5} \si{\m\per\s}\\
@@ -297,7 +322,7 @@ Dafür musste zunächst die Fermi-Energie $E_f$ berechnet werden. Für sie gilt 
 \begin{align*}
 E_f = \frac{h^2}{2 m_0} \left( \left( \frac{3}{8 \pi} \right)^2 \right)
 \end{align*}
-Mit dem Plankschen Wirkungsquantum $h = 6.625 \cdot 10^{-34}\si{\joule\s}$.
+Mit dem Plankschen Wirkungsquantum $h = 6.625 \cdot 10^{-34}\si{\joule\s}$ (\cite{Planck}).
 Es sind also $\bar{v} = \left( 1.801 \pm 0.11 \right) \cdot 10^{6} \si{\m\per\s}$ und 
 $\bar{v} = \left( 1.604 \pm 0.12 \right) \cdot 10^{6} \si{\m\per\s}$.
 
