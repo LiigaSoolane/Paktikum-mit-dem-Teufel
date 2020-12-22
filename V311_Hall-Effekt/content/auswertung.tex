@@ -73,6 +73,7 @@ b = 0.014 \pm 0.007\\
 B_{\text{mittel}} = (0.197 \pm 0.002) \pm (0.014 \pm 0.007) \cdot I
 \end{align*}
 
+
 \subsection{Berechnung der Hall-Spannung}
 Mithilfe einer Kupferprobe, durch die ein Strom geleitet wurde, wurde die Hall-Spannung sowohl bei konstant gehaltenem Spulenstrom als auch 
 bei konstant gehaltenem Probenstrom. Ab hier wird ein Subskript Pk dafür stehen, dass es sich um den Wert für die Messreihe mit konstantem 
@@ -178,17 +179,21 @@ Diese lässt sich mit Leichtigkeit nach $n$ umstellen, sodass sich ergibt
 n = \frac{-1}{U_H e_0} \frac{B I_\text{quer}}{d}
 \end{equation*}
 
-Dabei ist $e_0 = -1.601 \cdot 10^(-19)\si{\coulomb}$ die Elementarladung, $d = 0.032 \si{\milli\meter}$ die Dicke der Kupferprobe
+Dabei ist $e_0 = -1.601 \cdot 10^(-19)\si{\coulomb}$ die Elementarladung (Quelle \cite{e0}), 
+$d = 0.032 \si{\milli\meter}$ die Dicke der Kupferprobe
 und $I_\text{quer}$ der Probenstrom.
 Es folgen also auch wieder zwei Werte für n, einer für konstanten Probenstrom und einer für
 konstanten Spulenstrom. Der jeweils konstante Strom wurde dabei auf $2 \si{\ampere}$ gehalten.\\
-Nach Einsetzen der Werte folgen die Daten in Tabelle \ref{tab:nnn}.
+Nach Einsetzen der Werte folgen die Daten in Tabellen \ref{tab:n1} und \ref{tab:n2}.
 
 \begin{table}
+ \centering
+ \label{tab:n1}
+ \caption{Ladungsträgerdichte bei konstantem Spulenstrom.}
   \begin{tabular}{
-      S[table-format=3.1]
+      S[table-format=1.3]
       @{${}\pm{}$}
-      S[table-format=2.1]
+      S[table-format=1.3]
   }
    \toprule
    \multicolumn{2}{c}{$n_\text{Sk} \cdot 10^{29} \mathbin{/} \si{\per\m\cubed}$} \\
@@ -209,10 +214,13 @@ Nach Einsetzen der Werte folgen die Daten in Tabelle \ref{tab:nnn}.
 \end{table}
 
 \begin{table}
+ \centering
+ \label{tab:n2}
+ \caption{Ladungsträgerdichte bei konstantem Probenstrom.}
  \begin{tabular}{
-     S[table-format=3.1]
+     S[table-format=1.3]
      @{${}\pm{}$}
-     S[table-format=2.1]
+     S[table-format=1.2]
  }
   \toprule
   \multicolumn{2}{c}{$n_\text{Pk} \cdot 10^{29} \mathbin{/} \si{\per\m\cubed}$}\\
@@ -294,15 +302,16 @@ der mittleren Flugzeit $\bar{\tau}$ umstellen.
 \begin{equation*}
 \bar{\tau} = \frac{2 m_0 L}{R e_0^2 n Q}
 \end{equation*}
-Dabei bezeichnet $Q$ den Querschnitt des Drahtes, mit dessen Hilfe der Widerstand gemessen wurde.
+Dabei bezeichnet $Q$ den Querschnitt des Drahtes, mit dessen Hilfe der Widerstand gemessen wurde und 
+$m_0 = 9.108 \cdot 10^{-31}\si{\kg}$ ist die Ruhemasse eines Elektrons (Quelle \cite{m0}).
 Er ist mit der Formel
 \begin{equation}
 Q = \pi \left( \frac{d}{2} \right)^2
 \end{equation}
 zu Berechnen. So folgt für $\tau$
 \begin{align*}
-\tau_\text{Sk} = \left( 3.59 \pm 0.06 \right) \cdot 10^{-13}\\
-\tau_\text{Pk} = \left( 5.08 \pm 0.11 \right) \cdot 10^{-13}
+\tau_\text{Sk} = \left( 3.59 \pm 0.06 \right) \cdot 10^{-13} \si{\s}\\
+\tau_\text{Pk} = \left( 5.08 \pm 0.11 \right) \cdot 10^{-13} \si{\s}
 \end{align*}
 
 \subsubsection{Beweglichkeit}
@@ -322,7 +331,7 @@ Dafür musste zunächst die Fermi-Energie $E_f$ berechnet werden. Für sie gilt 
 \begin{align*}
 E_f = \frac{h^2}{2 m_0} \left( \left( \frac{3}{8 \pi} \right)^2 \right)
 \end{align*}
-Mit dem Plankschen Wirkungsquantum $h = 6.625 \cdot 10^{-34}\si{\joule\s}$ (\cite{Planck}).
+Mit dem Plankschen Wirkungsquantum $h = 6.625 \cdot 10^{-34}\si{\joule\s}$ (Quelle \cite{Planck}).
 Es sind also $\bar{v} = \left( 1.801 \pm 0.11 \right) \cdot 10^{6} \si{\m\per\s}$ und 
 $\bar{v} = \left( 1.604 \pm 0.12 \right) \cdot 10^{6} \si{\m\per\s}$.
 
