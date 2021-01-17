@@ -27,7 +27,8 @@ plt.savefig('plot.pdf')
 N1 = 96401
 N2 = 76518
 N12 = 158479
-T=(N1+N2-N12)/(2*N1*N2) 
+T=(N1+N2-N12)/(2*N1*N2*120)
+print(f'T=',T)
 
 #Totzeit anhand des Oszilloskops
 
