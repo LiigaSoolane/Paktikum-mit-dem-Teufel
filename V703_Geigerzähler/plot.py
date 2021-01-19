@@ -18,15 +18,17 @@ plt.errorbar(Un, N, yerr=N**(1/2), fmt='ro', label='Messwerte')
 plt.plot(Un[5:34], fit, label='lineare Regression')
 plt.xlabel(r'U [V]')
 plt.ylabel(r'N [Imp]')
-plt.savefig('plot.pdf')
+plt.savefig('build/plot.pdf')
+
+np.savetxt("NgegenU.txt", np.column_stack([Un, N]), fmt = "%10.4f", delimiter = " & ", newline = " \\\ ", header = " U N")
 
 # b) entfällt
 
 # c)
 #Totzeit anhand der Zwei-Quellen-Methode
-N1 = 96401
-N2 = 76518
-N12 = 158479
+N1 = ufloat(96401, 96401**(1/2))
+N2 = ufloat(76518, 76518**(1/2))
+N12 = ufloat(158479, 158479**(1/2))
 T=(N1+N2-N12)/(2*N1*N2*120)
 print(f'T=',T)
 
@@ -35,8 +37,19 @@ print(f'T=',T)
 # d)
 e0 = 1.602176634*10**(-19)
 Z = np.zeros(8)
-for i in range(7):
-    Z[i] = I[i]/(e0*N[3+5*i])
+for i in range(8):
+    Z[i] = I[i]*60/(e0*N[3+5*i])
 print(f'Z = ', Z)
+Er = np.zeros(8)
+for i in range(8):
+    Er[i] = Z[i]*(1/(N[3+5*i])+(0.05*10**(-6)/I[i])**2)**(1/2)
+print(f'Error = ', Er)
+np.savetxt("Zerr.txt", np.column_stack([Z, Er]), fmt = "%10.4f", delimiter = " & ", newline = " \\\ ", header = "Z Error")
 
+plt.errorbar(Ui, Z, yerr=Er, fmt='ro', label='Messwerte')
+plt.xlabel(r'U [V]')
+plt.ylabel(r'Zahl der freigesetzen Ladungen pro Teilchen')
+plt.savefig('build/plot1.pdf')
+
+np.savetxt("ZgegenU.txt", np.column_stack([Ui, Z]), fmt = "%10.4f", delimiter = " & ", newline = " \\\ ", header = "U Z")
 
