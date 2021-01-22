@@ -63,13 +63,16 @@
     \caption{Anzahl der gemessenen Impulse in Abhängigkeit von der Spannung am Zählrohr}
     \label{fig:plot}
   \end{figure}
-  Das Plateau erstreckt sich circa von $370 $ V bis $640 $ V und wurde mit einer linearen 
+  \noindent Das Plateau erstreckt sich circa von $370 $ V bis $640 $ V und wurde mit einer linearen 
   Regression $f = a\cdot U + b$ mit den Koeffizienten $a=1.262 \pm 0.218$ und $b=$ gefittet. 
   Die daraus resultierende Plateau-Steigerung beträgt $1.262 \pm 0.218$ \% pro 100 V. 
   Für einen Reibungslosen Ablauf der folgenden Versuchsteile kann eine Spannung zwischen
   370 V und 640 V gewählt werden.
 
 \subsection{Totzeitbestimmung anhand eines Oszilloskopes}
+  Die Zeit zwischen dem ersten und zweiten Puls
+  beträgt nach der Momentaufnahme des Oszilloskops
+  $T \approx \SI{130}{\mu\second}$.
 
 \subsection{Totzeitbestimmung anhand der Zwei-Quellen-Methode}
   Für die Totzeitbestimmung wurden 120 Sekunden lang zunächst die Impulse $N_1$ einer einzelnen
@@ -82,21 +85,21 @@
   \end{align*}
   Die Totzeit kann näherungsweise durch die in der Theorie hergeleitete Formel 
   \begin{equation*}
-  T \approx \dfrac{N_1+N_2-N_{1+2}}{2N_1N_2}= (8.1566 \pm 0.3) \cdot 10^{-9} s
+  T \approx \dfrac{N_1+N_2-N_{1+2}}{2N_1N_2}= (1,15 \pm 0,47) \cdot 10^{-4} \si{\second}
   \end{equation*}
   bestimmt werden. Die Fehlerfortpflanzung wurde mit Phython Uncertainties berechnet.
 
 \subsection{Berechnung der pro Teilchen freigesetzter Ladungsmenge}
   Es wurde neben der Impulsanzahl in größeren Abständen auch der Zählrohrstrom
-  gemessen. Dafür wurden die Werte in Tabelle \ref{fig:Zählrohrstrom}
+  gemessen. Dafür wurden die Werte in Tabelle \ref{fig:Zahlrohrstrom}
   mit einer Genauigkeit von $\Delta I = 0,05 \mu \si{\ampere}$ ermittelt.
-  \begin{table}
+  \begin{table}[H]
     \centering
     \caption{Messwerte Zählrohrstrom.}
-    \label{fig:Zählrohrstrom}
+    \label{fig:Zahlrohrstrom}
     \begin{tabular}{ccc}
     \toprule
-    $U [\si{\volt}]$ & $I [\mu\si{\ampere}]$ & $Z [10^{10}e_0]$ \\
+    $U [\si{\volt}]$ & $I [\mu\si{\ampere}]$ & $Z [10^{10}]$ \\
     \midrule
     350 & 0,3 & 1,14 \pm 0,21\\
     400	& 0,4 & 1,49 \pm 0,22\\
@@ -109,22 +112,21 @@
     \bottomrule
     \end{tabular}
   \end{table}
-  Durch die Beziehung 
+  \noindent Durch die Beziehung 
   \begin{equation*}
     Z = \dfrac{I \cdot \Delta t}{e_0 \cdot N}
   \end{equation*}
   lässt sich somit die Zahl Z der freigesetzten Ladungen pro eingefallenen Teilchen bestimmen. 
-
-  In der Grafik \ref{fig:plot1} sind die Werte aus Tabelle für die Zahl
+  In der Grafik \ref{fig:plot1} sind die Werte aus Tabelle \ref{fig:Zahlrohrstrom} für die Zahl
   Z auch nochmal graphisch dargestellt.
-  \begin{figure}
+  \begin{figure}[H]
     \centering
     \includegraphics{build/plot1.pdf}
     \caption{Plot.}
     \label{fig:plot1}
   \end{figure}
 
-  Der Fehler von Z wird anhand der Gaußschen Fehlerfortpflanzung 
+  \noindent Der Fehler von Z wird anhand der Gaußschen Fehlerfortpflanzung 
   \begin{align*}
     \Delta Z & = Z * \sqrt{\left( \frac{\Delta I}{I} \right)^2 + \left( \frac{\Delta N}{N} \right)^2}\\
   \end{align*}
