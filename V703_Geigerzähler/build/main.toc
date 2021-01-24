@@ -1,0 +1,9 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {ngerman}{}
+\contentsline {section}{\numberline {1}Auswertung}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Charakteristik des Zählrohrs}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Totzeitbestimmung anhand eines Oszilloskopes}{5}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Totzeitbestimmung anhand der Zwei-Quellen-Methode}{5}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Berechnung der pro Teilchen freigesetzter Ladungsmenge}{6}{subsection.1.4}%
+\contentsline {section}{\numberline {2}Diskussion}{7}{section.2}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
