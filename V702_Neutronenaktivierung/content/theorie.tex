@@ -33,17 +33,19 @@ von instabiler Isotope eingegangen.
     Im folgenden werden die Elemente Vanadium und Rhodium untersucht. Proben dieser 
     Elemente werden in die Nähe einer Neutronenquelle gebracht, wodurch sie angeregt werden.
     Die angeregten Atomkerne verhalten sich gemäß folgendermaßen:
-    \begin{align}
+    \begin{equation}
         ^{51}_{23}V + n \longrightarrow ^{52}_{23}V \longrightarrow ^{52}_{24}Cr + \beta⁻ + 
         \overline{\nu}_e\\ \\
         ^{103}_{45}Rh + n 
+    \end{equation}
+    \begin{equation}
         \begin{cases}
             \xrightarrow{10 \% }\ ^{104i}_{45}Rh \longrightarrow\ ^{104}_{45}Rh + \gamma 
             \longrightarrow ^{104}_{46}Pd + \beta^- + \overline{\nu}_e \\ \\
             \xrightarrow{90 \% }\ ^{104}_{45}Rh \longrightarrow ^{104}_{46}Pd + \beta^- + \overline{\nu}_e 
             \label{eqn:rhodium}
         \end{cases}
-    \end{align}
+    \end{equation}
     Der radioaktive Zerfall lässt sich durch Gleichung \ref{eqn:anzahl} beschreiben,
     \begin{equation*}
         N(t) = N_0 \cdot e^{-\lambda t}
@@ -61,6 +63,7 @@ von instabiler Isotope eingegangen.
     \begin{equation}
         N_{\Delta t}(t) = N(t) - N(t+\Delta t) = N_0 e^{-\lambda t}+N_0 e^{-\lambda (t+\Delta t)}
         = N_0 (1-e^{-\lambda \Delta t})e^{-\lambda t}\\
+        \label{eqn:N}
     \end{equation}
 \subsection{Besonderheiten des Isotopes Rhodium}
     Wie in Gleichung \ref{eqn:rhodium} zu erkennen, geht Rhodium bei Anregung mit einer 90 \% -tigen
@@ -68,6 +71,12 @@ von instabiler Isotope eingegangen.
     in das instabile Isotop $^{104i}Rh$ über. Die Zerfälle besitzen allerding unterschiedliche 
     Halbwertszeiten und das Isotop $^{104i}Rh$ zerfällt unter Aussendung von $\gamma$ -Strahlung 
     weiter in das Isotop $^{104}Rh$. Der Zerfall dieser Atomkerne kann aber vernachlässigt werden.
-    Wie in Grafik dargestellt wird also zunächst der Zerfallsprozess mit der geringeren Halbwertszeit
-    überwiegen und zur späteren Zeit der Zerfallsprozess mit der höheren Halbwertszeit.
+    Wie in Grafik dargestellt wird zunächst der Zerfallsprozess mit der geringeren Halbwertszeit
+    überwiegen und zur späteren Zeit der Zerfallsprozess mit der höheren Halbwertszeit. 
+    $\lambda_l$ kann also aus den Werten $t > t⁺$ mittels Ausgleichsrechnung berechnet werden. 
+    Nun wird dieser Wert in GLeichung \ref{eqn:N} eingesetzt und daraus die Werte $N_{\Delta t_l}$
+    gewonnen. Substrahiert von den Gesamtzählraten $N_{\Delta t}(t_i)$ liefern sie die Werte für den 
+    langsameren Zerfall. Auch hier wird eine Ausgleichsrechnung mit kleinen t (aufgrund von 
+    statistischen Schwankungen) zur Bestimmung durchgeführt. 
+    
     
