@@ -30,6 +30,15 @@ print(params1, errors1)
 # -> Plot
 x1 = np.linspace(0, 1230)
 
+plt.plot(x1, params1[1] -params1[0]*x1, 'b-', label="Lineare Regression")
+plt.errorbar(tv, unp.nominal_values(unp.log(Nvtrue)), yerr = unp.std_devs(unp.log(Nvtrue)), fmt='g.', label="Messwerte mit Fehlern")
+plt.yscale('log')
+plt.xlabel('t [s]')
+plt.ylabel('ln(N)')
+plt.legend()
+plt.tight_layout()
+plt.savefig('plot.pdf')
+
 # -> Halbwertszeit
 
 Tv = np.log(2)/params1[0]
@@ -46,5 +55,56 @@ print(params2, errors2)
 Tv = np.log(2)/params2[0]
 Tv_err = np.sqrt(np.log(2)**2 * errors2[0]**2)
 print(Tv, Tv_err)
+
 # Rhodium
 
+Nr_err = np.sqrt(Nr_)
+Nr = unp.uarray(Nr_, Nr_err)
+
+Nu *= 1/2
+Nu_mean = np.mean(Nu)
+
+Nrtrue = Nr - Nu_mean
+
+# linregress
+params3, cov3 = np.polyfit(tr, np.log(unp.nominal_values(Nrtrue)), deg = 1, cov = True)
+errors3 = np.sqrt(np.diag(cov3))
+params3[0] *= (-1)
+print(params3, errors3)
+
+# setze willkürlich t* = 450s, also slot 26
+tstern = 420
+
+paramsl, covl = np.polyfit(tr[28:], np.log(unp.nominal_values(Nrtrue[28:])), deg= 1, cov = True)
+errorsl = np.sqrt(np.diag(covl))
+paramsl[0] *= -1
+print (paramsl, errorsl)
+
+Nkurz = Nrtrue -paramsl[1] * np.exp(- tr * paramsl[0])
+
+print(Nkurz) # muestra que desde el principio hasta numero 16 domina la corta mierda
+tmax = 250
+
+# y otra vez porque no ha sido bastante
+paramsk, covk = np.polyfit(tr[:17], np.log(unp.nominal_values(Nkurz[:17])), deg=1, cov=True)
+errorsk = np.sqrt(np.diag(covk))
+paramsk[0] *= -1
+print(paramsk, errorsk)
+
+# -> Plot
+x2 = np.linspace(0, 630)
+xl = np.linspace(tstern, 630)
+xk = np.linspace(0, tmax)
+
+plt.clf()
+plt.plot(x2, params3[1] -params3[0]*x2, 'b-', label="Lineare Regression")
+plt.errorbar(tr, unp.nominal_values(unp.log(Nrtrue)), yerr = unp.std_devs(unp.log(Nrtrue)), fmt='g.', label="Messwerte mit Fehlern")
+plt.plot(xl, paramsl[1] -paramsl[0]*xl, 'r--', label="Fit für f")
+plt.plot(xk, paramsk[1] -paramsk[0]*xk, 'y--', label="fuck this/me/you/off/everything/my life")
+#plt.plot(tr, , 'p-', label="do the thing")
+plt.yscale('log')
+plt.xlabel('t [s]')
+plt.ylabel('ln(N)')
+plt.legend()
+plt.tight_layout()
+plt.savefig('plot2.pdf')
