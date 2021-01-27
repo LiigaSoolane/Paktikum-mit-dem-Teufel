@@ -20,7 +20,7 @@ Nu_mean = np.mean(Nu)
 # Vanadium
 # -> Curve fit
 Nvtrue = Nv - Nu_mean
-print(Nvtrue)
+#print(Nvtrue)
 # --> linregress
 params1, cov1 = np.polyfit(tv, np.log(unp.nominal_values(Nvtrue)), deg = 1, cov = True)
 errors1 = np.sqrt(np.diag(cov1))
@@ -58,13 +58,9 @@ print(Tv, Tv_err)
 
 # Rhodium
 
-Nr_err = np.sqrt(Nr_)
-Nr = unp.uarray(Nr_, Nr_err)
+Num = np.mean(Nu_)
 
-Nu *= 1/2
-Nu_mean = np.mean(Nu)
-
-Nrtrue = Nr - Nu_mean
+Nrtrue = unp.uarray(Nr_ - 1/2 * Num, np.sqrt(Nr_-1/2 * Num))
 
 # linregress
 params3, cov3 = np.polyfit(tr, np.log(unp.nominal_values(Nrtrue)), deg = 1, cov = True)
@@ -82,7 +78,7 @@ print (paramsl, errorsl)
 
 Nkurz = Nrtrue -paramsl[1] * np.exp(- tr * paramsl[0])
 
-print(Nkurz) # muestra que desde el principio hasta numero 16 domina la corta mierda
+#print(Nkurz) # muestra que desde el principio hasta numero 16 domina la corta mierda
 tmax = 250
 
 # y otra vez porque no ha sido bastante
@@ -91,6 +87,10 @@ errorsk = np.sqrt(np.diag(covk))
 paramsk[0] *= -1
 print(paramsk, errorsk)
 
+# declarar funcion aditiva
+def add(x):
+    return paramsk[1] - paramsk[0] * x + paramsl[1] - paramsl[0] * x
+
 # -> Plot
 x2 = np.linspace(0, 630)
 xl = np.linspace(tstern, 630)
@@ -98,13 +98,24 @@ xk = np.linspace(0, tmax)
 
 plt.clf()
 plt.plot(x2, params3[1] -params3[0]*x2, 'b-', label="Lineare Regression")
-plt.errorbar(tr, unp.nominal_values(unp.log(Nrtrue)), yerr = unp.std_devs(unp.log(Nrtrue)), fmt='g.', label="Messwerte mit Fehlern")
-plt.plot(xl, paramsl[1] -paramsl[0]*xl, 'r--', label="Fit für f")
-plt.plot(xk, paramsk[1] -paramsk[0]*xk, 'y--', label="fuck this/me/you/off/everything/my life")
-#plt.plot(tr, , 'p-', label="do the thing")
+plt.errorbar(tr, unp.nominal_values(unp.log(Nrtrue)), yerr = unp.std_devs(unp.log(Nrtrue)), fmt='b.', label="Messwerte mit Fehlern")
+plt.plot(xl, paramsl[1] -paramsl[0]*xl, 'r--', label="Fit für das Eine")
+plt.plot(xk, paramsk[1] -paramsk[0]*xk, 'y--', label="Fit für das Andere")
+#plt.plot(x2, add(x2), 'g-', label="fuck this/me/you/off/everything/my life")
 plt.yscale('log')
 plt.xlabel('t [s]')
 plt.ylabel('ln(N)')
 plt.legend()
 plt.tight_layout()
 plt.savefig('plot2.pdf')
+
+# -> Halbwertszeiten
+Tl = np.log(2)/paramsl[0]
+Tl_err = np.sqrt(np.log(2)**2 * errorsl[0]**2)
+
+Tk = np.log(2)/paramsk[0]
+Tk_err = np.sqrt(np.log(2)**2 * errorsk[0]**2)
+
+print(Tl, Tl_err)
+print(Tk, Tk_err)
+
