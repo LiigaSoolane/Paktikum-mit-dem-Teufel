@@ -2,5 +2,160 @@
 \label{sec:Auswertung}
 
 \subsection{Vanadium}
+Als Erstes sollte die Untergrundrate ermittelt werden, dazu wurde in 
+$300 \si{\s}$-Intervallen die Zerfallsrate gemessen. So ergaben sich
+$N_U = {129, 143, 144, 136, 126, 158}$.
+
+Anschließend wurde der Zerfall von $^{52}V$ gemessen. Dabei handelt sich um 
+ein Isotop mit einfachem Zerfall. Als Zeitintervall wurde $\increment t = 30 \si{\s}$
+geewählt, sodass sich die in Tabelle \ref{tab:vanwerte} ergaben.
+
+\begin{table}
+ \centering
+ \caption{Messdaten für den Zerfall von Vanadium.}
+ \label{tab:vanwerte}
+ \begin{tabular}{S S S}
+  \toprule
+  {$t \mathbin{/} \si{\s}$} & {$N_{\increment t, \text{gem}}$} & {$\increment N_{\increment t, \text{gem}}$}\\
+  \midrule
+  30.0                 & 189.0                & 13.74  \\
+  60.0                 & 197.0                & 14.03  \\
+  90.0                 & 150.0                & 12.24  \\
+  120.0                & 159.0                & 12.60  \\
+  150.0                & 155.0                & 12.44  \\
+  180.0                & 132.0                & 11.48  \\
+  210.0                & 117.0                & 10.81  \\
+  240.0                & 107.0                & 10.34  \\
+  270.0                & 94.0                 & 9.695  \\
+  300.0                & 100.0                & 10.0   \\
+  330.0                & 79.0                 & 8.888  \\
+  360.0                & 69.0                 & 8.306  \\
+  390.0                & 81.0                 & 9.0    \\
+  420.0                & 46.0                 & 6.782  \\
+  450.0                & 49.0                 & 7.0    \\
+  480.0                & 61.0                 & 7.810  \\
+  510.0                & 56.0                 & 7.483  \\
+  540.0                & 40.0                 & 6.324  \\
+  570.0                & 45.0                 & 6.708  \\
+  600.0                & 32.0                 & 5.656  \\
+  630.0                & 27.0                 & 5.196  \\
+  660.0                & 43.0                 & 6.557  \\
+  690.0                & 35.0                 & 5.916  \\
+  720.0                & 19.0                 & 4.358  \\
+  750.0                & 28.0                 & 5.291  \\
+  780.0                & 27.0                 & 5.196  \\
+  810.0                & 36.0                 & 6.0    \\
+  840.0                & 25.0                 & 5.0    \\
+  870.0                & 29.0                 & 5.385  \\
+  900.0                & 18.0                 & 4.242  \\
+  930.0                & 17.0                 & 4.123  \\
+  960.0                & 24.0                 & 4.898  \\
+  990.0                & 21.0                 & 4.582  \\
+  1020.0               & 25.0                 & 5.0    \\
+  1050.0               & 21.0                 & 4.582  \\
+  1080.0               & 24.0                 & 4.898  \\
+  1110.0               & 25.0                 & 5.0    \\
+  1140.0               & 17.0                 & 4.123  \\
+  1170.0               & 20.0                 & 4.472  \\
+  1200.0               & 19.0                 & 4.358  \\
+  1230.0               & 20.0                 & 4.472  \\
+  1260.0               & 18.0                 & 4.242  \\
+  1290.0               & 16.0                 & 4.0    \\
+  1320.0               & 17.0                 & 4.123  
+  \bottomrule
+ \end{tabular}
+\end{table}
+
+\noindent Mithilfe des Mittelwertes der Messung für den Untergrund $N_U = \pm $
+folgen die wahren Werte für $N_{\increment t}$ wie in Tabelle \ref{tab:vanwahr} 
+aufgeführt.
+
+\begin{table}
+ \centering
+ \caption{Messwerte von Vanadium ohne Untergrundrate.}
+ \label{tab:vanwahr}
+ \begin{tabular}{S S S}
+  \toprule
+  {$t \mathbin{/} \si{\s}$} & {$N_{\increment t}$} & {$\increment N_{\increment t}$}\\
+  \midrule
+  30.0    & 175.066  & 13.831  \\
+  60.0    & 183.066 & 14.118  \\
+  90.0    & 136.066  & 12.341  \\
+  120.0   & 145.066  & 12.701  \\
+  150.0   & 141.066  & 12.542  \\
+  180.0   & 118.066  & 11.589  \\
+  210.0   & 103.066  & 10.923  \\
+  240.0   & 93.066  & 10.455  \\
+  270.0   & 80.066  & 9.814  \\
+  300.0   & 86.066  & 10.115  \\
+  330.0   & 65.066  & 9.017\\
+  360.0   & 55.066  & 8.445  \\
+  390.0   & 67.066  & 9.128  \\
+  420.0   & 32.066  & 6.951  \\
+  450.0   & 35.066  & 7.163  \\
+  480.0   & 47.066  & 7.957  \\
+  510.0   & 42.066  & 7.636  \\
+  540.0   & 26.066  & 6.505  \\
+  570.0   & 31.066  & 6.879  \\
+  600.0   & 18.066  & 5.858  \\
+  630.0   & 13.066  & 5.414  \\
+  660.0   & 29.066  & 6.732  \\
+  690.0   & 21.066  & 6.109  \\
+  720.0   & 5.066  & 4.617  \\
+  750.0   & 14.066  & 5.506  \\
+  780.0   & 13.066  & 5.414  \\
+  810.0   & 22.066  & 6.190  \\
+  840.0   & 11.066  & 5.227  \\
+  870.0   & 15.066  & 5.596  \\
+  900.0   & 4.066  & 4.508  \\
+  930.0   & 3.066  & 4.395  \\
+  960.0   & 10.06  & 5.130  \\
+  990.0   & 7.066  & 4.829  \\
+  1020.0  & 11.06  & 5.227  \\
+  1050.0  & 7.066  & 4.829  \\
+  1080.0  & 10.06  & 5.130  \\
+  1110.0  & 11.06  & 5.227  \\
+  1140.0  & 3.066  & 4.395  \\
+  1170.0  & 6.066  & 4.724  \\
+  1200.0  & 5.066  & 4.617  \\
+  1230.0  & 6.066  & 4.724  \\
+  1260.0  & 4.066  & 4.508  \\
+  1290.0  & 2.066  & 4.280  \\
+  1320.0  & 3.066  & 4.395  
+  \bottomrule
+ \end{tabular}
+\end{table}
+
+\noindent Aus diesen Werten wurde mithilfe einer linearen Regression
+eine Kurve für den Zerfall von Vanadium errechnet, nach Formel %\ref{}
+aus der Theorie. Es gilt:
+\begin{align}
+    \lambda = (0.323 \pm 0.011) \cdot 10^(-2)
+    c = 5.32 \pm 0.04
+    ln(N_{\increment t}) = c - \lambda t 
+\end{align}
+Aus dem Zerfallsparameter $\lambda$ lässt sich die Halbwertszeit $T_V$ von
+Vanadium berechnen nach %\ref{}.
+\begin{equation}
+    T_V = 215+/-7 \si{\s}
+\end{equation}
+Eine genauere Methode nimmt nicht alle Werte in die lineare Regression auf,
+dazu wurden alle Wertepaar nach der doppelten Halbwertszeit vernachlässigt.
+Es folgt
+\begin{align}
+    \lambda_2 = (0.333 \pm 0.022) \cdot 10^(-2)
+    c_2 = 5.34 \pm 0.05
+    ln(N_{\increment t}) = c_2 - \lambda_2 t 
+    T_V,2 = 208+/-13
+\end{align}
+Abbildung \ref{fig:vankurve}
+zeigt die Messwerte ohne Untergrund sowie die beiden linearen Regressionen.
+
+\begin{figure}
+ \centering
+ \includegraphics[width=\textwidth]{Vanadium.pdf}
+ \caption{Messdaten und Fits für den Zerfall von Vanadium.}
+ \label{fig:vankurve}
+\end{figure}
 
 \subsection{Rhodium}
