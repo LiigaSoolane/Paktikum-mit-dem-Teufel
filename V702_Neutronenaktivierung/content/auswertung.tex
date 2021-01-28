@@ -14,7 +14,7 @@ geewählt, sodass sich die in Tabelle \ref{tab:vanwerte} ergaben.
  \centering
  \caption{Messdaten für den Zerfall von Vanadium.}
  \label{tab:vanwerte}
- \begin{tabular}{S S S}
+ \begin{tabular}{c c c}
   \toprule
   {$t \mathbin{/} \si{\s}$} & {$N_{\increment t, \text{gem}}$} & {$\increment N_{\increment t, \text{gem}}$}\\
   \midrule
@@ -61,7 +61,7 @@ geewählt, sodass sich die in Tabelle \ref{tab:vanwerte} ergaben.
   1230.0               & 20.0                 & 4.472  \\
   1260.0               & 18.0                 & 4.242  \\
   1290.0               & 16.0                 & 4.0    \\
-  1320.0               & 17.0                 & 4.123  
+  1320.0               & 17.0                 & 4.123  \\
   \bottomrule
  \end{tabular}
 \end{table}
@@ -74,7 +74,7 @@ aufgeführt.
  \centering
  \caption{Messwerte von Vanadium ohne Untergrundrate.}
  \label{tab:vanwahr}
- \begin{tabular}{S S S}
+ \begin{tabular}{c c c}
   \toprule
   {$t \mathbin{/} \si{\s}$} & {$N_{\increment t}$} & {$\increment N_{\increment t}$}\\
   \midrule
@@ -121,7 +121,7 @@ aufgeführt.
   1230.0  & 6.066  & 4.724  \\
   1260.0  & 4.066  & 4.508  \\
   1290.0  & 2.066  & 4.280  \\
-  1320.0  & 3.066  & 4.395  
+  1320.0  & 3.066  & 4.395  \\
   \bottomrule
  \end{tabular}
 \end{table}
@@ -130,8 +130,8 @@ aufgeführt.
 eine Kurve für den Zerfall von Vanadium errechnet, nach Formel %\ref{}
 aus der Theorie. Es gilt:
 \begin{align}
-    \lambda = (0.323 \pm 0.011) \cdot 10^(-2)
-    c = 5.32 \pm 0.04
+    \lambda = (0.323 \pm 0.011) \cdot 10^(-2) \\
+    c = 5.32 \pm 0.04 \\
     ln(N_{\increment t}) = c - \lambda t 
 \end{align}
 Aus dem Zerfallsparameter $\lambda$ lässt sich die Halbwertszeit $T_V$ von
@@ -143,9 +143,9 @@ Eine genauere Methode nimmt nicht alle Werte in die lineare Regression auf,
 dazu wurden alle Wertepaar nach der doppelten Halbwertszeit vernachlässigt.
 Es folgt
 \begin{align}
-    \lambda_2 = (0.333 \pm 0.022) \cdot 10^(-2)
-    c_2 = 5.34 \pm 0.05
-    ln(N_{\increment t}) = c_2 - \lambda_2 t 
+    \lambda_2 = (0.333 \pm 0.022) \cdot 10^(-2) \\
+    c_2 = 5.34 \pm 0.05 \\
+    ln(N_{\increment t}) = c_2 - \lambda_2 t \\
     T_V,2 = 208+/-13
 \end{align}
 Abbildung \ref{fig:vankurve}
@@ -159,3 +159,165 @@ zeigt die Messwerte ohne Untergrund sowie die beiden linearen Regressionen.
 \end{figure}
 
 \subsection{Rhodium}
+
+Für die Messung des Zerfalls von Rhodium wurde ein Zeitintervall von 
+$\increment t = 15 \si{\s}$ gewählt. Die Messdaten sind in Tabelle %\ref{tab:rhowerte}
+aufgelistet.
+
+\begin{table}
+ \centering
+ \caption{Messwerte von Rhodium.}
+ \label{tab:rhowerte}
+ \begin{tabular}{c c c}
+  \toprule
+  {$t \mathbin{/} \si{\s}$} & {$N_{\increment t, \text{gem}}$} & {$\increment N_{\increment t, \text{gem}}$}\\
+  \midrule
+  15.0    & 667.0  & 25.826 \\
+  30.0    & 585.0  & 24.186  \\  
+  45.0    & 474.0  & 21.771  \\  
+  60.0    & 399.0  & 19.974  \\  
+  75.0    & 304.0  & 17.435  \\  
+  90.0    & 253.0  & 15.905  \\  
+  105.0   & 213.0  & 14.594  \\  
+  120.0   & 173.0  & 13.152  \\  
+  135.0   & 152.0  & 12.328  \\  
+  150.0   & 126.0  & 11.224  \\  
+  165.0   & 111.0  & 10.535  \\  
+  180.0   & 92.0   & 9.591  \\  
+  195.0   & 79.0   & 8.888  \\  
+  210.0   & 74.0   & 8.602  \\  
+  225.0   & 60.0   & 7.745  \\  
+  240.0   & 52.0   & 7.211  \\  
+  255.0   & 56.0   & 7.483  \\  
+  270.0   & 53.0   & 7.280  \\  
+  285.0   & 41.0   & 6.403  \\  
+  300.0   & 36.0   & 6.0     \\  
+  315.0   & 37.0   & 6.082  \\  
+  330.0   & 32.0   & 5.656  \\  
+  345.0   & 36.0   & 6.0    \\  
+  360.0   & 38.0   & 6.164  \\  
+  375.0   & 34.0   & 5.830  \\  
+  390.0   & 40.0   & 6.324  \\  
+  405.0   & 21.0   & 4.582  \\  
+  420.0   & 35.0   & 5.916  \\  
+  435.0   & 33.0   & 5.744  \\  
+  450.0   & 36.0   & 6.0     \\  
+  465.0   & 20.0   & 4.472  \\  
+  480.0   & 24.0   & 4.898  \\  
+  495.0   & 30.0   & 5.477  \\  
+  510.0   & 30.0   & 5.477  \\  
+  525.0   & 26.0   & 5.099  \\  
+  540.0   & 28.0   & 5.291  \\  
+  555.0   & 23.0   & 4.795  \\  
+  570.0   & 20.0   & 4.472  \\  
+  585.0   & 28.0   & 5.291  \\  
+  600.0   & 17.0   & 4.123  \\  
+  615.0   & 26.0   & 5.099  \\  
+  630.0   & 19.0   & 4.358  \\  
+  645.0   & 13.0   & 3.605  \\  
+  660.0   & 17.0   & 4.123 \\
+  \bottomrule
+ \end{tabular}
+\end{table} 
+
+Nach abziehen der auf ein Zeitintervall von 15 Sekunden normierten Untergrundrate
+bleiben die in Tabelle %\ref{tab:rhowahr} 
+gezeigten Daten.
+
+\begin{table}
+ \centering
+ \caption{Messwerte von Rhodium ohne Untergrund.}
+ \label{tab:rhowahr}
+ \begin{tabular}{c c c}
+  \toprule
+  {$t \mathbin{/} \si{\s}$} & {$N_{\increment t}$} & {$\increment N_{\increment t}$}\\
+  \midrule
+  15.0   & 660.033  & 25.848    \\
+  30.0   & 578.033  & 24.210  \\
+  45.0   & 467.033  & 21.798  \\
+  60.0   & 392.033  & 20.004  \\
+  75.0   & 297.033  & 17.468  \\
+  90.0   & 246.033  & 15.942  \\
+  105.0  & 206.033  & 14.634  \\
+  120.0  & 166.033  & 13.197  \\
+  135.0  & 145.033  & 12.375  \\
+  150.0  & 119.033  & 11.276  \\
+  165.0  & 104.033  & 10.590  \\
+  180.0  & 85.033  & 9.652  \\
+  195.0  & 72.033  & 8.953  \\
+  210.0  & 67.033  & 8.669  \\
+  225.0  & 53.033  & 7.820  \\
+  240.0  & 45.033  & 7.291  \\
+  255.0  & 49.033  & 7.560  \\
+  270.0  & 46.033  & 7.359  \\
+  285.0  & 34.033  & 6.493  \\
+  300.0  & 29.033  & 6.095  \\
+  315.0  & 30.033  & 6.177  \\
+  330.0  & 25.033  & 5.758  \\
+  345.0  & 29.033  & 6.095  \\
+  360.0  & 31.033  & 6.257  \\
+  375.0  & 27.033  & 5.929  \\
+  390.0  & 33.033  & 6.415  \\
+  405.0  & 14.033  & 4.707  \\
+  420.0  & 28.033  & 6.013  \\
+  435.0  & 26.033  & 5.844  \\
+  450.0  & 29.033  & 6.095  \\
+  465.0  & 13.033  & 4.600  \\
+  480.0  & 17.033  & 5.016  \\
+  495.0  & 23.033  & 5.582  \\
+  510.0  & 23.033  & 5.582  \\
+  525.0  & 19.033  & 5.211  \\
+  540.0  & 21.033  & 5.400  \\
+  555.0  & 16.033  & 4.915  \\
+  570.0  & 13.033  & 4.600  \\
+  585.0  & 21.033  & 5.400  \\
+  600.0  & 10.033  & 4.261  \\
+  615.0  & 19.033  & 5.211  \\
+  630.0  & 12.033  & 4.490  \\
+  645.0  & 6.033   & 3.763  \\
+  660.0  & 10.033  & 4.261 \\
+  \bottomrule
+ \end{tabular}
+\end{table}
+
+\noindent Nach Auftragen der Messwerte halblogarithmisch gegen die Zeit wie in Abbildung \ref{fig:messf},
+ist eine Struktur erkennbar. Ab der Zeit $t_l = 270 \si{\s}$ ist nur noch der langsamere Zerfall
+von Bedeutung, während der schnellere bis zur Zeit $t_s = 150 \si{\s}$ vorherrschend ist.
+
+\begin{figure}
+ \centering
+ \includegraphics[width=\textwidth]{werte.pdf}
+ \caption{Messwerte des Rhodiumzerfalls mit Fehlern.}
+ \label{fig:messf}
+\end{figure}
+
+\noindent Für $t > t_l$ lässt sich die Kurve des langlebigen Zerfalls extrapolieren, sodass 
+sie dargestellt werden kann mit
+\begin{align}
+    \lambda_l = (0.323 \pm 0.11) \cdot 10^{-2}\\
+    c_l = 4.35 \pm 0.17 \\
+    ln(N_{langlebig}) = c_l - \lambda_l \cdot t
+\end{align}
+
+Nach Abziehen des so erhaltenen Beitrages vom langlebigen Zerfall ist es möglich, auch
+eine Darstellung des kurzlebigen Zerfalls zu finden. Sie wird wie folgt charakterisiert.
+\begin{align}
+    \lambda_k = (1.61 \pm 0.04) \cdot 10^{-2}\\
+    c_k = 6.678 \pm 0.025 \\
+    ln(N_{langlebig}) = c_k - \lambda_k \cdot t
+\end{align}
+
+Abbildung \ref{fig:regress} zeigt die jeweiligen Kurven für ihren Geltungsbereich sowie die Kombination aus beiden.
+
+\begin{figure}
+ \centering
+ \includegraphics[width=\textwidth]{rhodium.pdf}
+ \caption{Regressionskurven für den Zerfall von Rhodium.}
+ \label{fig:regress}
+\end{figure}
+
+\noindent Als Halbwertszeiten ergeben sich aus den Zerfallskonstanten
+\begin{align}
+    T_l = 258.149 \pm 0.001 \si{\s} \\
+    T_k = 43.054 \pm 0.025 \si{\s}\\
+\end{align}

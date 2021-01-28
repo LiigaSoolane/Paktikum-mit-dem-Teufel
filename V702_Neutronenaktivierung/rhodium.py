@@ -65,6 +65,15 @@ plt.legend()
 plt.tight_layout()
 plt.savefig('rhodium.pdf')
 
+plt.clf()
+plt.errorbar(tr, unp.nominal_values(Nr_diff_log), yerr = unp.std_devs(Nr_diff_log), fmt='b.', label="Messwerte mit Fehlern")
+plt.yscale('log')
+plt.xlabel('t [s]')
+plt.ylabel('ln(N)')
+plt.legend()
+plt.tight_layout()
+plt.savefig('werte.pdf')
+
 # hacer mierdos
 np.savetxt(
     'build/tab/Rhodium_mess.txt',
