@@ -73,7 +73,7 @@ np.savetxt(
 
 # datos teoreticos y diferencias procentuales
 
-T_theo = 224
+T_theo = 224.6
 abw1 = (T_theo - Tv1)/100
 abw2 = (T_theo - Tv2)/100
 

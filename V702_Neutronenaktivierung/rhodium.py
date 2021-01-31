@@ -94,7 +94,7 @@ np.savetxt(
 # comparacion con los datos que hemos encontrado en internet
 
 Ttheo_l = 260
-Ttheo_k = 41
+Ttheo_k = 42.3
 
 abwl = (Ttheo_l - Tl)/100
 abwk = (Ttheo_k - Tk)/100
