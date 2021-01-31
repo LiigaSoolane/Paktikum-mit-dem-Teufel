@@ -26,7 +26,7 @@ const1 = unp.uarray(params1[1], errors1[1])
 # encontrar al tiempo de medio
 Tv1 = np.log(2)/lamb1
 
-# realizer otra vez el curve fit pero sin algunos datos
+# realizar otra vez el curve fit pero sin algunos datos
 params2, cov2 = curve_fit(lnn, tv[:17], unp.nominal_values(Nv_diff_log[:17]), sigma=unp.std_devs(Nv_diff_log[:17]))
 errors2 = np.sqrt(np.diag(cov2))
 lamb2 = unp.uarray(params2[0], errors2[0])
@@ -70,3 +70,12 @@ np.savetxt(
     delimiter=' & ',
     header='t, Nv_diff, Nv_differr',
 )
+
+# datos teoreticos y diferencias procentuales
+
+T_theo = 224
+abw1 = (T_theo - Tv1)/100
+abw2 = (T_theo - Tv2)/100
+
+print(f'Abweichung von T1: {abw1}')
+print(f'Abweichung von T2: {abw2}')

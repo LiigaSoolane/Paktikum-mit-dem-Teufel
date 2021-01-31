@@ -90,3 +90,14 @@ np.savetxt(
     delimiter=' & ',
     header='t, Nr_diff, Nr_differr',
 )
+
+# comparacion con los datos que hemos encontrado en internet
+
+Ttheo_l = 260
+Ttheo_k = 41
+
+abwl = (Ttheo_l - Tl)/100
+abwk = (Ttheo_k - Tk)/100
+
+print(f'Abweichung l: {abwl}')
+print(f'Abweichung k: {abwk}')

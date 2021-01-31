@@ -8,7 +8,8 @@ $N_U = {129, 143, 144, 136, 126, 158}$.
 
 Anschließend wurde der Zerfall von $^{52}V$ gemessen. Dabei handelt sich um 
 ein Isotop mit einfachem Zerfall. Als Zeitintervall wurde $\increment t = 30 \si{\s}$
-geewählt, sodass sich die in Tabelle \ref{tab:vanwerte} ergaben.
+geewählt, sodass sich die in Tabelle \ref{tab:vanwerte} ergaben. Die Fehler wurden dabei 
+durch die Poisson-Verteilung $\increment N = \sqrt{N}$ ermittelt.
 
 \begin{table}
  \centering
@@ -127,27 +128,27 @@ aufgeführt.
 \end{table}
 
 \noindent Aus diesen Werten wurde mithilfe einer linearen Regression
-eine Kurve für den Zerfall von Vanadium errechnet, nach Formel %\ref{}
+eine Kurve für den Zerfall von Vanadium errechnet, nach Formel %\eqref{eqn:}
 aus der Theorie. Es gilt:
-\begin{align}
+\begin{align*}
     \lambda = (0.323 \pm 0.011) \cdot 10^(-2) \\
     c = 5.32 \pm 0.04 \\
     ln(N_{\increment t}) = c - \lambda t 
-\end{align}
+\end{align*}
 Aus dem Zerfallsparameter $\lambda$ lässt sich die Halbwertszeit $T_V$ von
 Vanadium berechnen nach %\ref{}.
-\begin{equation}
+\begin{equation*}
     T_V = 215+/-7 \si{\s}
-\end{equation}
+\end{equation*}
 Eine genauere Methode nimmt nicht alle Werte in die lineare Regression auf,
-dazu wurden alle Wertepaar nach der doppelten Halbwertszeit vernachlässigt.
+dazu wurden alle Wertepaare nach der doppelten Halbwertszeit vernachlässigt.
 Es folgt
-\begin{align}
+\begin{align*}
     \lambda_2 = (0.333 \pm 0.022) \cdot 10^(-2) \\
     c_2 = 5.34 \pm 0.05 \\
     ln(N_{\increment t}) = c_2 - \lambda_2 t \\
     T_V,2 = 208+/-13
-\end{align}
+\end{align*}
 Abbildung \ref{fig:vankurve}
 zeigt die Messwerte ohne Untergrund sowie die beiden linearen Regressionen.
 
@@ -161,7 +162,7 @@ zeigt die Messwerte ohne Untergrund sowie die beiden linearen Regressionen.
 \subsection{Rhodium}
 
 Für die Messung des Zerfalls von Rhodium wurde ein Zeitintervall von 
-$\increment t = 15 \si{\s}$ gewählt. Die Messdaten sind in Tabelle %\ref{tab:rhowerte}
+$\increment t = 15 \si{\s}$ gewählt. Die Messdaten sind in Tabelle \ref{tab:rhowerte}
 aufgelistet.
 
 \begin{table}
@@ -221,7 +222,7 @@ aufgelistet.
 \end{table} 
 
 Nach abziehen der auf ein Zeitintervall von 15 Sekunden normierten Untergrundrate
-bleiben die in Tabelle %\ref{tab:rhowahr} 
+bleiben die in Tabelle \ref{tab:rhowahr} 
 gezeigten Daten.
 
 \begin{table}
@@ -293,19 +294,19 @@ von Bedeutung, während der schnellere bis zur Zeit $t_s = 150 \si{\s}$ vorherrs
 
 \noindent Für $t > t_l$ lässt sich die Kurve des langlebigen Zerfalls extrapolieren, sodass 
 sie dargestellt werden kann mit
-\begin{align}
+\begin{align*}
     \lambda_l = (0.323 \pm 0.11) \cdot 10^{-2}\\
     c_l = 4.35 \pm 0.17 \\
     ln(N_{langlebig}) = c_l - \lambda_l \cdot t
-\end{align}
+\end{align*}
 
 Nach Abziehen des so erhaltenen Beitrages vom langlebigen Zerfall ist es möglich, auch
 eine Darstellung des kurzlebigen Zerfalls zu finden. Sie wird wie folgt charakterisiert.
-\begin{align}
+\begin{align*}
     \lambda_k = (1.61 \pm 0.04) \cdot 10^{-2}\\
     c_k = 6.678 \pm 0.025 \\
     ln(N_{langlebig}) = c_k - \lambda_k \cdot t
-\end{align}
+\end{align*}
 
 Abbildung \ref{fig:regress} zeigt die jeweiligen Kurven für ihren Geltungsbereich sowie die Kombination aus beiden.
 
@@ -317,7 +318,7 @@ Abbildung \ref{fig:regress} zeigt die jeweiligen Kurven für ihren Geltungsberei
 \end{figure}
 
 \noindent Als Halbwertszeiten ergeben sich aus den Zerfallskonstanten
-\begin{align}
+\begin{align*}
     T_l = 258.149 \pm 0.001 \si{\s} \\
     T_k = 43.054 \pm 0.025 \si{\s}\\
-\end{align}
+\end{align*}
