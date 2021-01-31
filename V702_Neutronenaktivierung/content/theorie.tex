@@ -51,11 +51,12 @@ von instabiler Isotope eingegangen.
     \begin{equation*}
         N(t) = N_0 \cdot e^{-\lambda t}
     \end{equation*}
-    wobei N(t) die Nazahl der zur Zeit t noch nicht zerfallenen Kerne angibt. $lambda$ ist die 
+    wobei N(t) die Nazahl der zur Zeit t noch nicht zerfallenen Kerne angibt. $\lambda$ ist die 
     sogenannte Zerfallskonstante. Die Halbwertszeit lässt sich dann offensichtlich durch
     \begin{equation}
         \dfrac{1}{2} N_0 = N_0 \cdot e^{-\lambda T}
          \Leftrightarrow T = \ln{\dfrac{2}{\lambda}}
+         \label{eqn:t}
     \end{equation}
     berechnen. Es gestaltet sich jedoch schwierig N(t) zuverlässig zu bestimmen. 
     Anhand der Beta-Zerfälle lassen sich allerdings die in einem Zeitintervall $\Delta t$ 
@@ -66,17 +67,22 @@ von instabiler Isotope eingegangen.
         = N_0 (1-e^{-\lambda \Delta t})e^{-\lambda t}\\
         \label{eqn:N}
     \end{equation}
+    Sodass nach Anwenden des natürlichen Logarithmus ein linearer Zusammenhang folgt.
+    \begin{equation}
+        ln(N_{\Delta t})(t) = ln \left( N_0 (1-e^{-\lambda \Delta t}) \right) -\lambda t \\
+        \label{eqn:ln}
+    \end{equation}
 \subsection{Besonderheiten des Isotopes Rhodium}
     Wie in Gleichung \ref{eqn:rhodium} zu erkennen, geht Rhodium bei Anregung mit einer 90 \% -tigen
     Wahrscheinlichkeit in das instabile Isotop $^{104}Rh$ und mit 10 \% -tiger Wahrscheinlichkeit 
     in das instabile Isotop $^{104i}Rh$ über. Die Zerfälle besitzen allerding unterschiedliche 
     Halbwertszeiten und das Isotop $^{104i}Rh$ zerfällt unter Aussendung von $\gamma$ -Strahlung 
     weiter in das Isotop $^{104}Rh$. Der Zerfall dieser Atomkerne kann aber vernachlässigt werden.
-    Wie in Grafik dargestellt wird zunächst der Zerfallsprozess mit der geringeren Halbwertszeit
+    Wie in Grafik \ref{fig:plot} dargestellt wird zunächst der Zerfallsprozess mit der geringeren Halbwertszeit
     überwiegen und zur späteren Zeit der Zerfallsprozess mit der höheren Halbwertszeit. 
     \begin{figure}[H]
         \centering
-        \includegraphics{Kurve.png}
+        \includegraphics[width=\textwidth]{Kurve.png}
         \label{fig:plot}
     \end{figure}
     $\lambda_l$ kann also aus den Werten $t > t⁺$ mittels Ausgleichsrechnung berechnet werden. 
