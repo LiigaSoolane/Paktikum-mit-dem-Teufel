@@ -1,13 +1,26 @@
 \section{Diskussion}
 \label{sec:Diskussion}
 
+\begin{table}[H]
+ \centering
+ \caption{Theoriewerte und prozentuale Abweichungen.}
+ \label{tab:theo}
+ \begin{tabular}{lccc}
+  \toprule
+  Wert & Theoriewert & Messung & Abweichung in Prozent \\
+  \midrule
+  Halbwertszeit von Vanadium & $224.4 \si{\s}$ & $215 \pm 7 \si{\s}$ & $10$ \\
+  Genauer gemesse Halbwertszeit von Va & $224.4 \si{\s}$ & $208 \pm 13 \si{\s}$ & $17$ \\
+  Halbwertszeit von Rh 104 & $42.3 \si{\s}$ & $43.05 \pm 0.001 \si{\s}$ & $1.8$ \\
+  Halbwertszeit von Rh 104i & $260 \si{\s}$ & $258.15 \pm 0.001 \si{\s}$ & $0.75$ \\
+  \bottomrule
+ \end{tabular}
+\end{table}
+
 \subsection{Vanadium}
 
-Die Halbwertzeit von Vanadium wurde zunächst mit allen aufgenommenen Werten berechnet, dabei ergab sich ein Wert
-von $T_1 = 215 \pm 7 \si{\s}$, die genauere Methode, die nach der doppelten Halbwertszeit abbricht, ergab 
-$T_2 = 208 \pm 13 \si{\s}$. Nach Quelle \cite{vanadium}
-ist der Theoriewert $T_s = 224.6 \si{\s}$, was zu einer prozentualen Abweichung für $T_1$ von etwa 10 Prozent und für 
-$T_2$ etwa 17 Prozent führt. Ungewöhnlich ist dabei, dass die Abweichung, die bei der prinzipiell genaueren Methode herauskommt,
+In Tabelle \ref{tab:theo} werden die Theorie-  und gemessenen Werte verglichen.
+Ungewöhnlich ist dabei, dass die Abweichung, die bei der prinzipiell genaueren Methode herauskommt,
 größer ist als bei der prinzipiell ungenaueren Methode. 
 Der größere Fehler des Wertes lässt sich dadurch erklären, dass durch eine geringere Anzahl an Werten auch ein größerer statistischer Fehler entsteht. 
 Außerdem ist die generelle Unsicherheit des Versuches recht hoch, beispielsweise durch die Auswirkungen einer möglicherweise nicht idealen Wahl von $\increment t$
@@ -20,12 +33,8 @@ des Geiger-Müller-Zählrohres.
 
 \subsection{Rhodium}
 
-In der zweiten Hälfte des Versuches wurde für den Zerfall des langlebigeren Isotopes $^{104i}Rh$
-eine Halbwertszeit von $258.14 \pm 0.001 \si{\s}$ berechnet, während sich für das kurzlebige ein Wert von $43.054 \pm 0.001 \si{\s}$ ergab. In Quelle \cite{rhodium}
-sind die Theoriewerte für die beiden Isotope zu finden, sie lauten $T_{\text{theo, l}} = 260 \si{\s}$ für das langlebige und $T_{\text{theo, k}} = 42.3 \si{\s}$ für
-das kurzlebige. \\
-So ergeben sich prozentuale Abweichungen von $1.8$ Prozent für $^{104i}Rh$
-und $0.75$ Prozent für $^{104}Rh$, also in beiden Fällen sehr geringe Abweichungen. In Abbildung \ref{fig:regress}, die die entsprechenden Kurven darstellt, ist die Güte dieser 
+Auch für Rhodium werden die Messwerte in Tabelle \ref{tab:theo} mit den Theoriewerten verglichen.
+In Abbildung \ref{fig:regress}, die die entsprechenden Kurven darstellt, ist die Güte dieser 
 Werte auch erkennbar, da die zusammengesetzte Kurve genau durch die Datenpunkte verläuft. \\
 Geringe Abweichungen bei den einzelnen Kuven für die jeweiligen Isotope kommen dadurch zustande, dass der Einfluss des andern Isotops bei der realen Messung natürlich auch noch
 einen Einfluss hat, sodass die Werte nicht perfekt repräsentiert sind. Dies ist erst bei Kombination der Kurven der Fall. 
