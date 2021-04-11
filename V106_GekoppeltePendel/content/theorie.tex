@@ -1,0 +1,91 @@
+\section{Theorie}
+\label{sec:Theorie}
+\subsection{Das Fadenpendel}
+    Ein Fadenpendel besteht aus einem Pendelkörper mit Masse m, der idealerweise 
+    an einem masselosen Faden; in unserem Fall an einer Metallstange befestigt ist.
+    Wird der Pendelkörper aus der Ruhelage ausgelenkt, so wirkt die 
+    Gravitation $\vec{F}=m\cdot \vec{g} $ als rücktreibende Kraft . Dadurch entsteht  
+    ein Drehmoment $M= D_p \cdot \sin{\theta}$ mit $D_p= m\cdot g\cdot l$. Für kleine Auslenkungen 
+    kann die Kleinwinkelnäherung $\sin{\theta}=\theta$ verwendet werden. %\nocite{wiki}
+    Unter Berücksichtigung des Trägheitsmomentes $J=m\cdot l²$ ergibt sich folgende Bewegungsgleichung 
+    für den Pendelkörper
+    \begin{equation}
+        D_p \cdot \theta+J\cdot \ddot \theta=0
+    \end{equation}
+    Für kleine Winkel kann das Fadenpendel also als harmonischer Oszillator angenähert werden.
+    Die Lösung dieser Gleichung lautet
+    \begin{equation}
+        \theta=a\cdot \sin{\omega t} + b\cdot \cos{\omega t}
+    \end{equation}
+    mit Schwingungsfrequenz
+    \begin{equation}
+        \omega= \sqrt{\dfrac{D_p}{J}}=\sqrt{\dfrac{g}{l}}
+    \end{equation}
+    Bei kleinen Auslenkungen haben daher weder die Masse des Pendelkörpers noch der
+    Auslenkwinkel Einfluss auf die Periodendauer $T=\dfrac{2\pi}{\omega}$.
+
+\subsection{Gekoppelte Schwingungen}
+    Im Folgenden wird immer von zwei identischen Pendeln ausgegangen. Durch die 
+    Kopplung von zwei Fadenpendeln durch eine Feder kann Energie des einen 
+    Fadenpendels auf das andere übertragen werden. Deswegen wirken auf die Pendelkörper
+    die zusätzlichen Drehmomente $M_1=D_F(\theta_2-\theta_1),\ M_2=D_F(\theta_1-\theta_2)$ 
+    Die daraus resultierenden Differentialgleichungen lauten (mit Kleinwinkelnäherung):
+    \begin{align}
+         D_p \cdot \theta_1+J\cdot \ddot \theta_1=D_F(\theta_2-\theta_1)\\
+         D_p \cdot \theta_2+J\cdot \ddot \theta_2=D_F(\theta_1-\theta_2)
+    \end{align}
+    In Abhängigkeit von den Anfangsbedingungen $\theta(0)$ und $\dot \theta(0)$ gibt es 
+    verschiedene Schwingungsarten. Unterschieden wird vor allem zwischen den zwei Eigenmodi 
+    (gleichsinnig und gegensinnig) und anderen Schwingungsarten. 
+
+    \subsubsection{Gleichsinnige Schwingungen}
+        Sind die Anfangsbedingungen (dh. Auslenkung und Geschwindigkeit) der gekoppelten
+        Pendel exakt gleich, wird von gleichsinniger Schwingung gesprochen.
+        Es findet keine Energieübertragung zwischen den beiden Fadenpendeln statt, da die 
+        Feder im Idealfall zu keinem Zeitpunkt ge- oder entspannt wird. Die Schwingungsfrequenz
+        stimmt mit den Eigenfrequenzen 
+        \begin{equation}
+            \omega_+= \sqrt{\dfrac{D_p}{J}}=\sqrt{\dfrac{g}{l}}
+        \end{equation}
+        der beiden Pendel überein, weshalb sich auch 
+        die Periodendauer nicht durch die Kopplung ändert, weil dem System weder Energie 
+        zugeführt noch entzogen wird. Sie beträgt daher ebenfalls 
+        \begin{equation}
+            T_+ = 2\pi \sqrt{\dfrac{l}{g}}
+        \end{equation}
+    \subsubsection{Gegensinnige Schwingungen}
+        Schwingungen, bei denen die Auslenkungen zu Beginn $\theta_1=-\theta_2$ betragen, werden gegensinnige
+        Schwingungen genannt. In dieser Eigenmode werden die rücktreibenden Kräfte der einzelnen Pendel 
+        durch die rücktreibenden Kräfte der Feder um jeweils den gleichen Betrag verstärkt. Die 
+        Bewegungsgleichung für beide $\theta$ lautet daher
+        \begin{equation}
+            D_p \cdot \theta +J\cdot \ddot \theta =D_F(2\theta)\Leftrightarrow 
+            (2 D_p D_F) \theta +J\cdot \ddot \theta =0
+        \end{equation}
+        Die dadurch entstehende Schwingung ist symmetrisch und besitzt aufgrund der größeren 
+        rücktreibenden Kräfte eine höhere Frequenz
+        \begin{equation}
+            \omega_-= \sqrt{\dfrac{D_p}{J}}=\sqrt{\dfrac{g}{l}+\dfrac{2 k}{l}}
+        \end{equation}
+        Dadurch verringert sich auch die Periodendauer
+        \begin{equation}
+            T_- = 2\pi \sqrt{\dfrac{l}{g+2k}}
+        \end{equation}
+        mit Federkonstante $k$.
+    \subsubsection{Gekoppelte Schwingungen}
+        Wird zu Beginn das eine Pendel ausgelenkt, das andere jedoch in der Ruheposition 
+        belassen. Die Energie vollständig und langsam zwischen den beiden Pendeln hin und her übertragen, so dass 
+        eines der Pendel still steht, sobald die Amplitude des anderen Pendels maximal wird.
+        (Dies gilt zumindestens, wenn die Rückstellkraft der Feder gering ist im Vergleich 
+        zur Rückstellkraft der Pendel). Die Schwingung ist darstellbar als Überlagerung von 
+        zwei harmonischen Schwingungen $\theta_+$ und $\theta_-$. Die Schwebungsdauer und 
+        die Schwebungsfrequenz berechnen sich dann als 
+        \begin{equation}
+            T_S = \dfrac{T_+\cdot T_-}{T_+ - T_-} \text{ und } \omega_S=\omega_+ - \omega_-
+        \end{equation}
+        Um die Kopplung der beiden Fadenpendel zu beschreiben wird die Kopplungskonstente
+        \begin{equation}
+            K=\dfrac{\omega_-^2 - \omega_+^2}{\omega_-^2 + \omega_+^2}=
+            \dfrac{T_+^2 - T_-^2}{T_+^2 + T_-^2}
+        \end{equation}
+        verwendet.
