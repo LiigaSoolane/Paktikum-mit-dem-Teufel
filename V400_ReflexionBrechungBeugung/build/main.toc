@@ -1,0 +1,13 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {ngerman}{}
+\contentsline {section}{\numberline {1}Theorie}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Reflexion}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Brechung}{3}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Planparallele Platten}{3}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}Prismen}{4}{subsubsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.3}Beugung}{4}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Beugung am Gitter}{5}{subsubsection.1.3.1}%
+\contentsline {section}{\numberline {2}Durchführung}{5}{section.2}%
+\contentsline {section}{\numberline {3}Auswertung}{5}{section.3}%
+\contentsline {section}{\numberline {4}Diskussion}{6}{section.4}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
