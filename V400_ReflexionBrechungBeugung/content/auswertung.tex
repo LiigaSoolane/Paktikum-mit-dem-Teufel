@@ -2,8 +2,8 @@
 \label{sec:Auswertung}
 
 \subsection{Reflektion}
-  Für die Reflektion wurden für die Einfallswinkel $\alpha_1$ folgende Ausfallswinkel (in Grad)
-  gemessen:
+  Für die Reflektion wurden für die Einfallswinkel $\alpha_1$ die in Tabelle \ref{tab:angle} dargestellten Ausfallswinkel (in Grad)
+  gemessen.
   \begin{table}[H]
     \centering
     \caption{Werte der Reflektion}
@@ -20,18 +20,20 @@
         70 & 71\\
       \bottomrule
     \end{tabular}
+    \label{tab:angle}
   \end{table}
-  \noindent Diese wurden in der nachfolgenden Grafik geplottet und ihre Steigung $m=1.001 \pm 0.007$
+  \noindent Diese wurden in der Grafik \ref{fig:plot2} geplottet und ihre Steigung $m=1.001 \pm 0.007$
   mittels linearer Regression bestimmt.
   \begin{figure}[H]
     \centering
     \includegraphics{plot.pdf}
     \caption{Messwerte der Reflektion}
-    \label{fig:plot}
+    \label{fig:plot2}
   \end{figure}
 
 \subsection{Transmission}
-  Folgende Brechungswinkel $\beta$ ergab der zweite Versuch zu den Einfallswinkeln $\alpha$:
+  Zu den Einfallswinkeln $\alpha$ ergab der zweite Versuch die in Tabelle \ref{tab:trans} gezeigten 
+  Brechungswinkel $\beta$.
   \begin{table}[H]
     \centering
     \caption{Werte der Transmission}
@@ -48,9 +50,10 @@
         70 & 39.5 \\
       \bottomrule
     \end{tabular}
+    \label{tab:trans}
   \end{table}
-  \noindent Daraus lassen sich anhand der Formel $n = \dfrac{\sin{\alpha}}{sin{\beta}}$ folgende
-  Werte für den Brechungsindex n berechnen:
+  \noindent Daraus lassen sich anhand der Formel $n = \dfrac{\sin{\alpha}}{sin{\beta}}$ die
+  Werte in Tabelle \ref{tab:brech} für den Brechungsindex n berechnen.
   \begin{table}[H]
     \centering
     \caption{Brechungsindizes}
@@ -67,6 +70,7 @@
       1.69 \\
       \bottomrule
     \end{tabular}
+    \label{tab:brech}
   \end{table}
   \noindent Mittels Numpy wurde daraus der Mittelwert $n=1.53\pm 0.04$ beestimmt. Anhand 
   dieses Wertes wurde die Lichtgeschwindigkeit in dem Glas zu $c_G=\dfrac{c}{n}= (1.95\pm 0.05)
@@ -81,7 +85,7 @@
   \end{equation*}
   wird nun der Strahversatz berechnet. Dabei wird zunächst mit den realen Beta-Werten und dann
   mit idealisierten, die durch $\beta=\arcsin{\dfrac{\sin{\alpha}}{n}}$ wurden. Dabei ergeben 
-  sich für Beta folgende Werte:
+  sich für Beta die in Tabelle \ref{tab:beta} aufgelisteten Werte.
 
   \begin{table}[H]
     \centering
@@ -99,14 +103,15 @@
         0.38 & 0.34 \\
       \bottomrule
     \end{tabular}
+    \label{tab:beta}
   \end{table}
-  \noindent Für den Strahlversatz lassen sich die Werte also zu
+  \noindent Für den Strahlversatz ergeben sich die in Tabelle \ref{tab:strahlen} gezeigten Werte.
   \begin{table}[H]
     \centering
     \caption{Strahlversatz}
     \begin{tabular}{c c }
       \toprule
-      Strahlversatz mit realen $\Beta$-Werten x $10^{-2}$ & Strahlversatz mit idealisierten $\Beta$-Werten x $10^{-2}$\\
+      Strahlversatz mit realen $\beta$-Werten x $10^{-2}$ & Strahlversatz mit idealisierten $\beta$-Werten x $10^{-2}$\\
       \midrule
         0.14 & 0.17 \\
         0.33 & 0.35 \\
@@ -117,8 +122,8 @@
         1.63 & 1.42 \\
       \bottomrule
     \end{tabular}
+    \label{tab:strahlen}
   \end{table}
-  berechnen.
 
 \subsection{Prisma}
   Nun wird die Brechhung von Licht unterschiedlicher Wellenlänge in einem Prisma betrachtet.
@@ -136,7 +141,7 @@
   \begin{equation*}
     \delta = (\alpha_1+\alpha_2)-(\beta_1+\beta_2)
   \end{equation*}
-  werden die in folgender Tabelle dargestellten Werte gewonnen:
+  werden die in Tabelle \ref{tab:strahlv} dargestellten Werte gewonnen.
   \begin{table}[H]
     \centering
     \caption{Strahlversatz}
@@ -151,8 +156,9 @@
       0.523599 & 0.305433 & 0.305433 & 0.331975 & 0.715223 & -0.218166  & -0.218166  \\
       \bottomrule
     \end{tabular}
+    \label{tab:strahlv}
   \end{table}
-  In der folgenden Abbildung sind diese Werte auch noch mal grafisch dargestellt.
+  In der Abbildung \ref{fig:plot} sind diese Werte auch noch mal grafisch dargestellt.
   \begin{figure}[H]
     \centering
     \includegraphics{plot1.pdf}
@@ -162,7 +168,8 @@
 
 \subsection{Beugung am Gitter}
   Im letzen Teil des Versuchs soll nun die Wellenlänge des Lichtes bestimmt werden. Dazu 
-  wird die Beugung an mehreren Gittern betrachtet. Folgende Daten wurden aufgenommen:
+  wird die Beugung an mehreren Gittern betrachtet. Die aufgenommenen Daten sind in Tabellen \ref{tab:gitter1},
+  \ref{tab:gitter2} und \ref{tab:gitter3} zu finden.
   \begin{table}[H]
     \centering
     \caption{Gitter mit 600 Linien/mm}
@@ -174,6 +181,7 @@
       22.7 \\
       \bottomrule
     \end{tabular}
+    \label{tab:gitter1}
   \end{table}
   \begin{table}[H]
     \centering
@@ -186,6 +194,7 @@
       11.5 & 23.2 \\
       \bottomrule
     \end{tabular}
+    \label{tab:gitter2}
   \end{table}
   \begin{table}[H]
     \centering
@@ -198,13 +207,14 @@
       3.6 & 7   & 11   & 15 \\
       \bottomrule
     \end{tabular}
+    \label{tab:gitter3}
   \end{table}
   \noindent Anhand der Gleichung 
   \begin{equation*}
     \lambda = d \dfrac{\sin{\phi}}{k}
   \end{equation*}
   ist es nun möglich die Wellenlänge des Lichtes zu bestimmen. Die für die oben 
-  gelisteten Daten berechneten Werte sind in der nachfolgenden Tabelle aufgelistet.
+  gelisteten Daten berechneten Werte sind in Tabelle \ref{tab:wellen} aufgelistet.
   \begin{table}[H]
     \centering
     \caption{Wellenlänge $\cdot 10^{7}$}
@@ -220,6 +230,7 @@
       &3.35&3.26&3.05&3.26\\
       \bottomrule
     \end{tabular}
+    \label{tab:wellen}
   \end{table}
   \noindent Der Mittelwert dieser Werte wurde mittels Numpy berechnet und liegt bei 
   $\lambda=(3.278\pm0.029)\cdot 10^{-7}$
