@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import math
 import numpy as np
+from tabulate import tabulate
 from uncertainties import ufloat
 import scipy.constants as const
 from scipy.stats import sem
@@ -48,10 +49,12 @@ print(f"Lichtgeschwindigkeit:", cm)
 ##########################################################################################
 
 s = d*np.sin((alpha-beta)*math.pi/360)/np.cos(beta*math.pi/360)
-betath = np.sin(alpha*math.pi/360)/nmid
-print(betath)
-print(beta)
-sth = d*np.sin((alpha-betath)*math.pi/360)/np.cos(betath*math.pi/360)
+beta = beta * math.pi/360
+alpha = alpha * math.pi/360
+betath = np.arcsin(np.sin(alpha)/nmid)
+print(f"betath", betath)
+print(f"beta", beta)
+sth = d*np.sin((alpha-betath))/np.cos(betath)
 
 print(f"s-Wert:", s)
 print(f"theoretischer S-Wert:", sth)
@@ -65,15 +68,30 @@ alpha = np.array([26, 30, 40, 50, 60])
 alphag = np.array([90, 74.5, 57.5, 45, 35])
 alphar = np.array([87.5, 73.5, 57, 44.75, 35])
 
+alpha = (alpha*math.pi/360)
+alphag = (alphag*math.pi/360)
+alphar = (alphar*math.pi/360)
 beta1 = np.arcsin(np.sin(alpha)/nmid)
-beta2g = np.arcsin(np.sin(alphag)/nmid)
-beta2r = np.arcsin(np.sin(alphar)/nmid)
+beta2 = math.pi/3-beta1
 
-delg = (alpha + alphag) - (beta1 + beta2g)
-delr = (alpha + alphar) - (beta1 + beta2r)
+delg = (alpha + alphag) - (beta1 + beta2)
+delr = (alpha + alphar) - (beta1 + beta2)
 
 print(f"Delta-Funktion grün:", delg)
 print(f"Delta-Funktion rot:", delr)
+
+#table ={'alpha': alpha, 'alphag': alphag, 'alphar': alphar, 'beta1':beta1, 'beta2':beta2, 'delg':delg, 'delr':delr}
+#print(tabulate (table, tablefmt="latex"))
+#print(tabulate (table, tablefmt="latex"))
+
+plt.figure(1)
+plt.plot(alpha, delg, "g*", label="$\delta des grünen Lasers$")
+plt.plot(alpha ,delr, 'r*', label="$\delta des roten Lasers$")
+plt.xlabel(r"$\alpha$ [rad]")
+plt.ylabel(r"$\delta$ [rad]")
+plt.legend(loc='best')
+plt.tight_layout()
+plt.savefig('plot1.pdf')
 
 
 
@@ -85,20 +103,26 @@ lambd=np.zeros(14)
 
 d=0.001/600
 phi = np.array([23.2, 22.7])
+table ={'m1': phi}
+print(tabulate (table, tablefmt="latex"))
 for i in range(2):
-    lambd[i]=d*np.sin(phi[i])
+    lambd[i]=d*np.sin(phi[i]*math.pi/360)
 
 d=0.001/300
 phi = np.array([[11, 11.5],[22.7, 23.2]])
+table ={'m1': phi[0][:], 'm2': phi[1][:]}
+print(tabulate (table, tablefmt="latex"))
 for i in range(2):
-    lambd[i+2]=d*np.sin(phi[i][0])/(i+1)
-    lambd[i+4]=d*np.sin(phi[i][1])/(i+1)
+    lambd[i+2]=d*np.sin(phi[i][0]*math.pi/360)/(i+1)
+    lambd[i+4]=d*np.sin(phi[i][1]*math.pi/360)/(i+1)
 
 d=0.001/100
 phi = np.array([[4, 3.6],[7.7, 7],[11.5, 11],[15, 15]])
+table ={'m1': phi[0][:], 'm2': phi[1][:], 'm3': phi[2][:], 'm4':phi[3][:]}
+print(tabulate (table, tablefmt="latex"))
 for i in range(4):
-    lambd[i+6]=d*np.sin(phi[i][0])/(i+1)
-    lambd[i+10]=d*np.sin(phi[i][1])/(i+1)
+    lambd[i+6]=d*np.sin(phi[i][0]*math.pi/360)/(i+1)
+    lambd[i+10]=d*np.sin(phi[i][1]*math.pi/360)/(i+1)
 print(f"Lambda bei 100mm:", lambd)
 
 mid = np.mean(lambd)

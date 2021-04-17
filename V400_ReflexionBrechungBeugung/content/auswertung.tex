@@ -58,13 +58,13 @@
       \toprule
       $n$\\
       \midrule
-        7.25 \\
-        13.5 \\
-        20   \\
-        26   \\
-        31.5 \\
-        36   \\
-        39.5 \\
+      1.38 \\
+      1.48 \\
+      1.49  \\
+      1.52   \\
+      1.56 \\
+      1.61   \\
+      1.69 \\
       \bottomrule
     \end{tabular}
   \end{table}
@@ -90,13 +90,13 @@
       \toprule
       reale $\Beta$-Werte [rad] &  idealisierte $\Beta$-Werte [rad]\\
       \midrule
-        0.14 & 0.51 \\
-        0.33 & 1.01 \\
-        0.51 & 1.51   \\
-        0.73 & 2.00   \\
-        0.98 & 2.46 \\
-        1.28 & 2.91   \\
-        1.63 & 3.34 \\
+        0.06 & 0.06 \\
+        0.11 & 0.12 \\
+        0.17 & 0.17 \\
+        0.22 & 0.23 \\
+        0.28 & 0.27 \\
+        0.33 & 0.31 \\
+        0.38 & 0.34 \\
       \bottomrule
     \end{tabular}
   \end{table}
@@ -108,13 +108,13 @@
       \toprule
       Strahlversatz mit realen $\Beta$-Werten x $10^{-2}$ & Strahlversatz mit idealisierten $\Beta$-Werten x $10^{-2}$\\
       \midrule
-        0.14 & 0.51 \\
-        0.33 & 1.01 \\
-        0.51 & 1.51   \\
-        0.73 & 2.00   \\
-        0.98 & 2.46 \\
-        1.28 & 2.91   \\
-        1.63 & 3.34 \\
+        0.14 & 0.17 \\
+        0.33 & 0.35 \\
+        0.51 & 0.55   \\
+        0.73 & 0.74   \\
+        0.98 & 0.95 \\
+        1.28 & 1.18   \\
+        1.63 & 1.42 \\
       \bottomrule
     \end{tabular}
   \end{table}
@@ -122,4 +122,104 @@
 
 \subsection{Prisma}
   Nun wird die Brechhung von Licht unterschiedlicher Wellenlänge in einem Prisma betrachtet.
-  Verwendet werden ein grüner und ein roter Laser. 
+  Verwendet werden ein grüner und ein roter Laser. Um die Ablenkung $\delta$ zu bestimmen,
+  werden die Ausfallswinkel $\alpha_2$ zu 5 verschiedenen Einfallswinkeln $\alpha_1$ gemessen.
+  Der Winkel innerhalb des Prismas $\beta_1$ wird anhand des im Kapitel Transmission bestimmten 
+  Brechungsindex n (Dieser wird auch für den roten Laser verwendet, obwohl rotes Licht einen
+  leicht anderen Brechungswinkel hat als grünes Licht) aus der Beziehung 
+  \begin{equation*}
+    \beta_1=n\sin{\alpha}
+  \end{equation*}
+  hergeleitet. Aus diesem kann im Anschluss der Ausfallswinkel $\beta_2=\dfrac{\pi}{3}\beta_1$
+  bestimmt werden. 
+  Durch die Formel
+  \begin{equation*}
+    \delta = (\alpha_1+\alpha_2)-(\beta_1+\beta_2)
+  \end{equation*}
+  werden die in folgender Tabelle dargestellten Werte gewonnen:
+  \begin{table}[H]
+    \centering
+    \caption{Strahlversatz}
+    \begin{tabular}{c c c c c c c}
+      \toprule
+      $\alpha_1$ & $\alpha_{2grün} $  & $\alpha_{2rot}$ & $\beta_1$ & $\beta_2$ & $\delta_{grün}$& $\delta_{rot}$\\
+      \midrule
+      0.226893 & 0.785398 & 0.763582 & 0.147158 & 0.900039 & -0.0349066 & -0.0567232 \\
+      0.261799 & 0.650135 & 0.641409 & 0.169514 & 0.877683 & -0.135263  & -0.14399   \\
+      0.349066 & 0.501782 & 0.497419 & 0.224825 & 0.822372 & -0.19635   & -0.200713  \\
+      0.436332 & 0.392699 & 0.390517 & 0.27908  & 0.768117 & -0.218166  & -0.220348  \\
+      0.523599 & 0.305433 & 0.305433 & 0.331975 & 0.715223 & -0.218166  & -0.218166  \\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+  In der folgenden Abbildung sind diese Werte auch noch mal grafisch dargestellt.
+  \begin{figure}[H]
+    \centering
+    \includegraphics{plot1.pdf}
+    \caption{Deltawerte}
+    \label{fig:plot}
+  \end{figure}
+
+\subsection{Beugung am Gitter}
+  Im letzen Teil des Versuchs soll nun die Wellenlänge des Lichtes bestimmt werden. Dazu 
+  wird die Beugung an mehreren Gittern betrachtet. Folgende Daten wurden aufgenommen:
+  \begin{table}[H]
+    \centering
+    \caption{Gitter mit 600 Linien/mm}
+    \begin{tabular}{c}
+      \toprule
+      Maximum 1\\
+      \midrule
+      23.2 \\
+      22.7 \\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+  \begin{table}[H]
+    \centering
+    \caption{Gitter mit 300 Linien/mm}
+    \begin{tabular}{c c}
+      \toprule
+      Maximum 1 & Maximum 2\\
+      \midrule
+      11   & 22.7 \\
+      11.5 & 23.2 \\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+  \begin{table}[H]
+    \centering
+    \caption{Gitter mit 100 Linien/mm}
+    \begin{tabular}{c c c c}
+      \toprule
+      Maximum 1 & Maximum 2 & Maximum 3 & Maximum 4\\
+      \midrule
+      4   & 7.7 & 11.5 & 15 \\
+      3.6 & 7   & 11   & 15 \\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+  \noindent Anhand der Gleichung 
+  \begin{equation*}
+    \lambda = d \dfrac{\sin{\phi}}{k}
+  \end{equation*}
+  ist es nun möglich die Wellenlänge des Lichtes zu bestimmen. Die für die oben 
+  gelisteten Daten berechneten Werte sind in der nachfolgenden Tabelle aufgelistet.
+  \begin{table}[H]
+    \centering
+    \caption{Wellenlänge $\cdot 10^{-7}$}
+    \begin{tabular}{c c c c c}
+      \toprule
+      Gitter & Maximum 1 & Maximum 2 & Maximum 3 & Maximum 4\\
+      \midrule
+      600&3.35   &&&\\
+      &3.28&&&\\
+      300&3.19& 3.33&& \\
+      &3.28&3.35&&\\
+      100&  3.48   &   3.33&  3.14&3.19 \\
+      &3.35&3.26&3.05&3.26\\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+  \noindent Der Mittelwert dieser Werte wurde mittels Numpy berechnet und liegt bei 
+  $\lambda=(3.278\pm0.029)\cdot 10^{-7}$
