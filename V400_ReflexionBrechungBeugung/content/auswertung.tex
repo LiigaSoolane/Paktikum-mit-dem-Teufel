@@ -11,18 +11,18 @@
       \toprule
       $\alpha_1$ & $\alpha_2$\\
       \midrule
-        20 & 20.5\\
-        30 & 31\\
-        40 & 41\\
-        45 & 46\\
-        50.5 & 51\\
-        60 & 60.5\\
-        70 & 71\\
+        20 & 20.5 \\
+        30 & 31   \\
+        40 & 41   \\
+        45 & 46   \\
+        50.5 & 51 \\
+        60 & 60.5 \\
+        70 & 71   \\
       \bottomrule
     \end{tabular}
     \label{tab:angle}
   \end{table}
-  \noindent Diese wurden in der Grafik \ref{fig:plot2} geplottet und ihre Steigung $m=1.001 \pm 0.007$
+  \noindent Diese wurden in der Abbildung \ref{fig:plot2} dargestellt und ihre Steigung $m=1.001 \pm 0.007$
   mittels linearer Regression bestimmt.
   \begin{figure}[H]
     \centering
@@ -37,41 +37,23 @@
   \begin{table}[H]
     \centering
     \caption{Werte der Transmission}
-    \begin{tabular}{c c}
+    \begin{tabular}{c c c}
       \toprule
-      $\alpha$ & $\beta$\\
+      $\alpha$ & $\beta$&$n$\\
       \midrule
-        10 & 7.25 \\
-        20 & 13.5 \\
-        30 & 20   \\
-        40 & 26   \\
-        50 & 31.5 \\
-        60 & 36   \\
-        70 & 39.5 \\
+        10 & 7.25& 1.38 \\
+        20 & 13.5& 1.48 \\
+        30 & 20  & 1.49 \\
+        40 & 26  & 1.52 \\
+        50 & 31.5& 1.56 \\
+        60 & 36  & 1.61  \\
+        70 & 39.5& 1.69 \\
       \bottomrule
     \end{tabular}
     \label{tab:trans}
   \end{table}
   \noindent Daraus lassen sich anhand der Formel $n = \dfrac{\sin{\alpha}}{sin{\beta}}$ die
-  Werte in Tabelle \ref{tab:brech} für den Brechungsindex n berechnen.
-  \begin{table}[H]
-    \centering
-    \caption{Brechungsindizes}
-    \begin{tabular}{c c}
-      \toprule
-      $n$\\
-      \midrule
-      1.38 \\
-      1.48 \\
-      1.49  \\
-      1.52   \\
-      1.56 \\
-      1.61   \\
-      1.69 \\
-      \bottomrule
-    \end{tabular}
-    \label{tab:brech}
-  \end{table}
+  Werte in für den Brechungsindex n berechnen.
   \noindent Mittels Numpy wurde daraus der Mittelwert $n=1.53\pm 0.04$ beestimmt. Anhand 
   dieses Wertes wurde die Lichtgeschwindigkeit in dem Glas zu $c_G=\dfrac{c}{n}= (1.95\pm 0.05)
   \cdot 10^{8}$ m/s berechnet.
@@ -85,7 +67,7 @@
   \end{equation*}
   wird nun der Strahversatz berechnet. Dabei wird zunächst mit den realen Beta-Werten und dann
   mit idealisierten, die durch $\beta=\arcsin{\dfrac{\sin{\alpha}}{n}}$ wurden. Dabei ergeben 
-  sich für Beta die in Tabelle \ref{tab:beta} aufgelisteten Werte.
+  sich für $\beta$ die in Tabelle \ref{tab:beta} aufgelisteten Werte.
 
   \begin{table}[H]
     \centering
@@ -149,16 +131,16 @@
       \toprule
       $\alpha_1$ & $\alpha_{2grün} $  & $\alpha_{2rot}$ & $\beta_1$ & $\beta_2$ & $\delta_{grün}$& $\delta_{rot}$\\
       \midrule
-      0.226893 & 0.785398 & 0.763582 & 0.147158 & 0.900039 & -0.0349066 & -0.0567232 \\
-      0.261799 & 0.650135 & 0.641409 & 0.169514 & 0.877683 & -0.135263  & -0.14399   \\
-      0.349066 & 0.501782 & 0.497419 & 0.224825 & 0.822372 & -0.19635   & -0.200713  \\
-      0.436332 & 0.392699 & 0.390517 & 0.27908  & 0.768117 & -0.218166  & -0.220348  \\
-      0.523599 & 0.305433 & 0.305433 & 0.331975 & 0.715223 & -0.218166  & -0.218166  \\
+      0.453786 & 1.5708   & 1.52716  & 0.306007 & 0.741191 & 0.977384 & 0.933751 \\
+      0.523599 & 1.30027  & 1.28282  & 0.350753 & 0.696444 & 0.776672 & 0.759218 \\
+      0.698132 & 1.00356  & 0.994838 & 0.457527 & 0.589671 & 0.654498 & 0.645772 \\
+      0.872665 & 0.785398 & 0.781035 & 0.554401 & 0.492797 & 0.610865 & 0.606502 \\
+      1.0472   & 0.610865 & 0.610865 & 0.637442 & 0.409755 & 0.610865 & 0.610865 \\
       \bottomrule
     \end{tabular}
     \label{tab:strahlv}
   \end{table}
-  In der Abbildung \ref{fig:plot} sind diese Werte auch noch mal grafisch dargestellt.
+  In Abbildung \ref{fig:plot} sind diese Werte grafisch dargestellt.
   \begin{figure}[H]
     \centering
     \includegraphics{plot1.pdf}
@@ -217,20 +199,20 @@
   gelisteten Daten berechneten Werte sind in Tabelle \ref{tab:wellen} aufgelistet.
   \begin{table}[H]
     \centering
-    \caption{Wellenlänge x $ 10^{7}$}
+    \caption{Wellenlänge, angegeben in m x $ 10^{7}$}
     \begin{tabular}{c c c c c}
       \toprule
       Gitterart & Maximum 1 & Maximum 2 & Maximum 3 & Maximum 4\\
       \midrule
-      600&3.35   &&&\\
-      &3.28&&&\\
-      300&3.19& 3.33&& \\
-      &3.28&3.35&&\\
-      100&  3.48   &   3.33&  3.14&3.19 \\
-      &3.35&3.26&3.05&3.26\\
+      600&6.57   &&&\\
+      &6.43&&&\\
+      300&6.36& 6.43&& \\
+      &6.65&6.57&&\\
+      100&  6.98   &   6.7&  6.65&6.47 \\
+      &6.27&6.09&6.36&6.47\\
       \bottomrule
     \end{tabular}
     \label{tab:wellen}
   \end{table}
-  \noindent Der Mittelwert dieser Werte wurde mittels Numpy berechnet und liegt bei 
-  $\lambda=(3.278\pm0.029)\cdot 10^{-7}$
+  \noindent Der Mittelwert dieser Werte wurde mittels Numpy berechnet und liegt bei \\
+  $\lambda=(6.5\pm0.06)\cdot 10^{-7}$
