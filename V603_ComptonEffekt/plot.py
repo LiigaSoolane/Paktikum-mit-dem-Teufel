@@ -3,14 +3,35 @@ import numpy as np
 from uncertainties import unumpy as unp
 from scipy.optimize import curve_fit
 
+# valores de la naturaleza
+h = 6.62607015 * 10**(-34)
+c = 299792458
+d_LiF = 201.4 
+d_LiF *= 10**(-12)
+
 # ------ Emissionsspektrum -------
 
 # read values for Emission spectrum
 theta, N = np.genfromtxt('EmissionCu.txt', unpack=True)
 
 # set k_alpha and k_beta line variables
-kbeta = 20.2
+kbeta = 20.2 
 kalpha = 22.5
+
+kalpha_ = unp.uarray(kalpha, 0.1)
+kbeta_ = unp.uarray(kbeta, 0.1)
+# K_alpha y K_beta energias
+lam_alpha = 2 * d_LiF * unp.sin(kalpha_ * np.pi / 180)
+lam_beta = 2 * d_LiF * unp.sin(kbeta_ * np.pi / 180)
+
+E_alpha = h * c / lam_alpha
+E_beta = h * c / lam_beta
+
+E_alpha *= 6.242 * 10**(18)
+E_beta *= 6.242 * 10**(18)
+
+print(f'E_a = {E_alpha}')
+print(f'E_b = {E_beta}')
 
 #plot Emission spectrum
 plt.plot(theta, N, 'r.', label='Messwerte')
@@ -26,7 +47,7 @@ plt.annotate(r'$K_{\beta}$',
 plt.plot([kalpha, kalpha], [0, 5050.0], color='red', linestyle='--')
 plt.scatter([kalpha], [5050.0], s=20, marker='o', color='red')
 plt.annotate(r'$K_{\alpha}$',
-            xy = (kalpha, 5050.0), xycoords='data', xytext=(+5, +20),
+            xy = (kalpha, 5050.0), xycoords='data', xytext=(+10, -2),
             textcoords='offset points', fontsize=12,
             arrowprops=dict(arrowstyle="->", connectionstyle="arc3, rad=.2"))
 
@@ -105,11 +126,26 @@ T_2 = I_2/I_0
 print(f'T_1 = {T_1:.3f}, T_2 = {T_2:.3f}')
 
 # calcular tamanos de ondas correspendientes
-lam_1 = (T_1 - params[1])/params[0]
-lam_2 = (T_2 - params[1])/params[0]
+a = unp.uarray(params[0], errs[0])
+b = unp.uarray(params[1], errs[1])
+lam_1 = (T_1 - b)/a
+lam_2 = (T_2 - b)/a
 
 lam_c = lam_2 - lam_1
 
 print(f'Lambda 1 = {lam_1}')
 print(f'Lambda 2 = {lam_2}')
 print(f'Compton = {lam_c}')
+
+# ----- Abweichungen von Literaturwerten ------
+E_alpha_theo = 8048.11
+E_beta_theo = 8906.9
+lam_c_theo = 2.427 * 10**(-12)
+
+ab_E_alpha = (E_alpha_theo - E_alpha)/E_alpha_theo * 100
+ab_E_beta = (E_beta_theo - E_beta)/E_beta_theo * 100
+ab_lam_c = (lam_c_theo - lam_c)/lam_c_theo * 100
+
+print(f'Abweichung Kalpha = {ab_E_alpha} Prozent')
+print(f'Abweichung Kbeta = {ab_E_beta} Prozent')
+print(f'Abweichung compton = {ab_lam_c} Prozent')
