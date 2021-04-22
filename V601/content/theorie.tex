@@ -1,0 +1,121 @@
+\section{Theorie}
+\label{sec:Theorie}
+
+\subsection{Zielsetzung}
+    Das Ziel dieses Versuches ist es, die quantenmechanische Beschreibung der Elektronenhülle
+    näher zu umreißen. Dazu werden Stöße von Elektronen und Atomen herbeigeführt und
+    der Energieverlust der Elektronen betrachtet. Im Franck-Hertz-Versuch wechselwirken
+    monoenergetische Elektronen mit Hg-Dampf. Dabei finden sowohl elastische als auch inelastische
+    Stöße statt. Bei inelastischen Stößen wird das Hg-Atom aus dem Grundzustand der Energie $E_0$ 
+    in den angeregten Zustand $E_1$ angehoben. Aus der Energieerhaltung folgt:
+    \begin{equation}
+        \dfrac{m_0\cdot v_{vor}^2}{2}-\dfrac{m_0\cdot v_{nach}^2}{2}=E_1-E_0
+    \end{equation}
+    wobei $m_0$, $v_{vor}$ und $v_{nach}$ die Masse und die Geschwindigkeiten des Elektrons
+    bezeichnen. Konkret wird die Energiedifferenz zwischem
+    Grund- und nächsthöheren angeregten Zustand von Hg-Atomen bestimmt sowie die Energieverteilung
+    der hier verwendeten Elektronen näher betrachtet. 
+
+\subsection{Aufbau}
+    Der Versuchsaufbau ist in der folgenden Abbildung ... dargestellt. In einer evakuierten Glasröhre
+    befinden sich Heizfaden, Beschleunigungs- und Auffängerelektrode und ein Tropfen 
+    Quecksilber, der beiErhitzung der Apperatur gemäß der Dampfdruckkurze spontan 
+    verdampft. Wird die Temperatur konstant gehalten, stellt sich ein Gleichgewichtsdampfdruck 
+    $p_{sät}$ ein, der sich für Quecksilber durch
+    \begin{equation}
+        p_{sät}(T)=5.5\cdot 10^{7} \ \exp{-\dfrac{6876}{T}}
+    \end{equation}
+    berechnen lässt ($p_{sät}$ wird in mbar angegeben).\\
+    \noindent Der Heizfaden besteht aus einem hochschmelzendem Metall, welches durch Gleichstrom
+    bis zur Rotglut erhitzt wird. Dadurch tritt eine große Zahl an Elektronen aus, die durch die 
+    positiv geladene Elektrode in der Mitte des Glasröhre beschleunigt werden. Die kinetische Energie
+    nach Passieren der Beschleunigungsstrecke beträgt
+    \begin{equation}
+        \dfrac{m_0\cdot v_{vor}^2}{2}=e_0 U_B.
+    \end{equation}
+    Hierbei stellt U_B die Beschleunigungsspannung dar, die zwischen Heifaden und 
+    Beschleunigungselektrode angebracht ist.\\
+    \noindent Am Ende der Glaröhre befindet sich eine Auffängerelektrode. Der durch die aufgefangenen
+    Elektronen entstandene Strom $I_A$ wird mittels eines ... gemessen. Da die Auffängerelektrode
+    negativ geladen ist gelangen nur solche Elektronen in ihre Nähe, die die Ungleichung 
+    \begin{equation}
+        \dfrac{m_0}{2}v_Z^2 \geq e_0 U_A
+    \end{equation}
+    erfüllen mit der Geschwindigkeit v_Z des Elektrons in Feldrichtung, und der Elektrodenspannung
+    $U_A$.\\
+    Auf dem Weg von Heizfaden zu Auffängerelektrode finden Stöße mit denen sich in der 
+    Glasröhre befindlichen Hg-Atomen. Bei niedrige Elektronenenergien finden nur 
+    elastische Stöße statt. Im zentralen Stoß beträgt die Energieabgabe des Elektrons
+    \begin{equation}
+        \Delta E = \dfrac{4 m_0 M}{(m_0 + M)^2}E \approx 1.1\cdot 10^{-5}E,
+    \end{equation}
+    ist also sehr gering, was an dem großen Massenunterschied zwischen Elektron und 
+    Hg-Atom liegt. Die Geschwindigkeitsveränderung kann also vernachlässigt werden,
+    die Richtungsänderung ist jedoch für den Franck-Hertz Versuch von Relevanz.\\
+    Bei Elektronenenergien, die über der Energiedifferenz $E_1-E_0$ liegen, ist es 
+    dem Elektron möglich, das gestoßene Hg-Atom anzuregen und dabei den entsprechenden 
+    Betrag an Energie zu verlieren. Das angeregte Hg-Atom fällt mit einer Relaxationszeit
+    von $10^{-8}$ s wieder in den 
+    Grundzustand zurück und emittiert dabei ein Lichtquant der Energie
+    \begin{equation}
+        h\nu = E_1-E_0 .
+    \end{equation}
+    Wird $U_A$ festgehalten, während $U_B$ variiert wird, entwickelt sich der Auffängerstrom
+    wie in der idealisierten Abbilgung ... aufgetragen. Überschreitet $U_B$ $U_A$, so 
+    nimmt der Elektronenstrom stark zu, bis die Elektronen durch die Beschleunigung die
+    kritische Energie von $E_1-E_2$ überschreiten, und diese dann in unelastischen Stößen
+    an die Hg-Atome abgeben. Der Spannungsunterschied zwischen den Maxima beträgt somit
+    \begin{equation}
+        U_1 = \dfrac{1}{e_0}(E_1-E_0).
+    \end{equation}
+
+\subsection{Weitere Einflüsse}
+    \subsubsection{Kontaktpotential}
+        Durch Effekte wie den elektrischen Widerstand gibt es eine erhebliche Differenz zwischen 
+        angelegtem und tatsächlichem Beschleunigungspotentiol. Besonders deutlich treten diese
+        Effekte zu Tage, wenn beide Elektroden unterschiedliche Austrittsarbeit für Elektronen 
+        besitzen, was bei diesem Versuch offensichtlich sehr hilfreich ist. Das effektive 
+        Beschleunigungspotential kann durch 
+        \begin{equation}
+            U_{b, eff} = U_B - K
+        \end{equation}
+        mit dem Kontaktpotential
+        \begin{equation}
+            K = \dfrac{1}{e_0}(\Phi_B - \Phi_G)
+        \end{equation}
+        bestimmt werden.
+    \subsubsection{Energie-Spektrum der Elektronen}
+        Schon bei der Glühemission besitzen die Elektronen unterschiedliche Geschwindigkeiten.
+        Nach Durchlauf der Beschleunigungsstrecke besitzen diese also ein kontinuierliches
+        Energiespektrum. Daher setzen die unelastischen stöße nicht bei einer bestimmten 
+        Beschleunigungsspannung ein und fallen auch nicht schlagartig bei einer anderen 
+        Spannung wieder ab. \\
+        Zudem sind auch die elastischen Stöße in diesem Zusammenhang nicht vernachlässigbar. 
+        Sie ändern die Energie der Elektronen zwar nicht übermäßig, aber die Richtung, wodurch
+        sich die Frack-Hertz-Kurve weiter abflacht.
+    \subsubsection{Dampfdruck}
+        Um Resultate aus dem Versuch gewinnen zu können, müssen genügend Zusammenstöße von 
+        Elektronen und Hg-Atomen stattfinden. Aus diesem Grund muss die mittlere freie 
+        Weglänge $\overline{w}$ klein sein (dh. Faktor 1000 bis 4000 für ausreichende
+        Stoßwahrscheinlichkeit) gegen den Abstand von Kathode und Beschleunigungselektrode.
+        Durch die kinetische Gastheorie kann für die mittlere freie Weglänge der Zusammenhang
+        \begin{equation}
+            \overlin{w} [cm]=\dfrac{0.0029}{p_{sät}}[p in mbar]
+        \end{equation}
+        hergeleitet werden. Wählt man $p_{sät}$ alleerdings zu hoch, finden zu viele elastische
+        Stöße statt, was der Messung schadet.
+    \subsubsection{Aufbau der Hg-Atomhülle}
+        Für diesen Versuch relevant sind nur die s s-Elektronen, die sich in der Schale mit 
+        Hauptquantenzahl $n=6$ befinden. AUfgrund des Pauli-Prinzipes lauten die 
+        Quantenzahlen der Elektronen im Grundzustand:
+        \begin{align*}
+            & n_1=n_2=6\ & l_1=l_2=0 \ & s_1 = -s_2=\dfrac{1}{2}
+        \end{align*}
+        Somit verchwindet die Gesamtspinzahl S und der Grundzustand besitzt keine Feinstruktur.
+        Die für ein Elektron eines solchen Atoms möglichen angeregten Zustände sind in der folgenden
+        Grafik dargestellt
+
+        Der dort abgebildete Übergang vom Grundzustand in den ersten angeregten Zustand ist 
+        selten - so lange man das Atom nicht mit Elektronen beschießt, wie in diesem Versuch.
+
+
