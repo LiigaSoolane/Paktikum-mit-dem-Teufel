@@ -91,7 +91,7 @@ an Messwerten verzichtet.\\
 %    \label{tab:emiss}
 %\end{table}
 
-Zur besseren Visualisierung zeigt Grafik \ref{fig:emission}
+\noindent Zur besseren Visualisierung zeigt Grafik \ref{fig:emission}
 das Spektrum. Anhand der Daten lässt sich ablesen, dass die Kupfer 
 $K_\alpha$ Linie bei einem Glanzwinkel von $\theta_\alpha = 22.5 \pm 0.1°$ liegt,
 während die $K_\beta$ Linie bei $\theta_\beta = 20.2 \pm 0.1 °$ auftritt.\\
@@ -105,7 +105,7 @@ Winkel von $11.1 \pm 0.1°$ hat.
     \label{fig:emission}
 \end{figure}
 
-\noindent Aus den Winkeln lässt sich mithilfe von %\eqref{eqn:}
+\noindent Aus den Winkeln lässt sich mithilfe von \eqref{eqn:bragg}
 die jeweilige Wellenlänge des Lichts berechnen. Zudem gilt für Licht
 \begin{align*}
     E = h f \\
@@ -169,14 +169,14 @@ der Messung beträgt die Integrationszeit jeweils $t = 200 \si{\s}$.
 \noindent Unter der Annahme, dass die Zählraten Poisson verteilt sind,
 lassen sich die Abweichungen durch $\increment N = \sqrt{N}$ berechnen.
 Alle weiteren Fehler werden durch Numeric Python berechnet.\\
-Um die Daten zu bereinigen, muss eine Totzeitkorrektur nach %\eqref{}
+Um die Daten zu bereinigen, muss eine Totzeitkorrektur
 durchgeführt werden. 
 \begin{align*}
     I_0 = \frac{N_0}{1 - \tau N_0}\\
     I_\text{Al} = \frac{N_\text{Al}}{1 - \tau N_\text{Al}}\\
 \end{align*}
 
-Wobei $\tau = 90 \si{\micro\s}$ die Totzeit des Geiger-Müller-Zählrohres 
+\noindent Wobei $\tau = 90 \si{\micro\s}$ die Totzeit des Geiger-Müller-Zählrohres 
 ist.\\
 Mithilfe einer linearen Regression wurde die Transmission als Funktion 
 der Wellenlänge bestimmt. Abbildung \ref{fig:transmission} zeigt sowohl
@@ -206,7 +206,7 @@ Absorber zwischen Plexiglas und Geiger-Müller-Zählrohr. \\
     I_1 = 1180 \text{Imp.}\\
     I_2 = 1024 \text{Imp.}\\
 \end{align*}
-Die Transmission der ungestreuten Röntgenstrahlung ist $T_1 = 0.432$,
+\noindent Die Transmission der ungestreuten Röntgenstrahlung ist $T_1 = 0.432$,
 die der gestreuten $T_2 = 0.375$.\\
 Durch die zuvor berechnete Ausgleichsgerade können diese Transmissionen nun
 mit der korrespondierenden Wellenlänge in Verbindung gebracht werden.\\
