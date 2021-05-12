@@ -1,0 +1,10 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {ngerman}{}
+\contentsline {section}{\numberline {1}Theorie}{3}{section.1}%
+\contentsline {paragraph}{\nonumberline Theoretische Bestimmung von $\mitchi $}{3}{paragraph*.3}%
+\contentsline {paragraph}{\nonumberline Praktische Bestimmung von $\mitchi $}{4}{paragraph*.5}%
+\contentsline {paragraph}{\nonumberline Selektivverstärker}{4}{paragraph*.8}%
+\contentsline {section}{\numberline {2}Durchführung}{5}{section.2}%
+\contentsline {section}{\numberline {3}Auswertung}{6}{section.3}%
+\contentsline {section}{\numberline {4}Diskussion}{6}{section.4}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
