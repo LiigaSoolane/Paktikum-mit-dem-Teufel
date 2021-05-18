@@ -44,9 +44,16 @@
     entsteht. Dadurch verringert sich auch die Amplitude der Kondensatorspannung.
     im folgenden wird für die Kondensatorspannung der Ansatz $U_C(t)=A(\omega)
     \cos{\omega t + \phi{\omega}}$ verwendet.
-    Die Spannung des in Abbildung ... dargestellten Stromkreises kann nach dem zweiten
+    \begin{figure}[H]
+        \centering
+        \includegraphics{schalt3.png}
+        \caption{Der RC-Schaltkreis mit angelegter Cosinus-Spannung}
+        \label{fig:schalt3}
+    \end{figure}
+    Die Spannung des in Abbildung \ref{fig:schalt3} dargestellten Stromkreises kann nach dem zweiten
     Kirchhoffschen Gesetzt durch 
     \begin{equation}
+        \label{eq:kirsche}
         U(t)=U_R(t)+U_C(t) \Leftrightarrow U_0 \cos{\omega t}=I(t)R + 
         A(\omega)\cos{\omega t + \phi}
     \end{equation}
@@ -61,6 +68,33 @@
     \end{equation*}
     Wird nun ausgenützt, dass $\sin{\phi + \dfrac{\pi}{2}}$, entsteht die Betiehung
     \begin{equation}
+        \label{eq:phi}
         \phi(\omega)=\arctan{-\omega RC}
     \end{equation}
-    zwischen Phase und verwendeter Frequenz.
+    zwischen Phase und verwendeter Frequenz. Nun wird der der Fall $\omega t + \phi = 
+    \dfrac{\pi}{2}$ betrachtet. Es gilt
+    \begin{align*}
+        U_0 \cos{\dfrac{\pi}{2}-\phi}=-A(\omega)\omega RC\\
+        \Leftrightarrow A(\omega)=-\dfrac{\sin{\phi}}{\omega RC}U_0
+    \end{align*}
+    Unter Verwendung von \ref{eq:phi} kann die Beziehung $\sin{\phi}=\dfrac{\omega RC}
+    {\sqrt{1+\omega^2 R^2 C^2}}$ hergeleitet und in die Gleichung eingesetzt werden.
+    Dadurch ergibt sich 
+    \begin{equation}
+        A(\omega)=\dfrac{U_0}{\sqrt{1+\omega^2 R^2 C^2}}
+    \end{equation}
+    Während kleine Frequanzen nur eine geringe Abweichung von der angelegten Spannung
+    aufweisen, verschwindet die Amplitude für sehr große Frequenzen.
+    RC-Glieder stellen also einen Tiefpass im elektrischen Schaltkreis dar.
+
+\subsection{Der RC-Kreis als Integrator}
+    Ein anderer möglicher Effekt des RC-Kreises ist die Integration der Spannung. Wir betrachten 
+    erneut Gleichung \ref{eq:kirsche}.
+    \begin{equation*}
+        U(t)=U_R(t)+U_C(t)=I(t)R+U_C(t)=RC\dfrac{dU_C}{dt}+U_C(t)
+    \end{equation*} 
+    Falls nun $\omega \ll \dfrac{1}{RC}$ ist die Spannung $\vert U_C \vert \ll \vert U_R \vert$
+    Näherungsweise ist dann 
+    \begin{equation}
+        \U(t)=RC\dfrac{dU_C}{dt} \Leftrightarrow U_C(t)=\dfrac{1}{RC}\int_0^t U(t')dt'.
+    \end{equation}
