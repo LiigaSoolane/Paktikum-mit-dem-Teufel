@@ -1,12 +1,66 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-\begin{figure}
-  \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
+\subsection{Aufladevorgang des Kondensators}
+\label{sec:Auswertung1}
+
+Durch die in Tabelle \ref{tab:a} aufgenommenen Spannungs- und Zeitwete des Aufladevorgangs des Kondensators lässt sich 
+der RC Wert bestimmen. Dafür werden die Messwerte in Graphik \ref{fig:a} geplottet und eine Ausgleichskurve bestimmt. 
+Die Ausgleichskurve hat die Form 
+\begin{equation}
+    U(t) = U_0 \left(1- e^{-\frac{t}{RC}}\right)
+\end{equation}
+und ergibt sich aus Gleichung \ref{eq:auf} und $Q = CU$.
+Aus dieser Rechnung ergeben sich die Werte $RC = 0.000931 \pm 0.000032$s und $U_0 = 6,20 \pm 0,07$V.
+\begin{figure}[H]
+    \centering
+    \includegraphics{build/a).pdf}
+    \caption{Aufladekurve des Kondensators.}
+    \label{fig:a}
 \end{figure}
 
+\subsection{Amplitude und Frequenz}
+\label{sec:b}
 
-Siehe \autoref{fig:plot}!
+Bei der zweiten Methode zur Bestimmung von der Zeitkonstanten RC werden die gebessenen Amplituden abhängig von den Frequenzen, aus Tabelle \ref{tab:b} genutzt.
+Diese Wertepaare werden ebenfalls in einem halb logarythmischen Graphen aufgetragen, wobei die Amplituden $A(\omega)$ vorher durch $U_0$ dividiert werden 
+zudem wird wieder eine Ausgleichsrechnung durchgeführt. 
+Der Ansatz der Ausgleichsrechnung ergibt sich aus Gleichung \ref{eq:Aw} zu 
+\begin{equation}
+    \frac{A(\omega)}{U_0} = \frac{1}{\sqrt{1 + \omega^2 (RC)^2}} = \frac{1}{\sqrt{1 + (2 \pi f)^2 (RC)^2}}
+\end{equation}
+Der aus der Rechnung ergebene Graph ist zusammen mit den Wertepaaren in Graphik \ref{fig:b} dargestellt. 
+Zudem ergibt sich aus der Rechnung $RC = 0.007222 \pm 0.002084$s.
+\begin{figure}[H]
+    \centering
+    \includegraphics{build/b).pdf}
+    \caption{$\frac{A(\omega)}{U_0}$ abhängig von der Frequenz $f$.}
+    \label{fig:b}
+\end{figure}
+
+\subsection{Phasenverschiebung}
+\label{sec:c}
+
+Die Phasenverschiebung wird nach Abbildung \ref{fig:sinus} bestimmt. Aus den so bestimmten Werten in Tabelle \ref{tab:b} lassen sich die 
+ Phasenverschiebungen $\phi$ wie folgt berechnen
+\begin{equation}
+  \phi = \frac{a}{b}2 \pi.
+\end{equation}
+
+Die Werte für $\phi$ werden in Diagramm \ref{fig:c} gegen die Frequenf $f$ aufgetragen und wie in der Aufgabe zuvor eine Ausgleichskurve 
+hinzugefügt. Die Ausgleichskurve ergibt sich hierbei aus Gleichung \ref{eq:phi} . Aus dieser Ausgleichskurve ergibt sich wieder ein Wert RC, $RC = 0.000680 \pm 0.000052$s.
+
+
+Zudem werden die Werte mit hilfe der gemessenen Amplituden und Frequenzen, in einem Polarkoordinatensystem (Graphik \ref{fig:d}) dargestellt.
+\begin{figure}[H]
+    \centering
+    \includegraphics{build/c).pdf}
+    \caption{Phasenverschiebung zwischen Generator und Kondensatorspannung abhängig von der Frequenz.}
+    \label{fig:c}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics{build/d).pdf}
+    \caption{Polarplot zur veranschaulichung der Phasenverschiebung zwischen der Generator und Kondensatorspannung.}
+    \label{fig:d}
+\end{figure}
