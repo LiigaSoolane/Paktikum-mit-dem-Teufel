@@ -1,0 +1,100 @@
+\section{Theorie}
+\label{sec:Theorie}
+Das Ziel dieses Versuchs ist es, einen zusammenhang zwischen Beugungsmuster und dem beugenden Objekt, 
+der sogenannten Aperturfunktion, herzustellen.
+
+\paragraph{Parallelspalt}
+Bei diesem Versuch wird die Frauenhofersche Beugung verwendet, da diese Mathematisch einfacher ist als die
+Fresnelsche Beugung. Das bedeutet, dass sowohl die Lichtquelle, als auch Aufpunkt im unendlichen liegen.
+Die in Z-Richtung einfallende Feldstärke pro Längeneinheit der Wellenfront der Welle wird nun wie folgt beschrieben
+\begin{equation}
+    \label{eq:1}
+    A(z,t) = A_0 exp \left( i(\omega t - \frac{2 \pi z}{\lambda})\right).
+\end{equation}
+Der verwendete Spalt hat die Breite b und eine Länge die groß gegen b ist. Die begrenzung des Lichtbündels 
+ligt also nur in der X-Koordinate. Der Beobachtungsort wird in einer Entfernung zum Spalt gewählt, die sehr groß 
+gegen die Spaltbreite ist.
+Durch Kombination des Huygensschen Prinzips der Elementarwellen und dem Interferenzprinzips, entsteht Abbildung \ref{fig:a} 
+so wie die Annahme, der zu beobachtende Schwingungszustand an einem einzelnen Punkt, ist gegeben durch die Überlagerung 
+aller Elementarwellen, die zum selben Zeitpunkt im entsprechenden Punkt ankommen.
+\begin{figure}[H]
+    \centering
+    \includegraphics{Spalt.png}
+    \caption{Skizze der Frauenhoferschen Beugung.}
+    \label{fig:a}
+\end{figure}
+Diese einzelnen Elementarwellen sind in Abbildung \ref{fig:a} als Strahlen dargestellt. Weiter ist zu erkennen, dass eben jene 
+Elementarwellen die zum selben Zeitpunkt den Beobatungspunkt erreichen und um die Entfernung x im Spalt auseinander liegen, 
+sich durch den Wegunterschied s unterscheiden. Da nun von infinitesimale kleinen abständen dx ausgegangen wird, ergibt sich 
+für die Amplitund B eine Integration über die gesammte Spaltbreite
+\begin{equation}
+    \label{eq:2}
+    B(z,t,\phi) = A_0 exp\left( i \left( \omega t - \frac{2 \pi z }{\lambda}\right)\right) \int_{0}^{b} exp\left(\frac{2 \pi i x sin \phi}{\lambda}\right) \,dx ,
+\end{equation}
+woraus sich wiederum nach der Integration und Umformen Gleichung \eqref{eq:3} ergibt.
+\begin{equation}
+    \label{eq:3}
+    B(z,t,\phi) = A_0 exp\left(i \left(\omega t - \frac{2 \pi z}{\lambda}\right)\right) \cdot exp\left(\frac{\pi i b \, sin \phi}{\lambda}\right) \cdot \frac{\lambda}{\pi b \, sin \phi} sin\left(\frac{\pi b \, sin \phi}{\lambda}\right).
+\end{equation}
+Die beiden Exponentialfunktionen stellen Phasenfunktionen dar, sind daher für die experimentelle Überprüfung irrelevant.
+Dafür grgibt sich dann 
+\begin{equation}
+    \label{eq:4}
+    B(\phi) = A_0 b \frac{sin \nu}{\nu},
+\end{equation}
+mit $\nu := \frac{\pi b \, sin \phi}{\lambda}$.
+Die Funktion ist in Abbildung \ref{fig:b} dargestellt und hat die Nullstellen bei 
+\begin{equation}
+    \label{eq:5}
+    sin \phi_n = \pm n\frac{\lambda}{b}.
+\end{equation}
+\begin{figure}[H]
+    \centering
+    \includegraphics{Funktion.png}
+    \caption{Graphische Darstellung der Amplitudenfunktion $B(\phi)$.}
+    \label{fig:b}
+\end{figure}
+Die Lichhtfrequenz der Lichtwelle $\omega = 10^14$ bis $10^15$ Hz, ist zu hoch für eine unmittelbare Messung, 
+weshalb der Mittelwert der Intensität $I(\phi)$ bestimmt wird. Für die Intensität gilt 
+\begin{equation}
+    \label{eq:6}
+    I(\phi) \propto B(\phi)^2.
+\end{equation}
+
+\paragraph{Beugung am Doppelspalt}
+Die Intensitätsverteilung $I(\phi)$ bei einer Beugung am Doppelspalt kann als Überlagerung zweier Beugungen an je 
+einem Spalt der Breite b mit abstand S, wie in Abb \ref{fig:c} dargestellt, betrachtet werden.
+Trifft paralleles Licht der Wellenlänge $\lambda$ af den Doppelspalt, ist die Intensitätsverteilung durch 
+\begin{equation}
+    \label{eq:7}
+    I(\phi) \propto B(\phi)^2 = 4 cos^2\left(\frac{\pi s \, sin \phi}{\lambda}\right) \cdot \left(\frac{\lambda}{\pi b \, sin \phi}\right)^2 \cdot sin^2 \left(\frac{\pi b \, sin \phi}{\lambda}\right)
+\end{equation}
+gegeben.
+\begin{figure}[H]
+    \centering
+    \includegraphics{Doppelspalt.png}
+    \caption{Beugung am Doppelspalt.}
+    \label{fig:c}
+\end{figure}
+
+\paragraph{Frauenhofersche Beugung und Fourier-Transformation}
+Die Fouriertransformierte einer Funktion f(x) ist gegeben durch
+\begin{equation}
+    \label{eq:8}
+    g(\xi) :=  \int_{- \infty}^{+ \infty} f(x) \cdot e^{ix \xi} \,dx.
+\end{equation}
+Es zeigt sich, dass $B(\phi)$ als Forier-Transformierte der Aperturfunktion dargestellt werden kann.
+In diesem Beispiel ist die Aperturfunktion $f(x) = A_0$ für 0 $\leq$ x $\leq $b und sonst null.
+Daraus ergibt sich durch eben jene Fourier-Transformation
+\begin{equation}
+    \label{eq:9}
+    g(\xi) = \frac{2 A_0}{\xi} exp \left(\frac{i \xi b}{2}\right) sin \frac{\xi b}{2},
+\end{equation}
+mit
+\begin{equation}
+    \label{eq:10}
+    \xi := \frac{2 \pi \, sin \phi}{\lambda}.
+\end{equation}
+Da die Fourier-Transformierte Umkehrbar ist, kann ebenso von der Amplitudenfunktion der Gestalt f(x) auf das Brechende 
+Objekt geschlossen werden.
+
