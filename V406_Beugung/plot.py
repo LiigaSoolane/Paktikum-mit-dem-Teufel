@@ -53,14 +53,14 @@ phi1=phi[1:50]
 params, covariance =curve_fit(einzel,phi1,I1,p0=[0.00015,70])
 errors = np.sqrt(np.diag(covariance))
 print('breite des Spaltes:', params[0],'+-',errors[0])
-print('Abweichung', a(params[0],0.000075))
+print('Abweichung', a(params[0],0.00015))
 print('A_0:', params[1],'+-',errors[1])
 #def einzel(phi,b,lamda,A_0)
 
 x=np.linspace(-0.025,0.025,10000)
 
 plt.figure(1)
-plt.plot(phi,I,'rx',label=r'$Messwerte$')
+plt.plot(phi,I,'cx',label=r'$Messwerte$')
 plt.plot(x,einzel(x,*params),'b-',label=r'$Ausgleichsfunktion$')
 plt.legend(loc='best')
 plt.xlabel(r'$\mathrm{Abstand \ von \ 0.-Hauptmaxima \ d \ in \ m}$')
@@ -73,33 +73,48 @@ plt.savefig('plot.pdf')
 #Doppelspalt
 
 #reading data
-d, I= np.genfromtxt('ddata.txt',unpack=True)
+d, I_2= np.genfromtxt('ddata.txt',unpack=True)
 d = (d*10**(-3))-0.026
-I = (I*10**(-3))-I_d
+I_2 = (I_2*10**(-3))-I_d
 phi=d/L
 
 #走吧
 table ={'1': d, '3': I}
 print(tabulate (table, tablefmt="latex"))
-I1=I[1:50]
-phi1=phi[1:50]
-print(phi1)
-print(I1)
+I2=I_2[1:50]
+phi2=phi[1:50]
 
-params, covariance =curve_fit(doppel,phi1,I1,p0=[0.00015,0.05, 1])
-errors = np.sqrt(np.diag(covariance))
-print('breite des Spaltes:', params[0],'+-',errors[0])
-print('Abweichung', a(params[0],0.000075))
-print('A_0:', params[1],'+-',errors[1])
-print('s:', params[2], '+-', errors[2])
-#def einzel(phi,b,lamda,A_0)
+params2, covariance2 =curve_fit(doppel,phi2,I2,p0=[0.00015,10, 0.00065])
+errors2 = np.sqrt(np.diag(covariance2))
+print('breite des Spaltes:', params2[0],'+-',errors2[0])
+print('Abweichung', a(params2[0],0.00015))
+print('A_0:', params2[1],'+-',errors2[1])
+print(params2[2], '+-', errors2[2])
 
-x=np.linspace(-0.025,0.025,100)
+
+x=np.linspace(-0.025,0.025,1000)
 
 plt.figure(2)
-plt.plot(phi,I,'rx',label=r'$Messwerte$')
-plt.plot(x,doppel(x,*params),'b-',label=r'$Ausgleichsfunktion$')
+plt.plot(phi,I_2,'bx',label=r'$Messwerte$')
+plt.plot(x,doppel(x,*params2),'g-',label=r'$Ausgleichsfunktion$')
 plt.legend(loc='best')
 plt.xlabel(r'$\mathrm{Abstand \ von \ 0.-Hauptmaxima \ d \ in \ m}$')
 plt.ylabel(r'$\mathrm{Intensität \ I/A}$')
 plt.savefig('plot1.pdf')
+
+########################################################################################
+
+#overlay
+
+plt.figure(3)
+plt.plot(phi,I_2,'bx',label=r'Messwerte des Doppelspaltes')
+plt.plot(x,doppel(x, *params2),'g-',label=r'Ausgleichsfunktion des Doppelspaltes')
+plt.plot(phi,I,'cx',label=r'Messwerte des Einzelspaltes')
+plt.plot(x,einzel(x,*params),'b-',label=r'Ausgleichsfunktion des Einzelspaltes')
+plt.legend(loc='best')
+plt.xlabel(r'$\mathrm{Abstand \ von \ 0.-Hauptmaxima \ d \ in \ m}$')
+plt.ylabel(r'$\mathrm{Intensität \ I/A}$')
+plt.savefig('plot2.pdf')
+
+
+###############################################################################
