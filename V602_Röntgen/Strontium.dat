@@ -1,0 +1,23 @@
+# Absorptionsspektrum von Strontium
+# Beschleunigungsspannung U=35kV, Strom I=1mA, LiF-Kristall
+# Integrationszeit pro Winkel t=20s, 
+#
+#Kristallwinkel	
+#theta/°	N [Imp/s]
+#
+10.5	43.0
+10.6	41.0
+10.7	40.0
+10.8	44.0
+10.9	50.0
+11.0	89.0
+11.1	120.0
+11.2	152.0
+11.3	181.0
+11.4	193.0
+11.5	181.0
+11.6	196.0
+11.7	181.0
+11.8	173.0
+11.9	166.0
+12.0	159.0
