@@ -1,11 +1,20 @@
 all: build/main.pdf
 
 # hier Python-Skripte:
-build/plot.pdf: plot.py matplotlibrc header-matplotlib.tex | build
-	TEXINPUTS=$$(pwd): python plot.py
+build/emission.pdf: emission.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS=$$(pwd): python emission.py
+
+build/Zink.pdf: absorption.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS=$$(pwd): python absorption.py
+
+build/bra.pdf: bragg.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS=$$(pwd): python bragg.py
+
+build/plot.pdf: vorb_v602.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS=$$(pwd): python vorb_v602.py
 
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
-build/main.pdf: build/plot.pdf
+build/main.pdf: build/emission.pdf build/bra.pdf build/Zink.pdf build/plot.pdf
 
 build/main.pdf: FORCE | build
 	  TEXINPUTS=build: \

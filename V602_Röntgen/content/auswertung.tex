@@ -1,12 +1,403 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-\begin{figure}
-  \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
-\end{figure}
+\subsection{Untersuchung der Bragg-Bedingung}
+  Zunächst gilt es, die Bragg-Bedingung zu untersuchen, indem der Kristall auf einen festen Winkel von
+  $\theta = 14°$ eingestellt wird.\\
+  Die gemessenen Daten sind in Tabelle \ref{tab:bratab} zu finden und in Abbildung \ref{fig:bra} grafisch dargestellt.
+  
+  \begin{table}
+    \centering
+    \caption{Messdaten bei festem Kristallwinkel.}
+    \label{tab:bratab}
+    \begin{tabular}{c c}
+      \toprule
+      $\theta [°]$ & $N$ \\
+      \midrule
+      26.0	& 56.0\\
+      26.1	& 58.0\\
+      26.2	& 54.0\\
+      26.3	& 62.0\\
+      26.4	& 58.0\\
+      26.5	& 68.0\\
+      26.6	& 72.0\\
+      26.7	& 83.0\\
+      26.8	& 89.0\\
+      26.9	& 95.0 \\      
+      27.0	& 105.0 \\
+      27.1	& 119.0 \\
+      27.2	& 125.0 \\
+      27.3	& 141.0 \\
+      27.4	& 154.0 \\
+      27.5	& 157.0 \\
+      27.6	& 166.0 \\
+      27.7	& 180.0 \\
+      27.8	& 188.0 \\
+      27.9	& 211.0 \\
+      28.0	& 212.0 \\
+      28.1	& 215.0 \\
+      28.2	& 218.0 \\
+      28.3	& 215.0 \\
+      28.4	& 208.0 \\
+      28.5	& 189.0 \\
+      28.6	& 189.0 \\
+      28.7	& 176.0 \\
+      28.8	& 164.0 \\
+      28.9	& 149.0 \\
+      29.0	& 138.0 \\
+      29.1	& 125.0 \\
+      29.2	& 111.0 \\
+      29.3	& 107.0 \\
+      29.4	& 95.0\\
+      29.5	& 77.0\\
+      29.6	& 73.0\\
+      29.7	& 58.0\\
+      29.8	& 56.0\\
+      29.9	& 53.0\\
+      30.0	& 53.0\\
+      \bottomrule
+    \end{tabular}
+  \end{table}
 
+  \begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{bra.pdf}
+    \caption{Messdaten bei festem Kristallwinkel.}
+    \label{fig:bra}
+  \end{figure}
 
-Siehe \autoref{fig:plot}!
+  \FloatBarrier
+  \noindent Aus diesen Daten wird das Maximum berechnet, es liegt demnach bei einem Winkel von $\theta_{\text{max}} = 28.2°$. %%%%%%%%% make maximum
+
+\subsection{Emissionsspektrum}
+  Zudem wird das Emissionsspektrum der Cu-Röntgenröhre aufgenommen. Auf das tabellarische Aufführen der Messwerte wird aufgrund 
+  der großen Anzahl an Werten verzichtet. Das Spektrum ist in Abbildung \ref{fig:emission} zu finden. Es sind die K-Linien eingetragen, wobei die 
+  $K_{\alpha}$ Linie bei einem Winkel von $\theta = 22.5 °$ auftritt und einer Energie von $E_{K_{\alpha}} = 8044 \pm 34 \text{eV}$ entspricht,
+  die $K_{\beta}$ Linie tritt bei $\theta = 20.2 °$ auf und entspricht einer Energie von $E_{K_{\alpha}} = 89100 \pm 40 \text{eV}$. Die Energien werden dabei mithilfe
+  von Gleichung \eqref{eqn:lambda}
+  und $E = h \frac{c}{\lambda}$ berechnet.
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{emission.pdf}
+    \caption{Emissionsspektrum mit K-Linien und Bremsberg.}
+    \label{fig:emission}
+  \end{figure}
+
+  \subsubsection{Halbwertsbreiten}
+    Aus dem Spektrum werden auch die Halbwertsbreiten der Linien ermittelt, dazu wird die Scipy.signals Bibliothek von Python 
+    verwendet. \\
+    Es folgt eine Breite für die $K_{\alpha}$ Linie von $4.895$ und für $K_{\beta}$ eine Breite von $4.751$. Daraus lässt sich mithilfe von
+    \begin{equation*}
+      A = \frac{E_K}{\increment E_{\text{FWHM}}}
+    \end{equation*}
+    das Auflösungsvermögen $A$ bestimmen. \\
+    Hier ergeben sich
+    \begin{align*}
+      A_{K_{\alpha}} = 38.23 \pm 0.161 \\
+      A_{K_{\beta}} = 52.839 \pm 0.251
+    \end{align*}
+
+  \subsubsection{Abschirmkonstanten}
+    Um die Abschirmkonstanten zu berechnen, werden Gleichungen bis
+    nach $\sigma_1$, $\sigma_2$ und $\sigma_3$ umgestellt.\\
+    \begin{align*}
+      \sigma_1 = - \sqrt{\frac{E_{\text{abs}}}{R_{\infty}}} + Z\\
+      \sigma_2 = - \sqrt{\frac{- E_{K_{\beta}} + R_{\infty} (Z - \sigma_1) \frac{1}{n^2}}{R_{\infty}}} \cdot m + Z\\
+      \sigma_2 = - \sqrt{\frac{- E_{K_{\beta}} + R_{\infty} (Z - \sigma_1) \frac{1}{n^2}}{R_{\infty}}} \cdot l + Z
+    \end{align*}
+    Mit $R_{\infty} = 13.6 \text{eV}$ der Rydberg-Energie, der Kernladung $Z$, und $n = 1$, $m = 2$, $l = 3$. 
+    Die Absorptionsenergie von Kupfer ist laut \cite{nist} $E_{\text{abs}} = 8987.96 \pm 15 \text{eV}$.
+    Für Kupfer ergeben sich daher Abschrimkonstanten von
+    \begin{align*}
+      \sigma_1 = 3.293 \pm 0.161\\
+      \sigma_2 = 18.859 \pm 0.004\\
+      \sigma_3 = 13.789 \pm 0.006
+    \end{align*}
+
+\subsection{Absorptionsspektrum}
+  Zuletzt werden für Zink ($Z = 30$), Gallium ($Z = 31$), Brom ($Z = 35$), Rubidium ($Z = 37$), Strontium ($Z = 38$) und Zirkonium ($Z = 40$) die Absorptionsspektren betrachtet und auf ihre
+  Eigenschaften untersucht. In Tabellen \ref{tab:zinktab} bis \ref{tab:zirkoniumtab} sind die Messwerte aufgeführt, in 
+  Abbildungen \ref{fig:zink} bis \ref{fig:zirkonium} sind sie grafisch dargestellt.\\
+  Aus dem Intensitätsmaximum und -minimum werden nach \eqref{eqn:intens} die jeweiligen K-Kanten berechnet.
+  \begin{align}
+    I_K = I_K^{\text{min}} + \frac{I_K^{\text{max}} - I_K^{\text{min}}}{2}\\
+    \label{eqn:intens}
+  \end{align}
+  Mithilfe von Gleichung %%%%
+  werden die korrespondierenden Absorptionsenergien berechnet. \\
+  Die Abschirmkonstanten $\sigma$ sind durch \eqref{eqn:sigma}
+  zu bestimmen.\\
+  In Tabelle \ref{tab:results} sind die Ergebnisse der Rechnungen für alle untersuchten Elemente zu finden.
+
+  \begin{table}
+    \centering
+    \caption{Werte für die verschiedenen Metalle.}
+    \label{tab:results}
+    \begin{tabular}{c c c c c}
+      \toprule
+      Element & $I_K$ & $\theta_K$ [°] & $E_K$ [eV]& $\sigma_K$ \\
+      \midrule
+      Zink & 78 & 19.5 & 9221.801 & 4.168 \\
+      Gallium & 94 & 19 & 9455.165 & 5.898 \\
+      Brom & 18 & 14.3 & 12462.805 & 5.059 \\
+      Rubidium & 37 & 12.5 & 14222.445 & 5.049 \\
+      Strontium & 118 & 12 & 14805.808 & 5.428 \\
+      Zirkonium & 206.5 & 11 & 16132.891 & 6.056 \\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+  \FloatBarrier
+
+  \begin{figure}
+    \centering
+    \begin{subfigure}{0.30\textwidth}
+      \centering
+      \includegraphics[scale = 0.5]{build/plot_zink.pdf}
+      \caption{Absorption bei Zink.}
+      \label{fig:zink}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.30\textwidth}
+      \centering
+      \includegraphics[scale = 0.5]{build/plot_gallium.pdf}
+      \caption{Absorption bei Gallium.}
+      \label{fig:gallium}
+    \end{subfigure}
+  \end{figure}
+
+  \begin{figure}
+    \centering
+    \begin{subfigure}{0.30\textwidth}
+      \centering
+      \includegraphics[scale = 0.5]{build/plot_brom.pdf}
+      \caption{Absorption bei Brom.}
+      \label{fig:brom}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.30\textwidth}
+      \centering
+      \includegraphics[scale = 0.5]{build/plot_rubidium.pdf}
+      \caption{Absorption bei Rubidium.}
+      \label{fig:rubidium}
+    \end{subfigure}
+  \end{figure}
+
+  \begin{figure}
+    \centering
+    \begin{subfigure}{0.30\textwidth}
+      \includegraphics[scale = 0.5]{build/plot_strontium.pdf}
+      \caption{Absorption bei Strontium.}
+      \label{fig:strontium}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.30\textwidth}
+      \includegraphics[scale = 0.5]{build/plot_zirkonium.pdf}
+      \caption{Absorption bei Zirkonium.}
+      \label{fig:zirkonium}
+    \end{subfigure}
+  \end{figure}
+
+  \FloatBarrier
+
+  \begin{table}
+    \centering
+    \caption{Messwerte mit Zinkabsorber.}
+    \label{tab:zinktab}
+    \begin{tabular}{c c}
+      \toprule
+      $\theta [°]$ & $N [\text{Imp}/\si{\s}]$ \\
+      \midrule
+      18.0	& 58.0\\
+      18.1	& 54.0\\
+      18.2	& 55.0\\
+      18.3	& 54.0\\
+      18.4	& 54.0\\
+      18.5	& 55.0\\
+      18.6	& 65.0\\
+      18.7	& 84.0\\
+      18.8	& 91.0\\
+      18.9	& 100.0\\
+      19.0	& 102.0\\
+      19.1	& 100.0\\
+      19.2	& 98.0\\
+      19.3	& 100.0\\
+      19.4	& 95.0\\
+      19.5	& 98.0\\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+
+  \begin{table}
+    \centering
+    \caption{Messwerte mit Galliumabsorber.}
+    \label{tab:galliumtab}
+    \begin{tabular}{c c}
+      \toprule
+      $\theta [°]$ & $N [\text{Imp}/\si{\s}]$ \\
+      \midrule
+      17.0	& 66.0\\
+      17.1	& 66.0\\
+      17.2	& 78.0\\
+      17.3	& 88.0\\
+      17.4	& 102.0\\
+      17.5	& 116.0\\
+      17.6	& 121.0\\
+      17.7	& 121.0\\
+      17.8	& 122.0\\
+      17.9	& 122.0\\
+      18.0	& 119.0\\
+      18.1	& 114.0\\
+      18.2	& 110.0\\
+      18.3	& 108.0\\
+      18.4	& 104.0\\
+      18.5	& 110.0\\
+      18.6	& 110.0\\
+      18.7	& 109.0\\
+      18.8	& 99.0\\
+      18.9	& 100.0\\
+      19.0	& 98.0\\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+
+  \begin{table}
+    \centering
+    \caption{Messwerte mit Bromabsorber.}
+    \label{tab:bromtab}
+    \begin{tabular}{c c}
+      \toprule
+      $\theta [°]$ & $N [\text{Imp}/\si{\s}]$ \\
+      \midrule
+      12.8	& 10.0 \\
+      12.9	& 12.0 \\
+      13.0	& 9.0 \\
+      13.1	& 13.0 \\
+      13.2	& 18.0 \\
+      13.3	& 21.0 \\
+      13.4	& 25.0 \\
+      13.5	& 27.0 \\
+      13.6	& 27.0 \\
+      13.7	& 22.0 \\
+      13.8	& 25.0 \\
+      13.9	& 21.0 \\
+      14.0	& 23.0 \\
+      14.1	& 20.0 \\
+      14.2	& 21.0 \\
+      14.3	& 19.0 \\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+
+  \begin{table}
+    \centering
+    \caption{Messwerte mit Rubidiumabsorber.}
+    \label{tab:rubidiumtab}
+    \begin{tabular}{c c}
+      \toprule
+      $\theta [°]$ & $N [\text{Imp}/\si{\s}]$ \\
+      \midrule
+      11.2	& 11.0 \\
+      11.3	& 10.0 \\
+      11.4	& 10.0 \\
+      11.5	& 12.0 \\
+      11.6	& 17.0 \\
+      11.7	& 32.0 \\
+      11.8	& 39.0 \\
+      11.9	& 47.0 \\
+      12.0	& 57.0 \\
+      12.1	& 64.0 \\
+      12.2	& 61.0 \\
+      12.3	& 57.0 \\
+      12.4	& 54.0 \\
+      12.5	& 54.0 \\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+
+  \begin{table}
+    \centering
+    \caption{Messwerte mit Strontiumabsorber.}
+    \label{tab:strontiumtab}
+    \begin{tabular}{c c}
+      \toprule
+      $\theta [°]$ & $N [\text{Imp}/\si{\s}]$ \\
+      \midrule
+      10.5	& 43.0\\
+      10.6	& 41.0\\
+      10.7	& 40.0\\
+      10.8	& 44.0\\
+      10.9	& 50.0\\
+      11.0	& 89.0\\
+      11.1	& 120.0\\
+      11.2	& 152.0\\
+      11.3	& 181.0\\
+      11.4	& 193.0\\
+      11.5	& 181.0\\
+      11.6	& 196.0\\
+      11.7	& 181.0\\
+      11.8	& 173.0\\
+      11.9	& 166.0\\
+      12.0	& 159.0\\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+
+  \begin{table}
+    \centering
+    \caption{Messwerte mit Zirkoniumabsorber.}
+    \label{tab:zirkoniumtab}
+    \begin{tabular}{c c}
+      \toprule
+      $\theta [°]$ & $N [\text{Imp}/\si{\s}]$ \\
+      \midrule
+      9.5	& 112.0\\
+      9.6	& 120.0\\
+      9.7	& 126.0\\
+      9.8	& 147.0\\
+      9.9	& 180.0\\
+      10.0	& 225.0\\
+      10.1	& 266.0\\
+      10.2	& 282.0\\
+      10.3	& 290.0\\
+      10.4	& 301.0\\
+      10.5	& 295.0\\
+      10.6	& 283.0\\
+      10.7	& 296.0\\
+      10.8	& 283.0\\
+      10.9	& 286.0\\
+      11.0	& 286.0\\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+  \FloatBarrier
+
+  \subsubsection{Rydberg-Energie}
+    Nach dem Moseley'schen Gesetz ist die Absorptionsenergie proportional zu $Z^2$. Mit den zuvor 
+    berechneten Werten wird eine lineare Regression durchgeführt, um die Rydbergfrequenz zu berechnen.
+    Die Fit-Funktion ist also 
+    \begin{align*}
+      E_K = R h (Z - \sigma)^2\\
+      \implies Z = \sqrt{\frac{E_K}{R h}} + \sigma\\
+    \end{align*}
+    was einer linearen Funktion in $\sqrt{E_K}$ mit Steigung $a = \frac{1}{\sqrt{R h}}$ entspricht.
+    Die Regression ergibt
+    \begin{align*}
+      Z = (0.305 \pm 0.011) \cdot \sqrt{E_K} + (3.1 \pm 12.6)
+    \end{align*}
+    woraus eine Rydbergfrequenz und -energie von
+    \begin{align*}
+      R = \frac{1}{a^2 h} = (2.9 \pm 0.5) \cdot 10^{15} \si{\Hz}\\
+      R_{\infty} = h \cdot R = 12.1 \pm 1.9 \text{eV}
+    \end{align*}
+    folgt.\\
+    Berechnete Werte sowie Fit sind in \ref{fig:moseley} dargestellt.
+
+    \begin{figure}
+      \centering
+      \includegraphics[width=\textwidth]{moseley.pdf}
+      \caption{Zusammenhang von $Z$ und $\sqrt{E}$.}
+      \label{fig:moseley}
+    \end{figure}
+
+    \FloatBarrier

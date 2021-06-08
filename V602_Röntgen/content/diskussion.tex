@@ -1,2 +1,92 @@
 \section{Diskussion}
 \label{sec:Diskussion}
+
+\subsection{Bragg-Bedingung}
+    Der gemessene Glanzwinkel liegt bei $\theta_{\text{max}} = 28.2 °$, die Abweichung vom Theoriewert von $\theta_{\text{theo}} = 28 °$ beträgt $0.713 \%$.
+    Wäre die Abweichung größer als drei Grad, würde das für systematische Fehler in der Messapparatur sprechen und alle folgenden Messungen würden unbrauchbar.
+
+\subsection{Emissionssprektrum}
+    \subsubsection{K-Linien}
+        Die in Kapitel \ref{sec:Auswertung} berechneten Werte lauten
+        \begin{align*}
+            E_{K_{\alpha}} = 8044 \pm 34 \text{eV}\\
+            E_{K_{\beta}} = 8910 \pm 40 \text{eV}
+        \end{align*}
+        Die Theoriewerte betragen (Quelle \cite{nist})
+        \begin{align*}
+            E_{K_{\alpha}\text{, theo}} = 8048.11 \pm 45 \text{eV}\\
+            E_{K_{\beta}\text{, theo}} = 8906.9 \pm 12 \text{eV}
+        \end{align*}
+        woraus eine prozentuale Abweichung von $0.1 \pm 0.7 \%$ für die $K_{\alpha}$ Linie und $0.1 \pm 0.5 \%$ für die $K_{\beta}$ Linie folgt. Beide Abweichungen sind also 
+        ausgesprochen gering und deuten auf genaue Messungen hin.\\
+        Dem Messverfahren unterliegt eine gewisse statistische Messunsicherheit, die bei jeder Messung eine Rolle spielt. Da es sich um zur Verfügung gestellte Messwerte handelt,
+        kann die Situation während der Datenaufnahme nicht in Betracht gezogen werden.
+
+    \subsubsection{Auflösungsvermögen}
+        Aus der Halbwertsbereiten folgen Auflösungsvermögen von 
+        \begin{align*}
+            A_{K_{\alpha}} = 38.23 \pm 0.161 \\
+            A_{K_{\beta}} = 52.839 \pm 0.251
+        \end{align*}
+        Es ist also nicht sinnvoll, zu versuchen, den statistischen Fehler zu bestimmen, da dieser höchstwahrscheinlich im Bereich des maximalen Auflösungsvermögens liegt.
+        
+
+\subsection{Absorptionsspektren}
+    \subsubsection{Spektren der verschiedenen Elemente}
+    In Tabelle \ref{tab:energies} sind die berechneten Absorptionsenergien sowie die Theoriewerte und prozentualen Abweichungen aufgeführt. 
+    \begin{table}
+        \centering
+        \caption{Mess- und Theoriewerte zur Absorptionsenergie.}
+        \label{tab:energies}
+        \begin{tabular}{c c c c c}
+            \toprule 
+            Element & $Z$ & berechneter Wert [eV] & Theoriewert [eV] & Abweichung [\%] \\
+            \midrule
+            Zink & 30 & 9221.801 & 9668.55 & 4.621 \\
+            Gallium & 31 & 9455.165 & 10377.76 & 8.891 \\
+            Brom & 35 & 124662.805 & 13483.86 & 7.572 \\
+            Rubidium & 37 & 14222.445 & 15207.74 & 6.478 \\
+            Strontium & 38 & 14805.808 & 16115.26 & 8.125 \\
+            Zirkonium & 40 & 16132.891 & 18008.15 & 10.413 \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+    \FloatBarrier
+
+    \noindent Bis auf für die Rechnung von Zirkonium liegen alle Abweichungen unter $10\%$, wenn auch bei manchen nur knapp. Wie oben bereits erwähnt ist der statistische 
+    Fehler eine mögliche Ursache, besonders da nur wenige Werte aufgenommen wurden. Bei einer größeren Anzahl an Messwerten würde dieser Fehler deutlich kleiner werden.\\
+    In Tabelle \ref{tab:abschirm} sind die Theorie- und Messwerte der Abschirmkonstanten für alle Elemente aufgeführt. Die Theoriewerte wurden dabei aus den Energien 
+    in Tabelle \ref{tab:energies} berechnet.
+
+    \begin{table}
+        \centering
+        \caption{Mess- und Theoriewerte zu den Abschirmkonstanten.}
+        \label{tab:abschirm}
+        \begin{tabular}{c c c c c}
+            \toprule 
+            Element & $Z$ & berechneter Wert & Theoriewert & Abweichung [\%] \\
+            \midrule
+            Zink & 30 & 4.168 & 3.54 & 17.746 \\
+            Gallium & 31 & 4.866 & 3.6 & 35.203 \\
+            Brom & 35 & 5.059 & 3.831 & 32.066 \\
+            Rubidium & 37 & 5.049 & 3.935 & 28.315 \\
+            Strontium & 38 & 5.428 & 3.983 & 36.306 \\
+            Zirkonium & 40 & 6.056 & 4.083 & 48.343 \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+    \FloatBarrier
+
+    \noindent Hier lassen sich sehr hohe Abweichungen von den Theoriewerten beobachten, was insbesondere an der Fehlerverstärkung bei der weiteren Berechnung liegen kann. 
+        
+    \subsubsection{Rydbergenergie}
+        Für die Rydbergenergie und -frequenz folgen aus den Messwerten
+        \begin{align*}
+            R = (2.6 \pm 0.19) \cdot 10^{15} \si{\Hz}\\
+            R_{\infty} = 12.1 \pm 1.9
+        \end{align*}
+        was einer prozentualen Abweichung vom Theoriewert $R_{\infty \text{, theo}} = 13.6 \text{eV}$ von $11 \pm 14 \%$ entspricht. Innerhalb der Messunsicherheit liegt also
+        auch eine Abweichung von 0 Prozent, aber auch eine sehr große Abweichung. \\
+        Die Ungenauigkeiten aus den vorherigen Messungen kommen zusammen und verstärken sich, sodass hier eine große Unsicherheit auftritt, die auch in großen Unterschieden zu
+        Theoriewerten zum Ausdruck kommen kann.\\
+        Die Messunsicherheiten des Verfahrens wurden bereits diskutiert, hier kommt noch die Ungenauigkeit aus der linearen Regression hinzu.
