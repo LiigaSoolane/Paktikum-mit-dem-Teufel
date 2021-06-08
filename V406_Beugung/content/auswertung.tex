@@ -10,7 +10,7 @@
   \label{tab:mag}
   \begin{tabular}{c c}
    \toprule
-    Winkel $\phi$ & Intensität\\
+    Winkel $\phi$ & Intensität [A]\\
    \midrule
    -0.026     & -2.27e-09    \\
  -0.025       & -2.27e-09    \\
@@ -66,22 +66,22 @@
    \bottomrule
   \end{tabular}
  \end{table} 
-  Bei diesen wurde bereits der Dunkelstrom abgezogen, weshalb manche Werte negativ wurden.
-  Die Daten wurden geplottet und durch die Funktion 
+  Bei diesen wird der Dunkelstrom abgezogen, weshalb manche Werte ins Negative geraten.
+  Die Daten werden durch die Funktion 
   \begin{equation*}
-    I=A_0^2\cdot b^2\cdot (\dfrac{lambda}{\pi \ b \ \sin{\phi}})^2 \cdot \sin{\pi \ b \ (\sin{\dfrac{\phi}{\lambda}}})^2
+    I=A_0^2\cdot b^2\cdot (\dfrac{\lambda}{\pi \ b \ \sin{\psi}})^2 \cdot \sin{\pi \ b \ (\sin{\dfrac{\phi}{\lambda}}})^2
   \end{equation*}
   angenähert. Diese ist in Abbildung \ref{fig:plot} dargestellt.
   \begin{figure}
     \centering
     \includegraphics{plot.pdf}
-    \caption{Messwerte des Doppelspaltes}
+    \caption{Messwerte des Einfachspaltes}
     \label{fig:doppel}
   \end{figure}
   Die für die Koeffizienten ermittelten Werte lauten:
   \begin{align*}
-    A_0 = 69.8477 \pm 1.009\\
-    b = (157.4 \pm 2.63) \cdot 10^{-6}
+    A_0 = 69.8477 \pm 1.009 \si{\ampere}\\
+    b = (157.4 \pm 2.63) \cdot 10^{-6} \si{\metre}
   \end{align*}
   
 
@@ -158,20 +158,20 @@
   \begin{figure}
     \centering
     \includegraphics{plot1.pdf}
-    \caption{Plot.}
-    \label{fig:plot}
+    \caption{Messdaten des Doppelspaltes}
+    \label{fig:p}
   \end{figure}
   Die aus der Ausgleichsrechnung gewonnenen Koeffizienten lauten:
   \begin{align*}
-    A_0 = 0.0543 \pm 0.002
-    b = (2.38 \pm 0.45)\cdot 10^{-4}
-    s = 1 \pm 3.47 \cdot 10^{-5}
+    A_0 = 0.0543 \pm 0.002 \si{\ampere}\\
+    b = (2.38 \pm 0.45)\cdot 10^{-4} \si{\metre}\\
+    s = 1 \pm 3.47 \cdot 10^{-5} \si{metre}
   \end{align*}
-  In Abbildung ... ist ein Vergleich der Intensität des Einzelspaltes mit der 
+  In Abbildung \ref{fig:verleich} ist ein Vergleich der Intensität des Einzelspaltes mit der 
   Intensitätsverteilung des Doppelspaltes zu sehen.
   \begin{figure}
     \centering
     \includegraphics{plot2.pdf}
-    \caption{Plot.}
-    \label{fig:plot}
+    \caption{Kurven des Doppelspaltes und des Einfachspaltes}
+    \label{fig:verleich}
   \end{figure}
