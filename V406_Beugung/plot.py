@@ -63,8 +63,8 @@ plt.figure(1)
 plt.plot(phi,I,'cx',label=r'$Messwerte$')
 plt.plot(x,einzel(x,*params),'b-',label=r'$Ausgleichsfunktion$')
 plt.legend(loc='best')
-plt.xlabel(r'$\mathrm{Abstand \ von \ 0.-Hauptmaxima \ d \ in \ m}$')
-plt.ylabel(r'$\mathrm{Intensität \ I/A}$')
+plt.xlabel(r'$\mathrm{Abstand \ von \ 0.-Hauptmaximum in °}$')
+plt.ylabel(r'$\mathrm{Intensität \ I [A]}$')
 plt.savefig('plot.pdf')
 
 
@@ -98,8 +98,8 @@ plt.figure(2)
 plt.plot(phi,I_2,'bx',label=r'$Messwerte$')
 plt.plot(x,doppel(x,*params2),'g-',label=r'$Ausgleichsfunktion$')
 plt.legend(loc='best')
-plt.xlabel(r'$\mathrm{Abstand \ von \ 0.-Hauptmaxima \ d \ in \ m}$')
-plt.ylabel(r'$\mathrm{Intensität \ I/A}$')
+plt.xlabel(r'$\mathrm{Abstand \ von \ 0.-Hauptmaximum in °}$')
+plt.ylabel(r'$\mathrm{Intensität \ I [A]}$')
 plt.savefig('plot1.pdf')
 
 ########################################################################################
@@ -112,8 +112,8 @@ plt.plot(x,doppel(x, *params2),'g-',label=r'Ausgleichsfunktion des Doppelspaltes
 plt.plot(phi,I,'cx',label=r'Messwerte des Einzelspaltes')
 plt.plot(x,einzel(x,*params),'b-',label=r'Ausgleichsfunktion des Einzelspaltes')
 plt.legend(loc='best')
-plt.xlabel(r'$\mathrm{Abstand \ von \ 0.-Hauptmaxima \ d \ in \ m}$')
-plt.ylabel(r'$\mathrm{Intensität \ I/A}$')
+plt.xlabel(r'$\mathrm{Abstand \ von \ 0.-Hauptmaximum in °}$')
+plt.ylabel(r'$\mathrm{Intensität \ I [A]}$')
 plt.savefig('plot2.pdf')
 
 
