@@ -98,8 +98,8 @@ U=U/2
 table ={'1': v, '2':U}
 print(tabulate (table, tablefmt="latex"))
 U=U/10
-R=332
-C=750*10**(-9)
+R=1000
+C=295*10**(-9)
 v_0 = 1/(R*C)
 print(v_0)
 
@@ -112,12 +112,13 @@ x=np.linspace(v[0], v[20], 10000)
 y=hui(x, v_0)
 
 plt.figure()
-plt.plot(v, U, 'b*', label='Messdaten')
-plt.plot(x, y, 'c')
+plt.plot(v/v_0, U, 'b*', label='Messdaten')
+plt.plot(x/v_0, y, 'c')
 plt.xscale('log')
-plt.xlabel(r'$v$')
+plt.xlabel(r'$v/v_0$')
 plt.ylabel(r'$U_{Br}/U_{Sp}$')
 plt.legend(loc='best')
 plt.savefig('build/plot.pdf')
 
 #Klirrfaktor
+print(f"Klirrfaktor: ", U[8]/hui(2, 1))
