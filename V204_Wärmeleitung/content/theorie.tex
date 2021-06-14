@@ -1,0 +1,45 @@
+\section{Theorie}
+\label{sec:Theorie}
+
+Temperatur innerhalb eines Systems verändert sich lokal durch Konvektion, Wärmestrahlung
+und Wärmeleitung. Im vorliegenden Versuch wird die Wärmeleitung von Metallen untersucht;
+dort überwiegt die Wärmeleitung eindeutig. Deshalb vernachlässigen wir im Folgenden die 
+anderen beiden Optionen der Temperaturübertragung.\\
+Für die Wärmemenge, die durch Wärmeleitung auf einer Oberfläche A pro Zeit übertragen 
+wird, gilt
+\begin{equation}
+    \dfrac{dQ}{dt}=-\kappa A \dfrac{\partial T}{\partial x}
+\end{equation}
+wobei $\kappa$ die Wärmeleitfähigkeit des Materials ist. Für die Wärmestromdichte gilt 
+daher:
+\begin{equation}
+    j_w=-\kappa \dfrac{\partial T}{\partial x}
+\end{equation}
+Unter Verwendung der Kontinuitätsgleichung
+\begin{equation}
+    \dfrac{\partial T}{\partial t}-\dfrac{\partial j}{\partial x}=0
+\end{equation}
+kann dieses Problem auf die eindimensionale Wärmeleitungs
+\begin{equation}
+    \dfrac{\partial T}{\partial t}=\dfrac{\kappa}{\rho c}\dfrac{\partial^2 T}{\partial x^2}
+\end{equation}
+zurückgeführt werden. $\dfrac{\kappa}{\rho c} = \sigma_T$ wird als Temperaturleitfähigkeit
+bezeichnet. Sie ist materialabhängig und ist ein Kriterium für die jeweilige Geschwindigkeit 
+des Temperaturausgleiches.\\
+Im hier vorliegenden Fall eines langen, dünnen Stabes, der an einer Seite (x=0) abwechselnd 
+erhitzt und gekühlt wird, ist 
+\begin{equation}
+    T(x,t)=T_{max} \exp{-\sqrt{\dfrac{\omega \rho c}{2 \kappa}}} \cos{\omega t - \sqrt{
+        \dfrac{\omega \rho c}{2 \kappa}}}
+\end{equation}
+eine Lösung der Differentialgleichung. Die Phasengeschwindigkeit der Ausbreitung lautet also
+\begin{equation}
+    v = \dfrac{\omega}{k}=\dfrac{\omega}{\sqrt{\dfrac{\omega \rho c}{2 \kappa}}}
+      = \sqrt{\dfrac{2 \kappa \omega}{\rho c}}
+\end{equation}
+und die Wärmeleitfähigkeit
+\begin{equation}
+    \kappa = \dfrac{\rho c (\Delta x)^2}{2 \Delta t \ln{A_{nah}}{A_{fern}}}.
+\end{equation}
+Dabei ist $\Delta x$ der Abstand zwischen den beiden Messpunkten, $\Delta t$ die Phasendifferenz,
+und $A_{nah}$ bzw. $A_{fern}$ die jeweilige Amplitude.
