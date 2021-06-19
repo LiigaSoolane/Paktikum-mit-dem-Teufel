@@ -11,16 +11,14 @@
         \lambda_{min}=\dfrac{h\cdot c}{e_0 U}
         \label{eqn:lambda}
     \end{equation}
-    bestimmt werden kann. Zu beachten ist, dass nicht nur Compton (kohärente) Streuung, sondern 
-    auch elastische (inkohärente) Streuung auf das Photon wirkt. Befindet sich das Elektron 
-    vor dem Stoß in Ruhe, kann aus der Energie- und Impulserhaltung auf den Zusammenhang
+    bestimmt werden kann.
     \\
     
     Beim Auftreffen auf die Anode wird außerdem ein für das Anodenmaterial 
     charakteristisches Spektrum ausgestrahlt, welches durch die 
     Ionisierung des Materials und das anschließende Rückfallen eines Elektrons auf eine weiter im 
     Zentrum liegende Schale entsteht. Dieses Spektrum besteht aus scharfen Peaks, da die 
-    die freigewordene Enrgie immer gleich der Energiedifferenz zwischen zwei Schalen ist 
+    freigewordene Enrgie immer gleich der Energiedifferenz zwischen zwei Schalen 
     und somit $h \nu = E_m-E_n$ ist. Die Energielevel der einzelnen Schalen können
     durch 
     \begin{equation}
@@ -34,11 +32,12 @@
     \\
 
 \subsection{Absorbtion der Röntgenstrahlung}
-    Trifft Röntgenstrahlung auf Material, dominieren der Comptoneffekt und der Photoeffekt.
+    Trifft Röntgenstrahlung mit Energien kleiner als 1 MeV auf Material, 
+    dominieren der Comptoneffekt und der Photoeffekt.
     \begin{figure}
         \centering
         \includegraphics{Absorbtionsspektrum.png}
-        \caption{Absorptionsspektrum}
+        \caption{Absorptionsspektrum \cite{anleitung}}
         \label{fig:rechtschreifehler}
       \end{figure}
     Wie in Abbildung \ref{fig:rechtschreifehler} dargestellt, sinkt der Absorbtionskoeffizient bei steigender Energie.
@@ -63,11 +62,9 @@
     $K_{\alpha}$- und $K_{\beta}$- Linie durch 
     \begin{align}
         E_{K, abs}=R_{\inf} (z-\sigma_1)^2\\
-        \label{eqn:nikolaaaa}
         E_{K, \alpha}=R_{\inf} (\dfrac{1}{n})^2 (z-\sigma_1)^2 - R_{\inf} (\dfrac{1}{m})^2 (z-\sigma_2)^2 \\
-        \label{eqn:nikolaaaaa}
-        E_{K, \alpha}=R_{\inf} (\dfrac{1}{n})^2 (z-\sigma_1)^2 - R_{\inf} (\dfrac{1}{l})^2 (z-\sigma_3)^2 \\
-        \label{eqn:nikolaaaaaa}
+        \label{eqn:nikolaaaaaaa}
+        E_{K, \alpha}=R_{\inf} (\dfrac{1}{n})^2 (z-\sigma_1)^2 - R_{\inf} (\dfrac{1}{l})^2 (z-\sigma_3)^2
     \end{align}
     abgeschätzt werden. Dabei ist $n=1, m=2$ und $l=3$.
     Die Abschirmkonstante für die L-Schale kann durch 
@@ -82,7 +79,12 @@
 \subsection{Bragg'sche Reflexion}
     Um die Energie bzw die Wellenlänge der Röntgenstrahlung zu bestimmen, wird der Effekt der Braggschen 
     Reflexion verwendet. Denn fällt Röntgenstrahlung auf ein dreidimensionales Gitter
-    und wird dort gebeugt, interferieren die ausfallenden Röntgenstrahlen. Ist die 
+    und wird dort gebeugt, interferieren die ausfallenden Röntgenstrahlen. Das bedeutet, es
+    treten Winkel auf, bei denen die Intensität der Röntgenstrahlung durch destruktive Interferenz
+    verschwindet, und solche, bei denen die Intensität durch konstruktive Interferenz maximal wird.
+    Letztere werden auch Glanzwinkel genannt. Die Interferenz ensteht dadurch, dass nicht alle 
+    Photonen an der ersten Gitterebene gestreut werden und durch die längere Laufzeit bei Steuung an 
+    der zweiten oder dritten Gitterebene eine Phasenverschiebung entsteht. Ist die 
     Gitterkonstante des verwendeten Materials bekannt, so kann die Wellenlänge durch
     die Beziehung $2 d \sin{\theta}=n \lambda$ bestimmt werden, wobei $\theta$ Glanzwinkel
     und n die Beugungsordnungs ist.
