@@ -1,9 +1,15 @@
 \section{Diskussion}
 \label{sec:Diskussion}
+Die prozentualen Abweichungen werden mithilfe der Formel
+\begin{equation*}
+    \increment x = \frac{x_{\symup{theoretisch}} - x_{\symup{gemessen}}}{x_{\symup{theoretisch}}}
+\end{equation*}
+berechnet.
 
 \subsection{Bragg-Bedingung}
     Der gemessene Glanzwinkel liegt bei $\theta_{\text{max}} = 28.2 °$, die Abweichung vom Theoriewert von $\theta_{\text{theo}} = 28 °$ beträgt $0.713 \%$.
-    Wäre die Abweichung größer als drei Grad, würde das für systematische Fehler in der Messapparatur sprechen und alle folgenden Messungen würden unbrauchbar.
+    Wäre die Abweichung größer als drei Grad, würde die Messung unbrauchbar werden: anstatt der gewollten Zählrate würde man einen 
+    Untergrund aufnehmen.
 
 \subsection{Emissionssprektrum}
     \subsubsection{K-Linien}
@@ -25,10 +31,9 @@
     \subsubsection{Auflösungsvermögen}
         Aus der Halbwertsbereiten folgen Auflösungsvermögen von 
         \begin{align*}
-            A_{K_{\alpha}} = 38.23 \pm 0.161 \\
-            A_{K_{\beta}} = 52.839 \pm 0.251
+            A_{K_{\alpha}} = (7.638 \pm 0.032) \cdot 10^{-18} \\
+            A_{K_{\beta}} = (6.788 \pm 0.032) \cdot 10^{-18}
         \end{align*}
-        Es ist also nicht sinnvoll, zu versuchen, den statistischen Fehler zu bestimmen, da dieser höchstwahrscheinlich im Bereich des maximalen Auflösungsvermögens liegt.
         
 
 \subsection{Absorptionsspektren}
@@ -40,14 +45,14 @@
         \label{tab:energies}
         \begin{tabular}{c c c c c}
             \toprule 
-            Element & $Z$ & berechneter Wert [eV] & Theoriewert [eV] & Abweichung [\%] \\
+            Element & $Z$ & berechneter Wert/eV & Theoriewert/eV & Abweichung/\% \\
             \midrule
-            Zink & 30 & 9221.801 & 9668.55 & 4.621 \\
-            Gallium & 31 & 9455.165 & 10377.76 & 8.891 \\
-            Brom & 35 & 124662.805 & 13483.86 & 7.572 \\
-            Rubidium & 37 & 14222.445 & 15207.74 & 6.478 \\
-            Strontium & 38 & 14805.808 & 16115.26 & 8.125 \\
-            Zirkonium & 40 & 16132.891 & 18008.15 & 10.413 \\
+            Zink & 30 & $9600 \pm 25$ & 9668.55 & $0.7 \pm 2.6$ \\
+            Gallium & 31 & $10320 \pm 29$ & 10377.76 & $0.5 \pm 2.8$ \\
+            Brom & 35 & $13500 \pm 50$ & 13483.86 & $0 \pm 4$ \\
+            Rubidium & 37 & $15100 \pm 60$ & 15207.74 & $1 \pm 4$ \\
+            Strontium & 38 & $16000 \pm 70$ & 16115.26 & $1 \pm 4$ \\
+            Zirkonium & 40 & $17700 \pm 90$ & 18008.15 & $2 \pm 5$ \\
             \bottomrule
         \end{tabular}
     \end{table}
@@ -66,27 +71,30 @@
             \toprule 
             Element & $Z$ & berechneter Wert & Theoriewert & Abweichung [\%] \\
             \midrule
-            Zink & 30 & 4.168 & 3.54 & 17.746 \\
-            Gallium & 31 & 4.866 & 3.6 & 35.203 \\
-            Brom & 35 & 5.059 & 3.831 & 32.066 \\
-            Rubidium & 37 & 5.049 & 3.935 & 28.315 \\
-            Strontium & 38 & 5.428 & 3.983 & 36.306 \\
-            Zirkonium & 40 & 6.056 & 4.083 & 48.343 \\
+            Zink & 30 & $3.63 \pm 0.35$ & 3.54 & $3 \pm 10$ \\
+            Gallium & 31 & $3.7 \pm 0.4$ & 3.6 & $2 \pm 11$ \\
+            Brom & 35 & $3.8 \pm 0.6$ & 3.831 & $0 \pm 15$ \\
+            Rubidium & 37 & $4.1 \pm 0.7$ & 3.935 & $4 \pm 18$ \\
+            Strontium & 38 & $4.1 \pm 0.8$ & 3.983 & $3 \pm 19$ \\
+            Zirkonium & 40 & $4.4 \pm 0.9$ & 4.083 & $7 \pm 22$ \\
             \bottomrule
         \end{tabular}
     \end{table}
     \FloatBarrier
 
-    \noindent Hier lassen sich sehr hohe Abweichungen von den Theoriewerten beobachten, was insbesondere an der Fehlerverstärkung bei der weiteren Berechnung liegen kann. 
-        
+    \noindent Genrell liegen die Abweichungen unter $10 \%$, allerdings sind sie von großer Ungenauigkeit betroffen.\\
+    Was besonders auffällt, ist, dass die Abweichungen und deren Unsicherheiten für steigende $Z$ größer werden. Dies 
+    kommt daher, dass in der zuvor durchgeführten Rechnung der Einfluss der Feinstruktur weitgehend vernachlässigt, bzw.
+    vereinfacht wurde. Für Atome größerer Ordnungszahlen wird dieser Effekt allerdings immer bedeutender,
+    sodass die Rechnung keine genauen Werte mehr liefern kann.\\
+
     \subsubsection{Rydbergenergie}
         Für die Rydbergenergie und -frequenz folgen aus den Messwerten
         \begin{align*}
-            R = (2.6 \pm 0.19) \cdot 10^{15} \si{\Hz}\\
-            R_{\infty} = 12.1 \pm 1.9
+            R = (3 \pm 0.05) \cdot 10^{15} \si{\Hz}\\
+            R_{\infty} = 12.42 \pm 0.19
         \end{align*}
-        was einer prozentualen Abweichung vom Theoriewert $R_{\infty \text{, theo}} = 13.6 \text{eV}$ von $11 \pm 14 \%$ entspricht. Innerhalb der Messunsicherheit liegt also
-        auch eine Abweichung von 0 Prozent, aber auch eine sehr große Abweichung. \\
-        Die Ungenauigkeiten aus den vorherigen Messungen kommen zusammen und verstärken sich, sodass hier eine große Unsicherheit auftritt, die auch in großen Unterschieden zu
+        was einer prozentualen Abweichung vom Theoriewert $R_{\infty \text{, theo}} = 13.6 \text{eV}$ von $8.7 \pm 1.4 \%$ entspricht. \\
+        Die Ungenauigkeiten aus den vorherigen Messungen kommen zusammen und verstärken sich, sodass hier eine größere Unsicherheit auftritt, die auch in größeren Unterschieden zu
         Theoriewerten zum Ausdruck kommen kann.\\
         Die Messunsicherheiten des Verfahrens wurden bereits diskutiert, hier kommt noch die Ungenauigkeit aus der linearen Regression hinzu.

@@ -72,14 +72,14 @@
 \subsection{Emissionsspektrum}
   Zudem wird das Emissionsspektrum der Cu-Röntgenröhre aufgenommen. Auf das tabellarische Aufführen der Messwerte wird aufgrund 
   der großen Anzahl an Werten verzichtet. Das Spektrum ist in Abbildung \ref{fig:emission} zu finden. Es sind die K-Linien eingetragen, wobei die 
-  $K_{\alpha}$ Linie bei einem Winkel von $\theta = 22.5 °$ auftritt und einer Energie von $E_{K_{\alpha}} = 8044 \pm 34 \text{eV}$ entspricht,
-  die $K_{\beta}$ Linie tritt bei $\theta = 20.2 °$ auf und entspricht einer Energie von $E_{K_{\alpha}} = 89100 \pm 40 \text{eV}$. Die Energien werden dabei mithilfe
+  $K_{\alpha}$ Linie bei einem Winkel von $\theta = 22.5 °$ auftritt und einer Energie von $E_{K_{\alpha}} = (8044 \pm 34) \text{eV}$ entspricht,
+  die $K_{\beta}$ Linie tritt bei $\theta = 20.2 °$ auf und entspricht einer Energie von $E_{K_{\alpha}} = (8910 \pm 40) \text{eV}$. Die Energien werden dabei mithilfe
   von Gleichung \eqref{eqn:lambda}
   und $E = h \frac{c}{\lambda}$ berechnet.
 
   \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{emission.pdf}
+    \includegraphics[width=\textwidth]{emission_neu.pdf}
     \caption{Emissionsspektrum mit K-Linien und Bremsberg.}
     \label{fig:emission}
   \end{figure}
@@ -87,43 +87,52 @@
   \subsubsection{Halbwertsbreiten}
     Aus dem Spektrum werden auch die Halbwertsbreiten der Linien ermittelt, dazu wird die Scipy.signals Bibliothek von Python 
     verwendet. \\
-    Es folgt eine Breite für die $K_{\alpha}$ Linie von $4.895$ und für $K_{\beta}$ eine Breite von $4.751$. Daraus lässt sich mithilfe von
+    Es folgt eine Breite für die beiden Linien betragen jeweils $\increment \theta_{\symup{fwhm}} = 0.5 °$. 
+    Daraus lässt sich mithilfe von
     \begin{equation*}
       A = \frac{E_K}{\increment E_{\text{FWHM}}}
     \end{equation*}
     das Auflösungsvermögen $A$ bestimmen. \\
-    Hier ergeben sich
+    Dabei betragen die Energiedifferenzen
     \begin{align*}
-      A_{K_{\alpha}} = 38.23 \pm 0.161 \\
-      A_{K_{\beta}} = 52.839 \pm 0.251
+      \increment E_{\symup{FWHM, \alpha}} = 1.053 \cdot 10^{21}\\ 
+      \increment E_{\symup{FWHM, \beta}} = 1.313 \cdot 10^{21}\\
     \end{align*}
+    woraus sich für die Auflösungsvermögen
+    \begin{align*}
+      A_{K_{\alpha}} = (7.638 \pm 0.032) \cdot 10^{-18} \\
+      A_{K_{\beta}} = (6.788 \pm 0.032) \cdot 10^{-18}
+    \end{align*}
+    ergeben.
 
   \subsubsection{Abschirmkonstanten}
     Um die Abschirmkonstanten zu berechnen, werden Gleichungen \eqref{eqn:energieeins} bis \eqref{eqn:nikolaaaaaaa}
         nach $\sigma_1$, $\sigma_2$ und $\sigma_3$ umgestellt.\\
     \begin{align*}
       \sigma_1 = - \sqrt{\frac{E_{\text{abs}}}{R_{\infty}}} + Z\\
-      \sigma_2 = - \sqrt{\frac{- E_{K_{\beta}} + R_{\infty} (Z - \sigma_1) \frac{1}{n^2}}{R_{\infty}}} \cdot m + Z\\
-      \sigma_2 = - \sqrt{\frac{- E_{K_{\beta}} + R_{\infty} (Z - \sigma_1) \frac{1}{n^2}}{R_{\infty}}} \cdot l + Z
+      \sigma_2 = - \sqrt{\frac{- E_{K_{\alpha}} + R_{\infty} (Z - \sigma_1) \frac{1}{n^2}}{R_{\infty}}} \cdot m + Z\\
+      \sigma_3 = - \sqrt{\frac{- E_{K_{\beta}} + R_{\infty} (Z - \sigma_1) \frac{1}{n^2}}{R_{\infty}}} \cdot l + Z
     \end{align*}
     Mit $R_{\infty} = 13.6 \text{eV}$ der Rydberg-Energie, der Kernladung $Z$, und $n = 1$, $m = 2$, $l = 3$. 
     Die Absorptionsenergie von Kupfer ist laut \cite{nist} $E_{\text{abs}} = 8987.96 \pm 15 \text{eV}$.
     Für Kupfer ergeben sich daher Abschrimkonstanten von
     \begin{align*}
-      \sigma_1 = 3.293 \pm 0.161\\
-      \sigma_2 = 18.859 \pm 0.004\\
-      \sigma_3 = 13.789 \pm 0.006
+      \sigma_1 = 3.293 \pm 0.021\\
+      \sigma_2 = 20.686 \pm 0.100\\
+      \sigma_3 = 49.300 \pm 0.179
     \end{align*}
 
 \subsection{Absorptionsspektrum}
   Zuletzt werden für Zink ($Z = 30$), Gallium ($Z = 31$), Brom ($Z = 35$), Rubidium ($Z = 37$), Strontium ($Z = 38$) und Zirkonium ($Z = 40$) die Absorptionsspektren betrachtet und auf ihre
   Eigenschaften untersucht. In Tabellen \ref{tab:zinktab} bis \ref{tab:zirkoniumtab} sind die Messwerte aufgeführt, in 
   Abbildungen \ref{fig:zink} bis \ref{fig:zirkonium} sind sie grafisch dargestellt.\\
-  Aus dem Intensitätsmaximum und -minimum werden nach \eqref{eqn:intens} die jeweiligen K-Kanten berechnet.
+  Aus dem Intensitätsmaximum und -minimum werden nach
   \begin{align}
     I_K = I_K^{\text{min}} + \frac{I_K^{\text{max}} - I_K^{\text{min}}}{2}\\
     \label{eqn:intens}
   \end{align}
+  die Winkel der jeweiligen K-Kanten berechnet. Es wird also die Mitter der Kante bestimmt, der zu dieser Impulsrate gehörige 
+  Winkel ist dann der Glanzwinkel.\\
   Mithilfe von Gleichung \eqref{eqn:energieeins}
   werden die korrespondierenden Absorptionsenergien berechnet. \\
   Die Abschirmkonstanten $\sigma$ sind durch \eqref{eqn:sigma}
@@ -136,14 +145,14 @@
     \label{tab:results}
     \begin{tabular}{c c c c c}
       \toprule
-      Element & $I_K$ & $\theta_K$ [°] & $E_K$ [eV]& $\sigma_K$ \\
+      Element & $I_K$ & $\theta_K \mathbin{/}°$ & $E_K$/eV& $\sigma_K$ \\
       \midrule
-      Zink & 78 & 19.5 & 9221.801 & 4.168 \\
-      Gallium & 94 & 19 & 9455.165 & 5.898 \\
-      Brom & 18 & 14.3 & 12462.805 & 5.059 \\
-      Rubidium & 37 & 12.5 & 14222.445 & 5.049 \\
-      Strontium & 118 & 12 & 14805.808 & 5.428 \\
-      Zirkonium & 206.5 & 11 & 16132.891 & 6.056 \\
+      Zink & $78 \pm 6$ & $18.7 \pm 0.5$ & $9600 \pm 25$ & $3.63 \pm 0.35$ \\
+      Gallium & $94 \pm 7$ & $17.4 \pm 0.5$& $1032 \pm 29$ & $3.7 \pm 0.4$ \\
+      Brom & $18 \pm 3$ & $13.2 \pm 0.5$ & $1350 \pm 50$ & $3.8 \pm 0.6$ \\
+      Rubidium & $37 \pm 4$ & $11.8 \pm 0.5$ & $1510 \pm 60$  & $4.1 \pm 0.7$ \\
+      Strontium & $118 \pm 8$ & $11.1 \pm 0.5$ & $1600 \pm 70$ & $4.1 \pm 0.8$ \\
+      Zirkonium & $206 \pm 10$ & $10 \pm 0.5$  & $1770 \pm 90$ & $4.4 \pm 0.9$ \\
       \bottomrule
     \end{tabular}
   \end{table}
@@ -206,7 +215,7 @@
     \label{tab:zinktab}
     \begin{tabular}{c c}
       \toprule
-      $\theta [°]$ & $N [\text{Imp}/\si{\s}]$ \\
+      $\theta \mathbin{/}°$ & $N [\text{Imp}/\si{\s}]$ \\
       \midrule
       18.0	& 58.0\\
       18.1	& 54.0\\
@@ -267,7 +276,7 @@
     \label{tab:bromtab}
     \begin{tabular}{c c}
       \toprule
-      $\theta [°]$ & $N [\text{Imp}/\si{\s}]$ \\
+      $\theta \mathbin{/}°$ & $N [\text{Imp}/\si{\s}]$ \\
       \midrule
       12.8	& 10.0 \\
       12.9	& 12.0 \\
@@ -295,7 +304,7 @@
     \label{tab:rubidiumtab}
     \begin{tabular}{c c}
       \toprule
-      $\theta [°]$ & $N [\text{Imp}/\si{\s}]$ \\
+      $\theta \mathbin{/}°$ & $N [\text{Imp}/\si{\s}]$ \\
       \midrule
       11.2	& 11.0 \\
       11.3	& 10.0 \\
@@ -321,7 +330,7 @@
     \label{tab:strontiumtab}
     \begin{tabular}{c c}
       \toprule
-      $\theta [°]$ & $N [\text{Imp}/\si{\s}]$ \\
+      $\theta \mathbin{/}°$ & $N [\text{Imp}/\si{\s}]$ \\
       \midrule
       10.5	& 43.0\\
       10.6	& 41.0\\
@@ -349,7 +358,7 @@
     \label{tab:zirkoniumtab}
     \begin{tabular}{c c}
       \toprule
-      $\theta [°]$ & $N [\text{Imp}/\si{\s}]$ \\
+      $\theta \mathbin{/}°$ & $N [\text{Imp}/\si{\s}]$ \\
       \midrule
       9.5	& 112.0\\
       9.6	& 120.0\\
@@ -387,8 +396,8 @@
     \end{align*}
     woraus eine Rydbergfrequenz und -energie von
     \begin{align*}
-      R = \frac{1}{a^2 h} = (2.9 \pm 0.5) \cdot 10^{15} \si{\Hz}\\
-      R_{\infty} = h \cdot R = 12.1 \pm 1.9 \text{eV}
+      R = \frac{1}{a^2 h} = (3 \pm 0.05) \cdot 10^{15} \si{\Hz}\\
+      R_{\infty} = h \cdot R = 12.42 \pm 0.19 \text{eV}
     \end{align*}
     folgt.\\
     Berechnete Werte sowie Fit sind in \ref{fig:moseley} dargestellt.
@@ -396,7 +405,7 @@
     \begin{figure}
       \centering
       \includegraphics[width=\textwidth]{moseley.pdf}
-      \caption{Zusammenhang von $Z$ und $\sqrt{E}$.}
+      \caption{Messdaten und Lineare Regression zum Moseley'schen Gesetz.}
       \label{fig:moseley}
     \end{figure}
 
