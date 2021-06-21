@@ -1,11 +1,11 @@
 all: build/main.pdf
 
 # hier Python-Skripte:
-build/emission.pdf: emission.py matplotlibrc header-matplotlib.tex | build
-	TEXINPUTS=$$(pwd): python emission.py
+build/emission.pdf: emission_neu.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS=$$(pwd): python emission_neu.py
 
-build/Zink.pdf: absorption.py matplotlibrc header-matplotlib.tex | build
-	TEXINPUTS=$$(pwd): python absorption.py
+build/Zink.pdf: absorption_neu.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS=$$(pwd): python absorption_neu.py
 
 build/bra.pdf: bragg.py matplotlibrc header-matplotlib.tex | build
 	TEXINPUTS=$$(pwd): python bragg.py
