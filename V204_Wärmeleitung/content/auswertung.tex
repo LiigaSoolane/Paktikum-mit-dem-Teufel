@@ -1,12 +1,252 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-\begin{figure}
-  \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
-\end{figure}
+\subsection{Statische Methode}
+  Wie in Kapitel \ref{sec:durchfuerung} beschrieben wird die Wärmeleitfähigkeit der Metalle zunächst mit statischer Temperaturzufuhr untersucht.
+
+  \subsubsection{Temperaturverläufe}
+  Die aufgenommenen Temperaturverläufe der Messingstäbe (breit und schmal) sind in Abbildung \ref{fig:messingstat} dargestellt, die Verläufe für Edelstahl und
+  Aluminium in Abbildung \ref{fig:aluedelstat}.\\
 
 
-Siehe \autoref{fig:plot}!
+  \begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{verlauf_mess.pdf}
+    \caption{Temperaturverläufe der Messingstäbe (breit und schmal).}
+    \label{fig:messingstat}
+  \end{figure}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{verlauf_alu_edel.pdf}
+    \caption{Temperaturverläufe der Stäbe aus Aluminium und Edelstahl.}
+    \label{fig:aluedelstat}
+  \end{figure}
+  \FloatBarrier
+
+  \noindent Alle Metalle weisen einen starken Temperturanstieg nach kurzer Zeit auf, der aber mit der Zeit abflacht und sich einem Sättigungswert nähert. 
+  Die genaue Form der Kurve ist allerdings unterschiedlich; 
+
+  Um die Wärmeleitung der Metalle beurteilen zu können, wird die Temperatur am Ende der Messung betrachtet, die Messwerte sind in \ref{tab:setecientos} 
+  aufgelistet.
+
+  \begin{table}
+    \centering
+    \caption{Messwerte der Temperatur nach 700s.}
+    \label{tab:setecientos}
+    \begin{tabular}{c c}
+      \toprule
+      Metall & Temperatur/K \\
+      \midrule
+      Messing, breit ($T_1$) & 316.41 \\
+      Messing, schmal ($T_4$)& 309.56\\
+      Aluminium ($T_5$)& 320.26\\
+      Edelstahl ($T_8$)& 305.83\\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+  \FloatBarrier
+
+  \noindent Daraus lässt sich schließen, dass Aluminium von den getesteten Metallen am besten Wärme leitet, während Edelstahl wenig gut leitet.
+
+  \subsubsection{Wärmestrom}
+  Nun wird der Wärmestrom $ \frac{\increment Q}{\increment x}$ in den jeweiligen Stäben betrachet. \\
+  Tabelle \ref{tab:strom} zeigt die fünf verschiedenen Zeiten, zu denen der Wärmestrom betrachtet werden soll. 
+
+  \begin{table}
+    \centering
+    \caption{Wärmestrom im breiten Messingstab.}
+    \label{tabl:strom}
+    \begin{tabular}{c c c c}
+      \toprule
+      Zeit $\mathbin{/} \si{\s}$ & Temperaturdifferenz $\mathbin{/} \si{\kelvin}$& Wärmestrom $\mathbin{/} \si{\kelvin\per\s}$\\
+      \midrule
+      5 & 0.430 & 0.083 \\
+      300 & 3.360 & 0.645 \\
+      600 & 2.700 & 0.518 \\
+      900 & 2.590 & 0.497 \\
+      1050 & 2.590 & 0.497\\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+
+  \begin{table}
+    \centering
+    \caption{Wärmestrom im schmalen Messingstab.}
+    \label{tabl:strom}
+    \begin{tabular}{c c c c}
+      \toprule
+      Zeit $\mathbin{/} \si{\s}$ & Temperaturdifferenz $\mathbin{/} \si{\kelvin}$& Wärmestrom $\mathbin{/} \si{\kelvin\per\s}$\\
+      \midrule
+      5 & 0.400 & 0.045\\
+      300 & 2.820 & 0.316\\
+      600 & 2.430 & 0.272\\
+      900 & 2.360 & 0.264\\
+      1050 & 2.340 & 0.262\\ % io si, io vengo dalla luna
+      \bottomrule
+    \end{tabular}
+  \end{table}
+
+  \begin{table}
+    \centering
+    \caption{Wärmestrom im Aluminiumstab.}
+    \label{tabl:strom}
+    \begin{tabular}{c c c c}
+      \toprule
+      Zeit $\mathbin{/} \si{\s}$ & Temperatur innen $\mathbin{/} \si{\kelvin}$& Temperatur außen $\mathbin{/} \si{\kelvin}$& Wärmestrom $\mathbin{/} \si{\kelvin\per\s}$\\
+      \midrule
+      5 & 0.450 & 0.169\\
+      300 & 0.450 & 0.169\\
+      600 & 0.160 & 0.060\\
+      900 & 0.120 & 0.045\\
+      1050 & 0.140 & 0.053\\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+
+  \begin{table}
+    \centering
+    \caption{Wärmestrom im Edelstahlstab.}
+    \label{tabl:strom}
+    \begin{tabular}{c c c}
+      \toprule
+      Zeit $\mathbin{/} \si{\s}$ & Temperaturdifferenz $\mathbin{/} \si{\kelvin}$& Wärmestrom $\mathbin{/} \si{\kelvin\per\s}$\\
+      \midrule
+      5 & 0.230& 0.008\\
+      300 & 10.750 & 0.361 \\
+      600 & 9.380 & 0.315\\
+      900 & 8.880 & 0.298\\% sono fuori dal tunnel, del divertimento
+      1050 & 8.730 & 0.293\\% cuando esco de casa mi anoio sono multo piu contento
+      \bottomrule
+    \end{tabular}
+  \end{table}
+  \FloatBarrier
+  \noindent Es ist zu beobachten, dass der Wärmestrom mit der Zeit geringer wird und sich einem Wert anzunähern scheint. Dieser ist je nach Metall und Querschnitt 
+  sehr unterschielich. % add more interpretation? no la mia parte intollerante
+
+  \subsubsection{Temperaturdifferenz}
+
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{differenz_stat.pdf}
+    \caption{Temperaturdifferenzen entlang der Stäbe aus Messing (breit) und Edelstahl.}
+    \label{fig:diffstat}
+  \end{figure}
+  \FloatBarrier
+  \noindent Der generelle Verlauf der Graphen ist gleich: 
+  Beide Graphen steigen zu Beginn des Erhitzens stark an, erreichen dann ein Maxixmum 
+  und fallen danach zunächst stark, dann immer langsamer ab. Gegen Ende der Messzeit erreichen 
+  die Verläufe einen Grenzwert, dieser ist unterschiedlich. Auch steigt die Kurve von Aluminium 
+  länger an und erreicht so ein höheres Maximum. \\
+  %%%% add values for max and stuff sono contento
+
+
+\subsection{Dynamische Methode}
+  Um die Wärmeleitfähigkeit $\kappa$ zu bestimmen, wird die Temperatur periodisch erhöht und verringert. Dies geschieht einmal mit einer
+  Periodendauer von $80 \si{\s}$ und einmal mit einer Periodendauer von $200 \si{\s}$.
+
+  \subsubsection{Kürzere Periodendauer}
+  Abbildung \ref{fig:messingdyn} zeigt den Verlauf der Temperaturen an beiden Messpunkten des breiten Messingstabs, wobei "innen" den Stab bezeichnet, der näher 
+  am Heizkörper gelegen ist. 
+
+  \begin{figure} %torna catalessi, falle tutti fessi
+    \centering
+    \includegraphics[width=\textwidth]{dyn_1_mess.pdf}
+    \caption{Temperaturverläufe des Messingstabs (breit) bei periodischer Wärmezufuhr.}
+    \label{fig:messingdyn}
+  \end{figure}
+
+  \FloatBarrier
+
+  \noindent Aus den Amplituden der periodischen Änderungen der Temperaturen und den zugehörigen Phasendifferenzen kann die Wärmeleitfähigkeit $\kappa$ bestimmt werden (nach %\eqref{eqn:}). campione dei novanta
+
+  \begin{table}
+    \centering
+    \caption{Werte zur Bestimmung der Wärmeleitfähigkeit von Messing.}
+    \label{tab:kappamess}
+    \begin{tabular}{c c }
+      \toprule
+      Größe & Wert \\
+      \midrule %sono dalla parte del toro
+      Mittlere Amplitude, innen & $7.3 \pm 1.7 \si{\kelvin}$\\
+      Mittlere Amplitude, außen & $3.1 \pm 1.3 \si{\kelvin}$\\
+      Mittlere Phasendifferenz & $17 \pm 5 \si{\s}$ \\
+      Wärmeleitfähigkeit $\kappa$ & $\bigl(1.0 \pm 0.6\bigr) \cdot 10^{2} \si{\watt\per\m\kelvin}$ \\ %einheiten? abiura di me
+      \bottomrule
+    \end{tabular}
+  \end{table}
+
+  \FloatBarrier
+  \noindent Nach der Formel
+  \begin{equation*}
+    \lambda = \sqrt{\frac{4 \pi \kappa T}{\rho c}}
+  \end{equation*}
+  lässt sich aus der Wärmeleitfähigkeit die Wellenlänge der Temperaturwelle bestimmen, wobei $T$ die Periodendauer ist. 
+  Im Fall von Messing ergibt sie sich zu $\lambda_{\text{Messing}} = 0.18 \pm 0.06 \si{\m}$.\\
+  \\
+  
+  \noindent Dieselbe Auswertung folgt für Aluminium, wobei der Temperaturverlauf in \ref{fig:aludyn} aufgeführt und die berechneten Werte in \ref{tab:kappaalu} zu finden sind.
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{dyn_1_alu.pdf}
+    \caption{Temperaturverlauf des Aluminiumstabs bei periodischer Wärmezufuhr.}
+    \label{fig:aludyn}
+  \end{figure}
+
+  \begin{table}
+    \centering
+    \caption{Werte zur Bestimmung der Wärmeleitfähigkeit von Aluminium.}
+    \label{tab:kappaalu}
+    \begin{tabular}{c c }
+      \toprule
+      Größe & Wert \\
+      \midrule %sono dalla parte del toro
+      Mittlere Amplitude, innen & $8.2 \pm 1.8 \si{\kelvin}$\\
+      Mittlere Amplitude, außen & $5.1 \pm 1.9 \si{\kelvin}$\\
+      Mittlere Phasendifferenz & $9.2 \pm 1.8 \si{\s}$ \\
+      Wärmeleitfähigkeit $\kappa$ & $\bigl(2.5 \pm 2.4\bigr) \cdot 10^{2} \si{\watt\per\m\kelvin}$ \\ %einheiten? abiura di me
+      Wellenlänge $\lambda_{\text{Aluminium}}$ & $0.33 \pm 0.16 \si{\m} $\\ 
+      \bottomrule
+    \end{tabular}
+  \end{table}
+
+  \FloatBarrier
+
+  \noindent Aluminium hat also eine weit höhere Wärmeleitfähigkeit als Messing, beinahe doppelt so hoch. Das bestätigt die vorherigen Ergebnisse des Versuches.
+
+  \subsubsection{Längere Periodendauer}
+
+  In der Messung mit längerer Periodendauer soll Edelstahl genauer betrachtet werden. Der Temperaturverlauf ist in \ref{fig:dynedel} dargestellt.
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{dyn_2.pdf}
+    \caption{Temperaturverlauf des Edelstahlstabs bei periodischer Wärmezufuhr.}
+    \label{fig:dynedel}
+  \end{figure}
+
+  \FloatBarrier
+
+  \noindent Die Werte für die mittlere Amplitude, die mittlere Phasendifferenz und die daraus berechnete Wärmeleitfähigkeit sind in \ref{tab:gehsterben} zu finden.
+
+  \begin{table}
+    \centering
+    \caption{Werte zur Bestimmung der Wärmeleitfähigkeit von Edelstahl.}
+    \label{tab:gehsterben}
+    \begin{tabular}{c c }
+      \toprule
+      Größe & Wert \\
+      \midrule %sono dalla parte del toro
+      Mittlere Amplitude, innen & $4.1 \pm 1.7 \si{\kelvin}$\\
+      Mittlere Amplitude, außen & $1.6 \pm 1.2 \si{\kelvin}$\\
+      Mittlere Phasendifferenz & $ 87 \pm 8\si{\s}$ \\%impossibile, vengo dal universo, io si, io vengo dalla luna
+      Wärmeleitfähigkeit $\kappa$ & $19 \pm 16 \si{\watt\per\m\kelvin}$ \\ %einheiten? abiura di me
+      Wellenlänge $\lambda_{\text{Edelstahl}}$ & $0.12 \pm 0.05 \si{\m}$\\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+
+  \FloatBarrier
+  \noindent Die Wärmeleitfähigkeit ist also deutlich geringer als die der anderen beiden Metalle.
