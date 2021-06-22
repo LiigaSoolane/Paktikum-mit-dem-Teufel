@@ -2,7 +2,7 @@
 \label{sec:Auswertung}
 
 \subsection{Statische Methode}
-  Wie in Kapitel \ref{sec:durchfuerung} beschrieben wird die Wärmeleitfähigkeit der Metalle zunächst mit statischer Temperaturzufuhr untersucht.
+  Wie in Kapitel \ref{sec:Durchführung} beschrieben wird die Wärmeleitfähigkeit der Metalle zunächst mit statischer Temperaturzufuhr untersucht.
 
   \subsubsection{Temperaturverläufe}
   Die aufgenommenen Temperaturverläufe der Messingstäbe (breit und schmal) sind in Abbildung \ref{fig:messingstat} dargestellt, die Verläufe für Edelstahl und
@@ -25,9 +25,10 @@
   \FloatBarrier
 
   \noindent Alle Metalle weisen einen starken Temperturanstieg nach kurzer Zeit auf, der aber mit der Zeit abflacht und sich einem Sättigungswert nähert. 
-  Die genaue Form der Kurve ist allerdings unterschiedlich; 
+  Die genaue Form der Kurve ist allerdings unterschiedlich; so ist das Abflachen bei Edelstahl am langsamsten, während Aluminium am schnellsten
+  einen Sättigungswert anstrebt.\\
 
-  Um die Wärmeleitung der Metalle beurteilen zu können, wird die Temperatur am Ende der Messung betrachtet, die Messwerte sind in \ref{tab:setecientos} 
+  \noindent Um die Wärmeleitung der Metalle beurteilen zu können, wird die Temperatur am Ende der Messung betrachtet, die Messwerte sind in \ref{tab:setecientos} 
   aufgelistet.
 
   \begin{table}
@@ -51,12 +52,12 @@
 
   \subsubsection{Wärmestrom}
   Nun wird der Wärmestrom $ \frac{\increment Q}{\increment x}$ in den jeweiligen Stäben betrachet. \\
-  Tabelle \ref{tab:strom} zeigt die fünf verschiedenen Zeiten, zu denen der Wärmestrom betrachtet werden soll. 
+  Tabellen \ref{tab:strom} bis \ref{tab:strome} zeigen die Wärmeströme der Metalle zu je fünf verschiedenen Zeiten. 
 
   \begin{table}
     \centering
     \caption{Wärmestrom im breiten Messingstab.}
-    \label{tabl:strom}
+    \label{tab:strom}
     \begin{tabular}{c c c c}
       \toprule
       Zeit $\mathbin{/} \si{\s}$ & Temperaturdifferenz $\mathbin{/} \si{\kelvin}$& Wärmestrom $\mathbin{/} \si{\kelvin\per\s}$\\
@@ -73,7 +74,7 @@
   \begin{table}
     \centering
     \caption{Wärmestrom im schmalen Messingstab.}
-    \label{tabl:strom}
+    \label{tabl:stroms}
     \begin{tabular}{c c c c}
       \toprule
       Zeit $\mathbin{/} \si{\s}$ & Temperaturdifferenz $\mathbin{/} \si{\kelvin}$& Wärmestrom $\mathbin{/} \si{\kelvin\per\s}$\\
@@ -90,7 +91,7 @@
   \begin{table}
     \centering
     \caption{Wärmestrom im Aluminiumstab.}
-    \label{tabl:strom}
+    \label{tabl:stroma}
     \begin{tabular}{c c c c}
       \toprule
       Zeit $\mathbin{/} \si{\s}$ & Temperatur innen $\mathbin{/} \si{\kelvin}$& Temperatur außen $\mathbin{/} \si{\kelvin}$& Wärmestrom $\mathbin{/} \si{\kelvin\per\s}$\\
@@ -107,7 +108,7 @@
   \begin{table}
     \centering
     \caption{Wärmestrom im Edelstahlstab.}
-    \label{tabl:strom}
+    \label{tabl:strome}
     \begin{tabular}{c c c}
       \toprule
       Zeit $\mathbin{/} \si{\s}$ & Temperaturdifferenz $\mathbin{/} \si{\kelvin}$& Wärmestrom $\mathbin{/} \si{\kelvin\per\s}$\\
@@ -116,7 +117,7 @@
       300 & 10.750 & 0.361 \\
       600 & 9.380 & 0.315\\
       900 & 8.880 & 0.298\\% sono fuori dal tunnel, del divertimento
-      1050 & 8.730 & 0.293\\% cuando esco de casa mi anoio sono multo piu contento
+      1050 & 8.730 & 0.293\\% cuando esco de casa mi anoio sono molto piu contento
       \bottomrule
     \end{tabular}
   \end{table}
@@ -125,7 +126,8 @@
   sehr unterschielich. % add more interpretation? no la mia parte intollerante
 
   \subsubsection{Temperaturdifferenz}
-
+  In Abbildung \ref{fig:diffstat} ist die Temperaturdifferenz zwischen dem Punkt, der näher am Peltier-Element gelegen, und dem, der weiter
+  entfernt gelegen ist, gegen die Zeit aufgetragen, für die Temperaturen von Edelstahl und denen von Messing
 
   \begin{figure}
     \centering
@@ -136,10 +138,9 @@
   \FloatBarrier
   \noindent Der generelle Verlauf der Graphen ist gleich: 
   Beide Graphen steigen zu Beginn des Erhitzens stark an, erreichen dann ein Maxixmum 
-  und fallen danach zunächst stark, dann immer langsamer ab. Gegen Ende der Messzeit erreichen 
-  die Verläufe einen Grenzwert, dieser ist unterschiedlich. Auch steigt die Kurve von Aluminium 
-  länger an und erreicht so ein höheres Maximum. \\
-  %%%% add values for max and stuff sono contento
+  und fallen danach zunächst stark, dann immer langsamer ab. Allerdings ist die Temperaturdifferenz für Edelstahl später deutlich größer als die im
+  Messingstab, und der Näherungsprozess ist nicht so deutlich zu erkennen, da er langsamer abläuft. Dies bestätigt den Eindruck, dass Edelstahl den Strom
+  weniger gut leitet als Messing.
 
 
 \subsection{Dynamische Methode}
@@ -159,7 +160,7 @@
 
   \FloatBarrier
 
-  \noindent Aus den Amplituden der periodischen Änderungen der Temperaturen und den zugehörigen Phasendifferenzen kann die Wärmeleitfähigkeit $\kappa$ bestimmt werden (nach %\eqref{eqn:}). campione dei novanta
+  \noindent Aus den Amplituden der periodischen Änderungen der Temperaturen und den zugehörigen Phasendifferenzen kann die Wärmeleitfähigkeit $\kappa$ bestimmt werden (nach ). % campione dei novanta
 
   \begin{table}
     \centering
