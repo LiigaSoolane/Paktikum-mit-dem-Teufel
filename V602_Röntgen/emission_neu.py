@@ -91,7 +91,7 @@ kbeta = unp.nominal_values(k_beta)
 kalpha = unp.nominal_values(k_alpha)
 
 plt.figure()
-plt.plot(theta, N, color = 'steelblue', marker = '.', label = 'Messwerte')
+plt.plot(theta, N, color = 'steelblue', marker = '.', linestyle = '', label = 'Messwerte')
 
 plt.hlines(widths[1], [theta[ind_beta[0]], theta[ind_alpha[0]]], [theta[ind_beta[1]], theta[ind_alpha[1]]], color = 'salmon', label = 'Full Width at Half Maximum')
 

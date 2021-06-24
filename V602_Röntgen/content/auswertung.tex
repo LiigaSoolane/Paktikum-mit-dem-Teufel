@@ -71,7 +71,9 @@
 
 \subsection{Emissionsspektrum}
   Zudem wird das Emissionsspektrum der Cu-Röntgenröhre aufgenommen. Auf das tabellarische Aufführen der Messwerte wird aufgrund 
-  der großen Anzahl an Werten verzichtet. Das Spektrum ist in Abbildung \ref{fig:emission} zu finden. Es sind die K-Linien eingetragen, wobei die 
+  der großen Anzahl an Werten verzichtet. Für die Messfehler wird eine Poisson-Verteilung angenommen mit $\increment N = \sqrt{N}$. Alle weiteren Fehler werden mithilfe
+  der Uncertainties-Bibliothek von python ausgerechnet.\\
+  Das Spektrum ist in Abbildung \ref{fig:emission} zu finden. Es sind die K-Linien eingetragen, wobei die 
   $K_{\alpha}$ Linie bei einem Winkel von $\theta = 22.5 °$ auftritt und einer Energie von $E_{K_{\alpha}} = (8044 \pm 34) \text{eV}$ entspricht,
   die $K_{\beta}$ Linie tritt bei $\theta = 20.2 °$ auf und entspricht einer Energie von $E_{K_{\alpha}} = (8910 \pm 40) \text{eV}$. Die Energien werden dabei mithilfe
   von Gleichung \eqref{eqn:lambda}
@@ -87,7 +89,7 @@
   \subsubsection{Halbwertsbreiten}
     Aus dem Spektrum werden auch die Halbwertsbreiten der Linien ermittelt, dazu wird die Scipy.signals Bibliothek von Python 
     verwendet. \\
-    Es folgt eine Breite für die beiden Linien betragen jeweils $\increment \theta_{\symup{fwhm}} = 0.5 °$. 
+    Die Breiten für die beiden Linien betragen jeweils $\increment \theta_{\symup{fwhm}} = 0.5 °$. 
     Daraus lässt sich mithilfe von
     \begin{equation*}
       A = \frac{E_K}{\increment E_{\text{FWHM}}}
@@ -95,8 +97,8 @@
     das Auflösungsvermögen $A$ bestimmen. \\
     Dabei betragen die Energiedifferenzen
     \begin{align*}
-      \increment E_{\symup{FWHM, \alpha}} = 1.053 \cdot 10^{21}\\ 
-      \increment E_{\symup{FWHM, \beta}} = 1.313 \cdot 10^{21}\\
+      \increment E_{\symup{FWHM, \alpha}} = \bigl( 1.053 \cdot 10^{21} \bigr) \symup{eV}\\ 
+      \increment E_{\symup{FWHM, \beta}} = \bigl( 1.313 \cdot 10^{21} \bigr) \symup{eV}\\
     \end{align*}
     woraus sich für die Auflösungsvermögen
     \begin{align*}
@@ -114,7 +116,7 @@
       \sigma_3 = - \sqrt{\frac{- E_{K_{\beta}} + R_{\infty} (Z - \sigma_1) \frac{1}{n^2}}{R_{\infty}}} \cdot l + Z
     \end{align*}
     Mit $R_{\infty} = 13.6 \text{eV}$ der Rydberg-Energie, der Kernladung $Z$, und $n = 1$, $m = 2$, $l = 3$. 
-    Die Absorptionsenergie von Kupfer ist laut \cite{nist} $E_{\text{abs}} = 8987.96 \pm 15 \text{eV}$.
+    Die Absorptionsenergie von Kupfer ist laut \cite{nist} $E_{\text{abs}} = (8987.96 \pm 15) \text{eV}$.
     Für Kupfer ergeben sich daher Abschrimkonstanten von
     \begin{align*}
       \sigma_1 = 3.293 \pm 0.021\\
@@ -397,7 +399,7 @@
     woraus eine Rydbergfrequenz und -energie von
     \begin{align*}
       R = \frac{1}{a^2 h} = (3 \pm 0.05) \cdot 10^{15} \si{\Hz}\\
-      R_{\infty} = h \cdot R = 12.42 \pm 0.19 \text{eV}
+      R_{\infty} = h \cdot R = (12.42 \pm 0.19) \text{eV}
     \end{align*}
     folgt.\\
     Berechnete Werte sowie Fit sind in \ref{fig:moseley} dargestellt.
