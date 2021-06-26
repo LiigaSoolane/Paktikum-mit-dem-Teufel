@@ -75,7 +75,7 @@ plt.plot(t_stat, stat_7 - stat_8, label = 'Temperaturdifferenz Edelstahl')
 plt.plot(t_stat, stat_2 - stat_1, label = 'Temperaturdifferenz Messing, breit')
 
 plt.xlabel('Zeit [s]')
-plt.ylabel('Temperatut [°C]')
+plt.ylabel('Temperatur [°C]')
 
 plt.legend()
 
@@ -301,4 +301,14 @@ lam_1 = unp.sqrt((4 * np.pi * kappa_mess_ex * 80)/(rho_mess * c_mess))
 lam_5 = unp.sqrt((4 * np.pi * kappa_alu_ex * 80)/(rho_alu * c_alu))
 lam_7 = unp.sqrt((4 * np.pi * kappa_edel_ex * 200)/(rho_edel * c_edel))
 
+lam_1_t = unp.sqrt((4 * np.pi * kappa_mess * 80)/(rho_mess * c_mess))
+lam_5_t = unp.sqrt((4 * np.pi * kappa_alu* 80)/(rho_alu * c_alu))
+lam_7_t = unp.sqrt((4 * np.pi * kappa_edel * 200)/(rho_edel * c_edel))
+
+abw_1 = 100 * (lam_1 - lam_1_t)/lam_1_t
+abw_2 = 100 * (lam_5 - lam_5_t)/lam_5_t
+abw_3 = 100 * (lam_7 - lam_7_t)/lam_7_t
+
 print(f'lambda: Messing {lam_1}, Alu {lam_5}, Edelstahl {lam_7}')
+print(f'lambda: Messing {lam_1_t}, Alu {lam_5_t}, Edelstahl {lam_7_t}')
+print(f'Abweichung: Messing {abw_1}, Alu {abw_2}, Edelstahl {abw_3}')
