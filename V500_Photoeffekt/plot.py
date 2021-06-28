@@ -1,21 +1,59 @@
 import matplotlib.pyplot as plt
 import numpy as np
+from tabulate import tabulate
 
-x = np.linspace(0, 10, 1000)
-y = x ** np.sin(x)
+def pl(x,y,a,c, alpha, omega):
+    y=np.sqrt(y)
+    params, cov = np.polyfit(x[alpha:omega], y[alpha:omega], deg=1, cov=True)
+    errors = np.sqrt(np.diag(cov))
+    #for name, value, error in zip('ab', params, errors):
+    #    print(f'{name} = {value:.3f} ± {error:.3f}')
+    x0=np.linspace(x[alpha], x[omega], 100)
+    y0=params[1]+x0*params[0]
+    c+1
+    plt.figure(c)
+    plt.plot(x, y, 'r*', label='Messwerte')
+    plt.plot(x0, y0, label='Messwerte')
+    plt.xlabel(r'U [V]')
+    plt.ylabel(r'$\sqrt{I}$')
+    plt.legend(loc='best')
+    plt.savefig(a)
+    plt.close()
+    ug=params[1]/params[0]
+    return c, ug
 
-plt.subplot(1, 2, 1)
-plt.plot(x, y, label='Kurve')
-plt.xlabel(r'$\alpha \:/\: \si{\ohm}$')
-plt.ylabel(r'$y \:/\: \si{\micro\joule}$')
+redU, redI = np.genfromtxt('drot.txt',unpack=True)
+greenU, greenI = np.genfromtxt('dgrün.txt',unpack=True)
+blueU, blueI = np.genfromtxt('dblau.txt',unpack=True)
+yelU, yelI = np.genfromtxt('dgelb.txt',unpack=True)
+yellU, yellI = np.genfromtxt('dgelb1.txt',unpack=True)
+
+c=-1
+c, redug =pl(redU, redI, 'build/plot.pdf', c, 6, 10)
+c, greenug =pl(greenU, greenI, 'build/fuckyou.pdf', c, 8, 12)
+c, blueug =pl(blueU, blueI, 'build/hurensohn.pdf', c, 8, 13)
+c, yelug =pl(yelU, yelI, 'build/verdammtescheiße.pdf', c, 18, 28)
+c, yellug =pl(yellU, yellI, 'build/fresse.pdf', c, 8, 11)
+
+lamda = np.array([614, 577.579, 577.579, 546, 434])
+ug = np.array([redug, yelug, yellug, greenug, blueug])
+#table ={'1': lamda, '3': ug}
+#print(tabulate (table, tablefmt="latex"))
+params, cov = np.polyfit(lamda, ug, deg=1, cov=True)
+errors = np.sqrt(np.diag(cov))
+for name, value, error in zip('ab', params, errors):
+    print(f'{name} = {value:.3f} ± {error:.3f}')
+e= - 1.602176634 * 10**(-19)
+print(f'h=', params[0]*e)
+
+x0=np.linspace(614, 434, 100)
+y0=params[1]+x0*params[0]
+
+c+1
+plt.figure(c)
+plt.plot(lamda, ug, 'r*', label='Messwerte')
+plt.plot(x0, y0, label='lineare Regression')
+plt.xlabel(r'$ \lambda$ [nm]')
+plt.ylabel(r'$U_G$ [V]')
 plt.legend(loc='best')
-
-plt.subplot(1, 2, 2)
-plt.plot(x, y, label='Kurve')
-plt.xlabel(r'$\alpha \:/\: \si{\ohm}$')
-plt.ylabel(r'$y \:/\: \si{\micro\joule}$')
-plt.legend(loc='best')
-
-# in matplotlibrc leider (noch) nicht möglich
-plt.tight_layout(pad=0, h_pad=1.08, w_pad=1.08)
-plt.savefig('build/plot.pdf')
+plt.savefig('build/torte.pdf')
