@@ -53,7 +53,7 @@ a=params[0]
 
 c+1
 plt.figure(c)
-plt.plot(lamda, ug, 'r*', label='Messwerte')
+plt.plot(lamda, ug, 'r*', label=r'für $U_G$ bestimmte Werte')
 plt.plot(x0, y0, label='lineare Regression')
 plt.xlabel('f [Hz]')
 plt.ylabel(r'$U_G$ [V]')
