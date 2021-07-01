@@ -1,12 +1,13 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-\subsection{Rote Spektrallinie}
+\subsection{Bestimmung des Planckschen Wirkungsquantum aus dem Photostrom}
   Es wurden für verschiedene Spektrallinien die Anodenspannung variiert und der resultierende
   Strom zwischen Anode und Anode gemessen. Folgende Werte wurden ermittelt:
   \begin{table}[H]
     \centering
     \caption{Messwerte der roten Spektrallinie}
+    \label{tab:fiesemoepp}
     \begin{tabular}{c c}
      \toprule
       U [V]& I[nA]\\
@@ -46,7 +47,7 @@
     -0.4  & 0.09 \\
     -0.6  & 0.01 \\
     -0.8  & 0    \\
-     1    & 0    \\
+     -1    & 0    \\
      \bottomrule
     \end{tabular}
   \end{table}  
@@ -138,48 +139,84 @@
      \bottomrule
     \end{tabular}
   \end{table} 
-  Diese Daten sind in Abbildung %\ref{fig:plot} bis \ref{fig:scheisse} dargestellt.
-  Für die linearen Teile der Messwerte wurde mittels Python eine lineare Regression 
-  anhand der Funktion $\sqrt{I}=aU+b$ angefertigt.
-
-  \begin{figure}
+  \noindent Die für die verschiedenen Spektrallinien aufgenommenen Daten werden
+  in Tabelle \ref{tab:fiesemoepp} bis Tabelle \ref{tab:idle} wiedergegeben.
+  Für die Analyse anhand der Funktion $\sqrt{I}=aU+b$ sind in Abbildung \ref{fig:plot} 
+  bis \ref{fig:scheisse} die Wurzel des Photostromes gegen die angelegte Spannung für jede betrachtete
+  Spektrallinie
+  aufgetragen. Diese werden grafisch auf Linearität untersucht. Für die als linear befundenen Teile 
+  der jeweiligen Messwertfolge wurde mittels Python eine lineare Regression 
+  mit der Funktion $\sqrt{I}=aU+b$ angefertigt. Zunächst sind nun die Abbildungen dargestellt, 
+  danach folgen die Erläuterungen und Ergebnisse.
+  Die Messwerte für die rote Spektrallinie mit einer Wellenlänge von $\lambda = 614 \si{\nano\meter}$
+  ist in folgender Abbildung dargestellt.
+  \begin{figure}[H]
     \centering
-    \includegraphics{build/plot.pdf}
+    \includegraphics[scale=0.8]{build/plot.pdf}
     \caption{Messwerte und lineare Regression der roten Spektrallinie}
     \label{fig:plot}
   \end{figure}
-  \begin{figure}
+  Die Messwerte für die güne Spektrallinie mit einer Wellenlänge von $\lambda = 546 \si{\nano\meter}$
+  ist in folgender Abbildung dargestellt.
+  \begin{figure}[H]
     \centering
-    \includegraphics{build/fuckyou.pdf}
+    \includegraphics[scale=0.8]{build/fuckyou.pdf}
     \caption{Messwerte und lineare Regression der grünen Spektrallinie}
     \label{fig:fuck}
   \end{figure}
-  \begin{figure}
+  Die Messwerte für die blaue Spektrallinie mit einer Wellenlänge von $\lambda = 492 \si{\nano\meter}$
+  ist in folgender Abbildung dargestellt.
+  \begin{figure}[H]
     \centering
-    \includegraphics{build/hurensohn.pdf}
+    \includegraphics[scale=0.8]{build/hurensohn.pdf}
     \caption{Messwerte und lineare Regression der blauen Spektrallinie}
     \label{fig:hure}
   \end{figure}
-  \begin{figure}
+  
+  Für die gelbe Spaktrallinie mit einer Wellenlänge von $\lambda = 577.579 \si{\nano\meter}$
+  wurden zwei Messreihen durchgeführt. Die erste jener ist in folgender Abbildung dargestellt.
+  \begin{figure}[H]
     \centering
-    \includegraphics{build/fresse.pdf}
+    \includegraphics[scale=0.8]{build/fresse.pdf}
     \caption{Messwerte und lineare Regression der gelben Spektrallinie}
     \label{fig:fresse}
   \end{figure}
-  \begin{figure}
+  In der folgenden Abbildung \ref{fig:scheisse} ist die zweite Messreihe für die gelbe Spektrallinie
+  dargestellt.
+  \begin{figure}[H]
     \centering
-    \includegraphics{build/verdammtescheiße.pdf}
+    \includegraphics[scale=0.8]{build/verdammtescheiße.pdf}
     \caption{Messwerte und lineare Regression der gelben Spektrallinie}
     \label{fig:scheisse}
   \end{figure}
   
+  In Tabelle \ref{tab:hirntoter} sind jeweils der Begin und das Ende der linearen Teile der Messdaten
+  für die jeweilige Spektrallinie dargestellt. Es wird für jede Spektrallinie von $U_a$ bis $U_b$ 
+  die lineare Regression durchgeführt.
+  \begin{table}[H]
+    \centering
+    \caption{Parameter der linearen Regressionen}
+    \label{tab:hirntoter}
+    \begin{tabular}{c c c}
+     \toprule
+      $\lambda$ [nm] & $U_{a}$ [V] & $U_{b}$ [V] \\
+      \midrule
+      614     & -0.2 & 0.5  \\
+      577.579 & -0.2 & 2.5  \\
+      577.579 & -0.6 & 0.02 \\
+      546     & -0.8 & 0.02 \\
+      434     & -1   & 0    \\
+     \bottomrule
+    \end{tabular}
+  \end{table} 
   Die durch die lineare Regression bestimmten Koeffizienten und den Grenzspannungen $U_G$,
-  der sich aus den Schnittpunkten mit der Spannungsachse ergibt.
+  der sich aus den Schnittpunkten mit der Spannungsachse ergibt, sind in Tabelle 
+  \ref{tab:affenarsch} dargestellt. 
   
   \begin{table}[H]
     \centering
     \caption{Parameter der linearen Regressionen}
-    \label{tab:some}
+    \label{tab:affenarsch}
     \begin{tabular}{c c c c}
      \toprule
       $\lambda$ [nm] & a & b & $U_G$ [nV]\\
@@ -192,22 +229,25 @@
      \bottomrule
     \end{tabular}
   \end{table} 
-  Durch Umpolen werden die Werte für $U_G$ positiv.
-  Aus den erhaltenen Gegenspannungen und Lichtfrequenzen wird erneut eine lineare 
-  Regression durchgeführt.
+  \noindent Durch Umpolen werden die Werte für $U_G$ positiv. Um nun die Austrittsarbeit aus der Photokathode
+  und das Plancksche Wirkungsquantum zu bestimmen, wird mit den erhaltenen Gegenspannungen 
+  mit zugehörigen Lichtfrequenzen erneut eine lineare Regression durchgeführt. Die bestimmten
+  Gegenspannungen $U_G$ sind in der folgenden Grafik \ref{fig:torte} gegen die zugehörigen 
+  Wellenlängen aufgetragen.
   \begin{figure}
     \centering
     \includegraphics{torte.pdf}
     \caption{}
     \label{fig:torte}
   \end{figure}
-  Mit der Ausgleichsgeraden $U_G=a\cdot f +b$ werden die Koeffizienten
+  Mit einer linearen Regression in Python der Ausgleichsgeraden $U_G=a\cdot f +b$ 
+  werden die Koeffizienten
   \begin{align*}
     a = (4.46 ± 0.18) \cdot 10^{-15}\\
     b = 1.66 ± 0.1
   \end{align*}
-  bestimmt. Die Steigung a entspricht $\dfrac{h}{e}$ und der Achsenabschnitt
-  b der Austrittsarbeit in eV. Somit ergibt sich
+  bestimmt. Aus Gleichung \ref{eqn:bilanz} folgt, dass die Steigung a dem Bruch $\dfrac{h}{e}$ und 
+  der Achsenabschnitt b der Austrittsarbeit in eV entspricht. Somit ergibt sich
   \begin{align*}
     h = 4.46 \cdot 10^{-15} eVs\\
     W_A = 1.66 eV.
@@ -217,15 +257,17 @@
 \subsection{Betrachtung des Photostroms in Abhängigkeit von der Spannung}
   Nun wird bei einer Wellenlänge von $\lambda = 578$ nm der Photostrom bei einer Variation
   der angelegten Brems- bzw. Beschleunigungsspannung von -0.2 V bis 19 V gemessen. Die
-  Daten sind in Tabelle \ref{tab:idle} gelistet und in Abbildung \ref{fig:scheiße} dargestellt.
+  Daten sind in Tabelle \ref{tab:idle} gelistet und in Abbildung \ref{fig:scheisse} dargestellt.
   Es ist ersichtlich, dass es einen Sättigungswert gibt, gegen den die Kurve strebt.
-  Dieser kommt durch die konstante Intensität des bestrahlenden Lichtes 
-  zustande, da diese proportional zu der Anzahl austretender Elektronen ist.
+  Dieser kommt durch die konstante Intensität des bestrahlenden Lichtes
+  zustande. Die Anzahl der austretenden Elektronen ist nämlich proportional zu der
+  Intenssität des einfallenden Lichtes.
   Ab einem gewissen Punkt werden nicht mehr Elektronen vom Licht freigesetzt
-  als von der Anode angezogen. Der Sättigungswert hängt also nur von der Intensität ab.\\
-  Dieser wird asymptotisch angestrebt, da die Elektronen beim Austritt über
-  verschiedene kinetische Energien verfügen und daher teilweise die Anode verfehlen,
-  weil diese auf einen kleinen Raumbereich beschränkt ist.\\
+  als von der Anode angezogen. 
+  Da die Elektronen beim Austritt über verschiedene kinetische Energien verfügen, 
+  und einen Impuls in Unterschiedliche Richtungen aufweisen, und daher teilweise die Anode 
+  verfehlen, wird der Sättigungswert asymptotisch erreicht. Der Sättigungswert hängt also 
+  von der Oberfläche der Anode sowie der Intensität ab.\\
   Auch bei der Spannung $U_G$ gibt es keinen Knick, sondern eine asymptotische Annäherung.
   Diese exestiert aus dem selben Grund. Auch wenn keine Spannung anliegt, gibt es Elektronen,
   die kinetischische Energie in Richtung der Anode besitzen, sodass trotzdem ein Strom zwischen 
