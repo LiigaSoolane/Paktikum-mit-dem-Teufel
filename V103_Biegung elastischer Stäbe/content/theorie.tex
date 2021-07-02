@@ -15,16 +15,23 @@ Ziel des Versuches ist es, das Elastizitätsmodul verschiedener Materialien zu b
         \sigma = E \dfrac{\Delta L}{L}
     \end{equation}
     mit dem Elestizitätsmodul $E$ in Kraft. Um dieses für verschiedene Materialien zu bestimmen, 
-    wird die Biegung von Stäben betrachtet, wie in Abb. ... und Abb. zu sehen.
+    wird die Biegung von Stäben betrachtet, wie in Abb. \ref{fig:lebertran} und Abb. 
+    \ref{fig:gemüse} zu sehen.
 
 \subsection{Mechanische Spannung bei Biegung}
     \label{sec:aiaiai}
-    Die Biegung eines Stabes verursacht Spannung innerhalb der Probe. Wie in Abbildung ...
+    Die Biegung eines Stabes verursacht Spannung innerhalb der Probe. Wie in Abbildung \ref{fig:backfisch}
     dargestellt kommt es zu Dehnung der äußeren Fasern und Stauchung der inneren. 
     Allein die neutrale Faser in der Mitte des Querschnitts Q behält ihre Länge bei.
     Bei den anderen Fasern kommt es aufgrund der Elastizitäts des Körpers zu Normalspannungen.
-    Aus geometrischen Günden, die in Abbildung ... ersichtlich sind, ergibt sich für die 
-    Änderung $delta x$ einer Faser der Länge $\Delta x$
+    \begin{figure}
+        \centering
+        \includegraphics[scale=0.5]{Backfisch.png}
+        \caption{Skizze zur Berechnung der Normalspannung $\sigma(y)$ in einem gebogenen Stab}
+        \label{fig:backfisch}
+    \end{figure}
+    Aus geometrischen Günden, die in Abbildung \ref{fig:backfisch} ersichtlich sind, 
+    ergibt sich für die Änderung $delta x$ einer Faser der Länge $\Delta x$
     \begin{equation*}
         \delta x = y \Delta \phi= y\dfrac{\Delta x}{R},
     \end{equation*}
@@ -44,13 +51,19 @@ Ziel des Versuches ist es, das Elastizitätsmodul verschiedener Materialien zu b
     aufsummieren. 
     
 \subsection{Biegung bei einseitiger Einspannung}
+    \begin{figure}
+        \centering
+        \includegraphics[scale=0.5]{Lebertransuppe.png}
+        \caption{Durchbiegung eines elastischen Stabes bei einseitiger Einspannung}
+        \label{fig:lebertran}
+    \end{figure}
     Wird ein Stab einseitig eingespannt und ein Gewicht am uneingespannten Ende des Stabes 
     installiert, biegt sich der Stab aufgrund der Gravitation mit der Durchbiegung D(x) 
     und bewirkt am Ort x ein angreifendes Drehmoment
     \begin{equation}
         M_F = F \cdot (L − x)
     \end{equation}
-    mit der Länge des Hebelarms (L − x).
+    mit der Länge des Hebelarms (L − x). Dabei wird das Eigengewicht des Staber vernachlässigt.
     Dieses Drehmoment verursacht eine Biegung des Stabes, wodurch die im Kapitel 
     \ref{sec:aiaiai} berechneten Normalspannungen zustande kommen. Diese heben das 
     Drehmoment exakt auf, so dass ein Kräftegleichgewicht zwischen $M_F$ und $M_{\sigma}$ herrscht.
@@ -73,7 +86,13 @@ Ziel des Versuches ist es, das Elastizitätsmodul verschiedener Materialien zu b
     bestimmt werden.
 
 \subsection{Biegung bei zweiseitiger Auflage}
-    Wie in Abb. ... dargestellt, wird bei beidseitiger Auflage ein Gewicht in der Mitte des 
+    \begin{figure}
+        \centering
+        \includegraphics[scale=0.5]{Gemüsemedley.png}
+        \caption{Durchbiegung eines elastischen Stabes bei beidseitiger Auflage}
+        \label{fig:gemüse}
+    \end{figure}
+    Wie in Abb. \ref{fig:gemüse} dargestellt, wird bei beidseitiger Auflage ein Gewicht in der Mitte des 
     jeweiligen Stabes installiert, sodass dieser sich zur Mitte hin biegt. Bei dieser 
     Konstruktion greift am Ort x die Kraft $\dfrac{F}{2}$ mit Hebelarm x 
     beziehungsweise (L-x) auf der linken Seite an der Querschnittsfläche Q
