@@ -6,11 +6,11 @@
   wird, wurden die folgenden Messdaten aufgenommen:
   \begin{table}[H]
   \centering
-  \caption{Messwerte des Selektivverstärkers}
+  \caption{Messwerte des Parallelspaltes}
   \label{tab:mag}
   \begin{tabular}{c c}
    \toprule
-    Winkel $\phi$ & Intensität [A]\\
+    Abstand vom Hauptmaximum [m] & Intensität [A]\\
    \midrule
    -0.026     & -2.27e-09    \\
  -0.025       & -2.27e-09    \\
@@ -52,6 +52,17 @@
   0.011       &  1.49773e-06 \\
   0.012       &  4.9773e-07  \\
   0.013       &  2.4773e-07  \\
+  \bottomrule
+  \end{tabular}
+  \end{table}
+  \begin{table}[H]
+    \centering
+    \caption{Messwerte des Parallelspaltes}
+    \label{tab:mag}
+    \begin{tabular}{c c}
+     \toprule
+      Abstand vom Hauptmaximum [m] & Intensität [A]\\
+     \midrule
   0.014       &  4.9773e-07  \\
   0.015       &  4.9773e-07  \\
   0.016       & -2.27e-09    \\
@@ -67,20 +78,26 @@
   \end{tabular}
  \end{table} 
   Bei diesen wird der Dunkelstrom abgezogen, weshalb manche Werte ins Negative geraten.
-  Die Daten werden durch die Funktion \ref{eq:6}
+  Um den Winkel $\phi$ zu erhalten, wird der geometrische Zusammenhang
   \begin{equation*}
-    I=A_0^2\cdot b^2\cdot (\dfrac{\lambda}{\pi \ b \ \sin{\psi}})^2 \cdot \sin{\pi \ b \ (\sin{\dfrac{\phi}{\lambda}}})^2
+    \tan{\phi}=\dfrac{a}{l}
   \end{equation*}
-  angenähert. Diese ist in Abbildung \ref{fig:plot} dargestellt.
-  \begin{figure}
+  verwendet, wobei a den Abstand vom Hauptmaximum und l den Abstand des Schirmes zur Blende
+  kennzeichnet.
+  \begin{figure}[H]
     \centering
     \includegraphics{plot.pdf}
     \caption{Messwerte des Einfachspaltes}
-    \label{fig:doppel}
+    \label{fig:einzel}
   \end{figure}
+  Die Daten werden durch die Funktion \ref{eq:6}
+  \begin{equation*}
+    I=A_0^2\cdot b^2\cdot (\dfrac{\lambda}{\pi \ b \ \sin{\phi}})^2 \cdot \sin{\pi \ b \ (\sin{\dfrac{\phi}{\lambda}}})^2
+  \end{equation*}
+  angenähert. Diese ist in zusammen mit den Messwerten in Abbildung \ref{fig:einzel} dargestellt.
   Die für die Koeffizienten ermittelten Werte lauten:
   \begin{align*}
-    A_0 = 69.8477 \pm 1.009 \si{\ampere}\\
+    A_0 = 69.8477 \pm 1.009 \si{\ampere \per \milli \metre}\\
     b = (157.4 \pm 2.63) \cdot 10^{-6} \si{\metre}
   \end{align*}
   
@@ -89,11 +106,11 @@
   Die gemessenen Werte für den Doppelspalt lauten:
   \begin{table}[H]
     \centering
-    \caption{Messwerte des Selektivverstärkers}
+    \caption{Messwerte des Doppelspaltes}
     \label{tab:mag}
     \begin{tabular}{c c}
      \toprule
-      Winkel $\phi$ & Intensität\\
+      Abstand vom Hauptmaximum [m] & Intensität [A]\\
      \midrule
   -0.026       & 8.99773e-06 \\
  -0.025       & 5.99773e-06 \\
@@ -121,7 +138,18 @@
  -0.003       & 4.79977e-05 \\
  -0.002       & 0.000259998 \\
  -0.001       & 0.0023      \\
-  3.46945e-18 & 0.003       \\
+  0           & 0.003       \\
+  \bottomrule
+  \end{tabular}
+  \end{table}
+  \begin{table}[H]
+    \centering
+    \caption{Messwerte des Parallelspaltes}
+    \label{tab:mag}
+    \begin{tabular}{c c}
+     \toprule
+      Abstand vom Hauptmaximum [m] & Intensität [A]\\
+     \midrule
   0.001       & 0.000469998 \\
   0.002       & 0.000269998 \\
   0.003       & 0.000799998 \\
@@ -163,7 +191,7 @@
   \end{figure}
   Die aus der Ausgleichsrechnung gewonnenen Koeffizienten lauten:
   \begin{align*}
-    A_0 = 0.0543 \pm 0.002 \si{\ampere}\\
+    A_0 =  \SI{0.0543 \pm 0.002}{\ampere\per \milli\metre}\\
     b = (1.38 \pm 0.45)\cdot 10^{-4} \si{\metre}\\
     s = (4.98 \pm 0.1) \cdot 10^{-4} \si{\metre}
   \end{align*}
