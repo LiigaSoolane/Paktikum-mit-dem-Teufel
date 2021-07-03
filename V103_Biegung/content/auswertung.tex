@@ -1,0 +1,253 @@
+\section{Auswertung}
+\label{sec:Auswertung}
+
+\subsection{Bestimmung der Metalle}
+  Zur Bestimmung der Metalle, aus denen die untersuchten Stäbe bestehen, werden
+  zunächst die Eigenschäften der Stäbe aufgenommen. Sie sind in Tabelle \ref{tab:mass}
+  zu finden.
+
+  \begin{table}
+    \centering
+    \caption{Vermessung des runden Stabs.}
+    \label{tab:mass}
+    \begin{tabular}{c c c c}
+      \toprule
+      \multicolumn{2}{c}{runder Stab} & \multicolumn{2}{c}{quadratischer Stab}\\
+      \cmidrule(lr){1-2}\cmidrule(lr){3-4}{Größe} & {Messwert } & {Größe} & {Messwert}\\
+      \midrule
+      Länge & $0.58 \si{\m}$& Länge & $0.60 \si{\m}$\\
+      Durchmesser & $0.01 \si{\m}$& Breite und Höhe & $1.025 \cdot 10^{-2} \si{\m}$\\
+      Masse & $356 \si{\g}$ & Masse & $535.7 \si{\g}$\\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+
+  \noindent Aus den Massen und Volumen können nach $\rho = M/V$ die Dichten $\rho$ der 
+  Metalle berechnet werden. Es ergeben sich
+  \begin{align*}
+    \rho_{\symup{rund}} = 7.808 \si{\g\per\centi\m\cubed}\\
+    \rho_{\symup{quad}} = 8.498 \si{\g\per\centi\m\cubed}
+  \end{align*}
+  woraus sich der runde Stab als Eisen identifizieren lässt (Dichte nach \cite{dichten}: $\rho_{\symup{Eisen}} = 7.87 \si{\g\per\centi\m\cubed}$)
+  und der Stab quadratischen Querschnitts als Messing (Dichte nach \cite{dichten}: $\rho_{\symup{Messing}} = 8.5 \si{\g\per\centi\m\cubed}$).\\
+
+\subsection{Berechnung der Flächenträgheitsmomente}
+  Bevor mit der Bestimmung der Elastizitätsmodule begonnen werden kann, müssen die Flächenträgheitsmomente der beiden 
+  Stäbe berechnet werden.\\
+  Für den runden Eisenstab lässt sich das Integral in Gleichung \eqref{eqn:} gut in Polarkoordinaten 
+  umformen. Dann gilt
+  \begin{align*}
+    I_{\symup{rund}} &= \int_0^{2 \pi} \int_0^{\frac{d}{2}} \left( r \cos(\phi)\right)^2 r \symup{d}r \symup{d}\phi \\
+    &= \frac{1}{4} r^4|_{0}^{ \frac{d}{2} } \int_0^{2 \pi} \cos^2(\phi) \symup{d}\phi \\
+    &= \frac{d^4}{64} \int_{0}^{2 \pi} \frac{1}{2} + \frac{1}{2} \cos{2 \phi} \symup{d}\phi\\
+    &= \frac{d^4}{64} \pi 
+  \end{align*}
+  mit dem Durchmesser $d$ des Eisenstabes.\\
+
+  \noindent Dagegen lässt sich das Flächenträgheitsmoment des Messingstabs in kartesischen Koordinaten berechnen. Es gilt
+  \begin{align*}
+    I_{\symup{quad}} &= \int_{- \frac{a}{2}}^{ \frac{a}{2} } \int_{ - \frac{a}{2}}^{ \frac{a}{2}} y^2 \symup{d}y \symup{d}x \\
+    &= x|_{ - \frac{a}{2}}^{ \frac{a}{2}} \int_{ - \frac{a}{2}}^{ \frac{a}{2}} y^2 \symup{d}y\\
+    &= a \cdot \frac{1}{3} y^3|_{ - \frac{a}{2}}^{ \frac{a}{2}}\\
+    &= \frac{a^4}{12}
+  \end{align*}
+  mit der Breite und Höhe des $a$ des Messingstabes.
+
+\subsection{Einseitige Einspannung}
+  Nun können die Elastizitätsmodule bestimmt werden. Tabellen \ref{tab:rund} und \ref{tab:eck} 
+  zeigen die aufgenommenen Messwerte.\\
+
+  \begin{table}
+    \centering
+    \caption{Messung der Biegung des Messingstabs bei einseitiger Einspannung.}
+    \label{tab:eck}
+    \begin{tabular}{c c}
+      \toprule
+      Abstand von der Einspannung $\mathbin{/} \si{\centi\m}$ & Durchbiegung $\mathbin{/} \si{\milli\m}$\\
+      \midrule
+      3  & 0\\
+      8  & 0.001\\
+      13 & 0.03\\
+      16 & 0.005\\
+      21 & 0.11\\
+      26 & 0.42\\
+      29 & 0.71\\
+      31 & 0.94\\
+      33 & 1.21\\
+      35 & 1.415\\
+      37 & 1.64\\
+      39 & 1.865\\
+      41 & 2.125\\
+      43 & 2.355\\
+      45 & 2.58\\
+      47 & 2.83\\
+      49 & 3.02\\
+      51 & 3.25\\
+      53 & 3.31\\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+
+  \begin{table}
+    \centering
+    \caption{Messung der Biegung des Eisenstabs bei einseitiger Einspannung.}
+    \label{tab:rund}
+    \begin{tabular}{c c}
+      \toprule
+      Abstand von der Einspannung $\mathbin{/} \si{\centi\m}$ & Durchbiegung $\mathbin{/} \si{\milli\m}$\\
+      \midrule
+      3  & 0.01\\
+      8  & 0.1\\
+      13 & 0.29\\
+      18 & 0.51\\
+      23 & 0.74\\
+      25 & 0.88\\
+      27 & 0.965\\
+      29 & 1.14\\
+      31 & 1.25\\
+      33 & 1.41\\
+      35 & 1.52\\
+      37 & 1.64\\
+      39 & 1.825\\
+      41 & 2.02\\
+      43 & 2.1\\
+      45 & 2.275\\
+      47 & 2.385\\
+      49 & 2.62\\
+      51 & 2.765\\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+  \FloatBarrier
+
+  \noindent Um zu einer linearen Darstellung von D zu gelangen, werden diese Daten in den Term
+  \begin{equation*}
+    L x^2 - \frac{x^3}{3}
+  \end{equation*}
+  aus Gleichung \eqref{eqn:} eingesetzt. Dann lässt sich eine lineare Regression durchführen, die 
+  für die Darstellung $D(x) = a \cdot x + b$ die Parameter
+  \begin{align*}
+    a_{\symup{rund}} = \left(2.997 \pm 0.024 \right) \cdot 10^{-2}\\
+    b_{\symup{rund}} = \left(3.900 \pm 1.300 \right) \cdot 10^{-5}\\
+  \end{align*}
+  für den runden Stab und die Parameter
+  \begin{align*}
+    a_{\symup{quad}} = \left( 3.660 \pm 0.130 \right) \cdot 10^{-2}\\
+    b_{\symup{quad}} = \left(0.040 \pm 0.008 \right) \cdot 10^{-2}\\
+  \end{align*}
+  für den Stab mit quadratischem Querschnitt liefert. Die Fehler wurden dabei nach 
+  \begin{equation}
+    \Delta
+    \label{eqn:linerr}
+  \end{equation}
+  berechnet. Aus den Steigungen der Geraden lässt sich das Elastizitätsmodul bestimmen, wenn man den 
+  entsprechenden Teil aus \ref{} umstellt. Es folgt
+  \begin{align*}
+    a &= \frac{F}{2 E I}\\
+    \implies E &= \frac{F}{2 a I}
+  \end{align*}
+  mit der Kraft $F$, die auf den jeweiligen Stab wirkt und dem zuvor berechneten Flächenträgheitsmoment $I$.
+  Die Kraft entspricht der Gewichtskraft $F = m \cdot g$ mit Gravitationsbeschleunigung $g = $ \cite{}
+  und dem jeweils verwendeten Gewicht $m$. \\
+  Die Messwerte und die linearen Ausgleichsgeraden sind in Abbildung \ref{fig:plots} dargestellt.
+  Es ergeben sich nach Einsetzen
+  \begin{align*}
+    E_{\symup{Eisen, einseitig}} = \left( 1.761 \pm 0.014\right)\cdot 10^{11} \si{\newton\per\m}\\
+    E_{\symup{Messing}} = \left( 0.945 \pm 0.035 \right)\cdot 10^{11} \si{\newton\per\m}.\\ %%%%%%%%% argenti vive
+  \end{align*}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{plots_einseitig.pdf}
+    \caption{Messung der Durchbiegung beider Stäbe bei einseitiger Auflage.}
+    \label{fig:plots}
+  \end{figure}
+  
+
+\subsection{Beidseitige Einspannung}
+  Bei der Untersuchung des Verhaltens der Biegung unter beidseitiger Einspannung wurde nur der 
+  Eisenstab betrachtet. \\
+  Die aufgenommenen Messwerte sind in Tabellen zu finden. %%%%%%%%% add here
+
+  \begin{table}
+    \centering
+    \caption{Messwerte bei beidseitiger Auflage, Bereich $0 \leq x \leq \frac{L}{2}$.}
+    \label{tab:rechts}
+    \begin{tabular}{c c}
+      \toprule
+      Abstand $x \mathbin{/} \si{\centi\m}$ & Durchbiegung $D \mathbin{/} \si{\milli\m}$ \\
+      \midrule
+      3  & 0\\
+      8  & 0\\
+      13 & 0.035\\
+      17 & 0.075\\
+      19 & 0.14\\
+      21 & 0.16\\
+      23 & 0.2\\
+      25 & 0.19\\
+      27 & 0.21\\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+
+  \begin{table}
+    \centering
+    \caption{Messwerte bei beidseitiger Auflage, Bereich $\frac{L}{2} \leq x \leq L$.}
+    \label{tab:links}
+    \begin{tabular}{c c}
+      \toprule
+      Abstand $x \mathbin{/} \si{\centi\m}$ & Durchbiegung $D \mathbin{/} \si{\milli\m}$ \\
+      \midrule
+      29 & 0.18\\
+      31 & 0.2\\
+      33 & 0.185\\
+      35 & 0.16\\
+      37 & 0.15\\
+      39 & 0.13\\
+      44 & 0.12\\
+      49 & 0.01\\
+      54 & 0\\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+  \FloatBarrier
+
+  \noindent Es werden also der Bereich rechts von der Auflage des Gewichts und links davon 
+  getrennt betrachet.\\
+  Werden die nichtlinearen Teile in \ref{} und \ref{} berechnet, lassen sich wieder lineare 
+  Regressionen durchführen, aus denen das Elastizitätsmodul von Eisen nach 
+  \begin{align*}
+    a &= \frac{F}{48 E I} \\
+    E &= \frac{F}{48 a I}
+  \end{align*}
+  bestimmt werden kann.\\
+  Die Parameter ergebens sich für den Bereich $\leq \frac{L}{2}$ zu 
+  \begin{align*}
+    a_{\symup{rechts}} &= \left( 0.154 \pm 0.026 \right) \cdot 10^{-2}\\
+    b_{\symup{rechts}} &= \left( 0.009 \pm 0.004 \right) \cdot 10^{-2}\\
+  \end{align*}
+  und für den Bereich $\geq \frac{L}{2}$ zu 
+  \begin{align*}
+    a_{\symup{links}} = \left( 0.130 \pm 0.012 \right) \cdot 10^{-2}\\
+    b_{\symup{links}} = \left( 0.041 \pm 0.017 \right) \cdot 10^{-2}.\\
+  \end{align*}
+  Messwerte sowie Fit sind in Abbildungen dargestellt.
+  Für das Elastizitätsmodul ergibt sich
+  \begin{align*}
+    E_{\symup{Eisen, rechts}} = \left( 2.030 \pm 0.340 \right) \cdot 10^{11} \si{\newton\per\m}\\
+    E_{\symup{Eisen, links}} = \left( 2.410 \pm 0.230 \right) \cdot 10^{11} \si{\newton\per\m}.\\
+  \end{align*}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{plot_rechts.pdf}
+    \caption{Messung der Durchbiegung bei beidseitiger Auflage, Bereich $\leq \frac{L}{2}$.}
+    \label{fig:rechts}
+  \end{figure}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{plot_links.pdf}
+    \caption{Messung der Durchbiegung bei beidseitiger Auflage, Bereich $\geq \frac{L}{2}$.}
+    \label{fig:links}
+  \end{figure}
