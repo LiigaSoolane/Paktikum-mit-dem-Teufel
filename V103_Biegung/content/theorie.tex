@@ -31,7 +31,7 @@ Ziel des Versuches ist es, das Elastizitätsmodul verschiedener Materialien zu b
         \label{fig:backfisch}
     \end{figure}
     Aus geometrischen Günden, die in Abbildung \ref{fig:backfisch} ersichtlich sind, 
-    ergibt sich für die Änderung $delta x$ einer Faser der Länge $\Delta x$
+    ergibt sich für die Änderung $\Delta x$ einer Faser der Länge $\Delta x$
     \begin{equation*}
         \delta x = y \Delta \phi= y\dfrac{\Delta x}{R},
     \end{equation*}
@@ -78,10 +78,12 @@ Ziel des Versuches ist es, das Elastizitätsmodul verschiedener Materialien zu b
     ergibt. Die Durchbiegung kann also zu
     \begin{equation}
         D(x)=\dfrac{F}{2 E \ I}(Lx²-\dfrac{x^3}{3})
+        \label{eqn:hubert}
     \end{equation}
     mit Flächenträgheitsmoment
     \begin{equation}
         I = \int_Q y² dq
+        \label{eqn:trage}
     \end{equation}
     bestimmt werden.
 
@@ -110,8 +112,8 @@ Ziel des Versuches ist es, das Elastizitätsmodul verschiedener Materialien zu b
     \end{equation*}
     Somit folgt für 
     \begin{align}
-        \text{für } 0 \leq x \leq \dfrac{L}{2}\ \ \ \ D(x)=\dfrac{F}{48 E\ I}(3L^2x-4x^3) \\
-        \text{für} \dfrac{L}{2} \leq x \leq L:\ \ \ \ D(x)=\dfrac{F}{48 E\ I}(4 x^3-12Lx^2+9L^2x-L^3) 
+        \text{für } 0 \leq x \leq \dfrac{L}{2}\ \ \ \ D(x)=\dfrac{F}{48 E\ I}(3L^2x-4x^3) \label{eqn:kurt} \\
+        \text{für} \dfrac{L}{2} \leq x \leq L:\ \ \ \ D(x)=\dfrac{F}{48 E\ I}(4 x^3-12Lx^2+9L^2x-L^3) \label{eqn:fred}
     \end{align}
 
 %\subsection{Zusammenhang zwischen Elastizitätsmodul und Schallgeschwwindigkeit in Festkörpern}

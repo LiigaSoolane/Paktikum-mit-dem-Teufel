@@ -1,5 +1,16 @@
 \section{Auswertung}
 \label{sec:Auswertung}
+\subsection{Fehlerrechnung}
+  Die Fehler bereits fehlerbehafteter Größen werden nach dern Gauss'schen Fehlerformel
+  \begin{equation*}
+    \Delta f = \sqrt{ \sum_{i = 0}^n \left(\frac{\partial f}{\partial x_i}\right)^2 \sigma_{x_i}^2 }
+  \end{equation*}
+  berechnet. Die Ausgleichsgeraden berechnen sich über 
+  \begin{align*}
+    y &= a \cdot x + b\\
+    a &= \frac{\overline{xy} - \overline{x} \cdot \overline{y}}{\overline{x^2} - \overline{x}^2}\\
+    c &= \frac{ \overline{x^2} \overline{y} - \overline{x} \cdot \overline{xy}}{\overline{x^2} - \overline{x}^2}.
+  \end{align*}
 
 \subsection{Bestimmung der Metalle}
   Zur Bestimmung der Metalle, aus denen die untersuchten Stäbe bestehen, werden
@@ -34,7 +45,7 @@
 \subsection{Berechnung der Flächenträgheitsmomente}
   Bevor mit der Bestimmung der Elastizitätsmodule begonnen werden kann, müssen die Flächenträgheitsmomente der beiden 
   Stäbe berechnet werden.\\
-  Für den runden Eisenstab lässt sich das Integral in Gleichung \eqref{eqn:} gut in Polarkoordinaten 
+  Für den runden Eisenstab lässt sich das Integral in Gleichung \eqref{eqn:trage} gut in Polarkoordinaten 
   umformen. Dann gilt
   \begin{align*}
     I_{\symup{rund}} &= \int_0^{2 \pi} \int_0^{\frac{d}{2}} \left( r \cos(\phi)\right)^2 r \symup{d}r \symup{d}\phi \\
@@ -124,7 +135,7 @@
   \begin{equation*}
     L x^2 - \frac{x^3}{3}
   \end{equation*}
-  aus Gleichung \eqref{eqn:} eingesetzt. Dann lässt sich eine lineare Regression durchführen, die 
+  aus Gleichung \eqref{eqn:hubert} eingesetzt. Dann lässt sich eine lineare Regression durchführen, die 
   für die Darstellung $D(x) = a \cdot x + b$ die Parameter
   \begin{align*}
     a_{\symup{rund}} = \left(2.997 \pm 0.024 \right) \cdot 10^{-2}\\
@@ -135,19 +146,15 @@
     a_{\symup{quad}} = \left( 3.660 \pm 0.130 \right) \cdot 10^{-2}\\
     b_{\symup{quad}} = \left(0.040 \pm 0.008 \right) \cdot 10^{-2}\\
   \end{align*}
-  für den Stab mit quadratischem Querschnitt liefert. Die Fehler wurden dabei nach 
-  \begin{equation}
-    \Delta
-    \label{eqn:linerr}
-  \end{equation}
+  für den Stab mit quadratischem Querschnitt liefert.
   berechnet. Aus den Steigungen der Geraden lässt sich das Elastizitätsmodul bestimmen, wenn man den 
-  entsprechenden Teil aus \ref{} umstellt. Es folgt
+  entsprechenden Teil aus Gleichung \eqref{eqn:hubert} umstellt. Es folgt
   \begin{align*}
     a &= \frac{F}{2 E I}\\
     \implies E &= \frac{F}{2 a I}
   \end{align*}
   mit der Kraft $F$, die auf den jeweiligen Stab wirkt und dem zuvor berechneten Flächenträgheitsmoment $I$.
-  Die Kraft entspricht der Gewichtskraft $F = m \cdot g$ mit Gravitationsbeschleunigung $g = $ \cite{}
+  Die Kraft entspricht der Gewichtskraft $F = m \cdot g$ mit Gravitationsbeschleunigung $g$
   und dem jeweils verwendeten Gewicht $m$. \\
   Die Messwerte und die linearen Ausgleichsgeraden sind in Abbildung \ref{fig:plots} dargestellt.
   Es ergeben sich nach Einsetzen
@@ -167,7 +174,7 @@
 \subsection{Beidseitige Einspannung}
   Bei der Untersuchung des Verhaltens der Biegung unter beidseitiger Einspannung wurde nur der 
   Eisenstab betrachtet. \\
-  Die aufgenommenen Messwerte sind in Tabellen zu finden. %%%%%%%%% add here
+  Die aufgenommenen Messwerte sind in Tabellen \ref{tab:rechts} und \ref{tab:links} zu finden. %%%%%%%%% add here
 
   \begin{table}
     \centering
@@ -214,7 +221,7 @@
 
   \noindent Es werden also der Bereich rechts von der Auflage des Gewichts und links davon 
   getrennt betrachet.\\
-  Werden die nichtlinearen Teile in \ref{} und \ref{} berechnet, lassen sich wieder lineare 
+  Werden die nichtlinearen Teile in \eqref{eqn:kurt} und \eqref{eqn:fred} berechnet, lassen sich wieder lineare 
   Regressionen durchführen, aus denen das Elastizitätsmodul von Eisen nach 
   \begin{align*}
     a &= \frac{F}{48 E I} \\
